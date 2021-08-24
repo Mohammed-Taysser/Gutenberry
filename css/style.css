@@ -18,6 +18,59 @@ body{
     color: #fff;
 }
 
+.special-header::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100px;
+    position: relative;
+    background-color: #9400ff;
+    top: 50px;
+}
+
+.nice-shadow {
+    box-shadow: 0px 3px 15px rgba(22, 41, 124, 0.1);
+}
+
+.view-more{
+    color: #333;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+
+.view-more:hover {
+    color: #333;
+    opacity: 0.5;
+    text-decoration: none;
+}
+.view-more:hover::before{
+    opacity: 0;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}
+
+.view-more::before{
+    content: '';
+    height: 2px;
+    top: 30px;
+    width: 100%;
+    position: absolute;
+    background-color: #9400ff;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
 .main-background-color{
     background: linear-gradient(90deg, rgba(244,245,255,1) 10%, rgba(235,248,255,1));
 }
@@ -28,6 +81,10 @@ body{
 
 .bg-purple{
     background-color: #9400ff;
+}
+
+.text-purple{
+    color: #9400ff;
 }
 
 /* navbar */
@@ -185,6 +242,13 @@ nav .search-popup button[type='submit'] {
     }
 }
 
+/* latest-news */
+
+.latest-news .new .img{
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
 
 @media (min-width: 576px) { }
 @media (min-width: 768px) { }
