@@ -4,6 +4,10 @@
 	src: url("../fonts/Montserrat-Regular.ttf");
 }
 
+@font-face {
+	font-family: Tajawal;
+	src: url("../fonts/Tajawal-Regular.ttf");
+}
 
 body{
     font-family:Montserrat; 
@@ -12,6 +16,173 @@ body{
 ::selection{
     background-color: #333;
     color: #fff;
+}
+
+.main-background-color{
+    background: linear-gradient(90deg, rgba(244,245,255,1) 10%, rgba(235,248,255,1));
+}
+
+.other-background-color{
+    background-image: linear-gradient(to top right, #f5f5ff 30%, #f5f5ff 100%, #ffffff 70%);
+}
+
+.bg-purple{
+    background-color: #9400ff;
+}
+
+/* navbar */
+
+nav .brand{
+    font-size: 1.5rem;
+}
+
+nav .close-button{
+    user-select: none;
+    cursor: pointer;
+    display: none;
+}
+
+nav .close-button > span{
+    height: 3px;
+    width: 30px;
+    display: block;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    background-color: #9400ff;
+}
+
+nav .close-button span:last-child{
+    margin: 0;
+}
+
+nav .close-button > span:first-of-type.transform {
+    transform: rotate(-45deg) translate(-10px, 10px);
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    -moz-transform: rotate(-45deg) translate(-10px, 10px);
+    -ms-transform: rotate(-45deg) translate(-10px, 10px);
+    -o-transform: rotate(-45deg) translate(-10px, 10px);
+}
+nav .close-button > span:nth-of-type(2).transform {
+    opacity: 0;
+}
+nav .close-button > span:last-of-type.transform {
+    transform: rotate(45deg) translate(-1px, -1px);
+    -webkit-transform: rotate(45deg) translate(-1px, -1px);
+    -moz-transform: rotate(45deg) translate(-1px, -1px);
+    -ms-transform: rotate(45deg) translate(-1px, -1px);
+    -o-transform: rotate(45deg) translate(-1px, -1px);
+}
+
+nav .main-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .main-links .custom-nav-link a{
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+nav .main-links .custom-nav-link.active a, nav .main-links .custom-nav-link:hover a{
+    color: #9400ff;
+}
+
+nav .search-popup{
+    position: fixed;
+    opacity: 0;
+    z-index: -3;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e88a;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+nav .search-popup.open{
+    opacity: 1;
+    z-index: 100;
+}
+
+nav .search-popup input[type="search"] {
+    font-size: 1em;
+    padding: 15px;
+    font-weight: bold;
+    background: #fff;
+    border: 2px solid #9400ff4d;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px rgba(65, 71, 86, 0.2);
+    -webkit-box-shadow: 0px 20px 20px rgba(65, 71, 86, 0.2);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -ms-transition: .2s ease;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+nav .search-popup input[type="search"]:hover {
+    -webkit-box-shadow: 0px 10px 10px rgba(65, 71, 86, 0.2);
+    box-shadow: 0px 10px 10px rgba(65, 71, 86, 0.2);
+    -webkit-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+}
+
+nav .search-popup button[type='submit'] {
+    position: absolute;
+    top: 4px;
+    bottom: 0;
+    right: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    nav .close-button{
+        display: block;
+    }
+    
+    nav .main-links ul {
+        display: block;
+        position: absolute;
+        width: 20em;
+        left: -20em;
+        background-image: linear-gradient(to top right, #f5f5ff 30%, #f5f5ff 100%, #ffffff 70%);
+        top: 0;
+        height: 100vh;
+        padding-top: 50px;
+        padding-left: 20px;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+    }
+    nav .main-links ul.open{
+        left: 0;
+    }
 }
 
 
