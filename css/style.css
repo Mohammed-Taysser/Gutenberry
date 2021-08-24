@@ -341,7 +341,7 @@ nav .search-popup button[type='submit'] {
 
 /* latest-news */
 
-.latest-news .new .img{
+.latest-news .new .img, .related-posts .new .img{
     height: 200px;
     background-position: center;
     background-size: cover;
