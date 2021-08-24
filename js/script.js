@@ -51,6 +51,15 @@ $(function () {
 
 	});
 
+	
+	$(".profile-container").addClass("pre-enter");
+	setTimeout(function(){
+		$(".profile-container").addClass("on-enter");
+	}, 500);
+	setTimeout(function(){
+		$(".profile-container").removeClass("pre-enter on-enter");
+	}, 3000);
+
 	let current_year = new Date().getFullYear()
 	document.querySelector('#current_year').textContent = current_year
 
