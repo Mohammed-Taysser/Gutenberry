@@ -250,6 +250,90 @@ nav .search-popup button[type='submit'] {
     background-size: cover;
 }
 
+
+/* .newsletter */
+
+.newsletter{
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+.newsletter input {
+    width: 100%;
+    line-height: 50px;
+    padding: 0 180px 0 25px;
+    outline: 2px solid #a387ff;
+    border: none;
+    background: transparent;
+    font-weight: 300;
+    border-radius: 25px;
+    background: #f9f9ff;
+}
+  
+  
+
+.newsletter .primary-btn {
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    line-height: 40px;
+    padding: 0 30px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid transparent;
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+}
+  
+.newsletter .primary-btn:focus {
+    outline: none;
+}
+
+  
+.newsletter .primary-btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    z-index: 1;
+    background-image: -moz-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
+    background-image: -webkit-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
+    background-image: -ms-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
+}
+.newsletter .primary-btn span{
+      z-index: 3;
+}
+@media (max-width: 767px) {
+    .newsletter input {
+      padding: 0 25px;
+    }
+    .newsletter .primary-btn {
+      position: relative;
+      margin-top: 10px;
+      right: 0;
+      bottom: 0;
+    }
+}
+
 @media (min-width: 576px) { }
 @media (min-width: 768px) { }
 @media (min-width: 992px) {  }
