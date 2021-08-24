@@ -134,13 +134,13 @@ nav .close-button > span:last-of-type.transform {
     -o-transform: rotate(45deg) translate(-1px, -1px);
 }
 
-nav .main-links ul {
+nav .main-links > ul {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-nav .main-links .custom-nav-link a{
+ .custom-nav-link > a, .custom-dropdown-link{
     color: #333;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -149,8 +149,104 @@ nav .main-links .custom-nav-link a{
     -o-transition: all 0.3s ease-in-out;
 }
 
-nav .main-links .custom-nav-link.active a, nav .main-links .custom-nav-link:hover a{
+ .custom-nav-link.active > a,.custom-nav-link:hover > a, .custom-dropdown-link:hover{
     color: #9400ff;
+}
+
+ .custom-dropdown:hover .custom-dropdown-menu .custom-dropdown-item {
+    display: block;
+    opacity: 1;
+  }
+  
+@media (min-width: 768px) { 
+
+  .custom-dropdown-menu {
+    position: absolute;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    width: 15em;
+    perspective: 1000px;
+    z-index: 3;
+  }
+  .custom-dropdown-menu .custom-dropdown-item {
+    display: none;
+    color: #333;
+    background-image: linear-gradient(to top right, #f5f5ff 30%, #f5f5ff 100%, #ffffff 70%);
+    border: 2px solid #a387ff9e;
+    border-bottom: none;
+    font-size: 16px;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+.custom-dropdown-menu .custom-dropdown-item:last-child{
+    border-bottom: 2px solid #a387ff9e;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.custom-dropdown-menu .custom-dropdown-item:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.custom-dropdown-menu .custom-dropdown-item  a{
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+  .custom-dropdown-menu .custom-dropdown-item:hover {
+    background: #a387ff;
+    color: #fff;
+    padding-left: 20px;
+  }
+
+  .custom-dropdown-menu .custom-dropdown-item:hover a{
+    color: #fff;
+  }
+
+.custom-dropdown-menu .custom-dropdown-item:nth-child(1) {
+    transform-origin: top center;
+    animation: translateX 300ms ease-in-out forwards;
+    -webkit-animation: translateX 300ms ease-in-out forwards;
+}
+.custom-dropdown-menu .custom-dropdown-item:nth-child(2) {
+    transform-origin: top center;
+    animation: translateX 300ms 60ms ease-in-out forwards;
+    -webkit-animation: translateX 300ms 60ms ease-in-out forwards;
+}
+.custom-dropdown-menu .custom-dropdown-item:nth-child(3) {
+    transform-origin: top center;
+    animation: translateX 300ms 120ms ease-in-out forwards;
+    -webkit-animation: translateX 300ms 120ms ease-in-out forwards;
+}
+.custom-dropdown-menu .custom-dropdown-item:nth-child(4) {
+    transform-origin: top center;
+    animation: translateX 300ms 180ms ease-in-out forwards;
+    -webkit-animation: translateX 300ms 180ms ease-in-out forwards;
+}
+
+@keyframes translateX {
+    0% {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    80% {
+      transform: translateX(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  } 
+
 }
 
 nav .search-popup{
@@ -221,7 +317,7 @@ nav .search-popup button[type='submit'] {
         display: block;
     }
     
-    nav .main-links ul {
+    nav .main-links > ul {
         display: block;
         position: absolute;
         width: 20em;
@@ -231,13 +327,14 @@ nav .search-popup button[type='submit'] {
         height: 100vh;
         padding-top: 50px;
         padding-left: 20px;
+        z-index: 5;
         transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         -moz-transition: all 0.3s ease-in-out;
         -ms-transition: all 0.3s ease-in-out;
         -o-transition: all 0.3s ease-in-out;
     }
-    nav .main-links ul.open{
+    nav .main-links > ul.open{
         left: 0;
     }
 }

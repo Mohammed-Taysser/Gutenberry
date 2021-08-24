@@ -51,4 +51,7 @@ $(function () {
 
 	});
 
+	let current_year = new Date().getFullYear()
+	document.querySelector('#current_year').textContent = current_year
+
 });
