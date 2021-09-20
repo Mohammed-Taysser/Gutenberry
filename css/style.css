@@ -392,12 +392,23 @@ nav .search-popup button[type='submit'] {
     width: 100%;
     line-height: 50px;
     padding: 0 180px 0 25px;
-    outline: 2px solid #a387ff;
-    border: none;
-    background: transparent;
+    border: 2px solid #a387ff;
+    outline: none;
     font-weight: 300;
-    border-radius: 25px;
+    border-radius: 50px;
     background: #f9f9ff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.newsletter input:focus {
+  box-shadow: 0 0 0 0.2rem #a387ff5e;
 }
   
   
@@ -414,13 +425,15 @@ nav .search-popup button[type='submit'] {
     display: inline-block;
     font-weight: 500;
     cursor: pointer;
-}
-  
-.newsletter .primary-btn:focus {
     outline: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
-
   
+ 
 .newsletter .primary-btn:after {
     position: absolute;
     content: "";
@@ -429,18 +442,25 @@ nav .search-popup button[type='submit'] {
     top: 0;
     left: 0;
     border-radius: 20px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease-in-out;
     z-index: 1;
     background-image: -moz-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
     background-image: -webkit-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
     background-image: -ms-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
+    -ms-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 .newsletter .primary-btn span{
       z-index: 3;
 }
+.newsletter .primary-btn:focus:after , .newsletter .primary-btn:hover:after {
+  background-image: -moz-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
+  background-image: -webkit-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
+  background-image: -ms-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
+}
+
 @media (max-width: 767px) {
     .newsletter input {
       padding: 0 25px;
