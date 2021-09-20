@@ -17,6 +17,7 @@ $(function () {
 
 	search_button.onclick = function (e) {
 		e.stopPropagation();
+		document.querySelector('#search-popup input.input-search').focus()
 		search_popup.classList.toggle('open')
 	};
 
