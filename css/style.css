@@ -258,6 +258,12 @@ nav .main-links > ul {
     -webkit-animation: translateX 300ms 180ms ease-in-out forwards;
 }
 
+.custom-dropdown-menu .custom-dropdown-item:nth-child(5) {
+  transform-origin: top center;
+  animation: translateX 300ms 240ms ease-in-out forwards;
+  -webkit-animation: translateX 300ms 240ms ease-in-out forwards;
+}
+
 @keyframes translateX {
     0% {
       opacity: 0;
