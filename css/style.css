@@ -590,7 +590,8 @@ nav .search-popup button[type='submit'] {
     .profile-container .user-img{
         border-radius: 50% !important;
         clip-path: none;
-        width: 50%;
+        width: 250px;
+        height: 250px;
         margin: 0 auto;
         -webkit-border-radius: 50% !important;
         -moz-border-radius: 50% !important;
