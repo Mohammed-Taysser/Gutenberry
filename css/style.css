@@ -335,7 +335,7 @@ nav .search-popup input[type="search"]:hover {
 
 nav .search-popup button[type='submit'] {
     position: absolute;
-    top: 4px;
+    top: 1px;
     bottom: 0;
     right: 15px;
     background: transparent;
