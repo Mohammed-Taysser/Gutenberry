@@ -6,6 +6,22 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	$('[data-toggle="popover"]').popover();
 
+	// ----------- toggle value on input
+	$('input.input-effect').focusout(function () {
+		toggle_input_effect(this);
+	});
+
+	document.querySelectorAll('input.input-effect').forEach(item => {
+		toggle_input_effect(item)
+	})
+
+	function toggle_input_effect(selector) {
+		if (selector.value !== '') {
+			selector.classList.add('has-content');
+		} else {
+			selector.classList.remove('has-content');
+		}
+	}
 
 	// toggle menu & search button
 	let close_button = document.querySelector('#close-button')
