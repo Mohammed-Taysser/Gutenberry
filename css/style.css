@@ -204,7 +204,8 @@ nav .main-links > ul {
     display: none;
     color: #333;
     background-image: linear-gradient(to top right, #f5f5ff 30%, #f5f5ff 100%, #ffffff 70%);
-    border: 2px solid #a387ff9e;
+    border: 2px solid #a387ff;
+/*     border: 2px solid #a387ff9e; */
     border-bottom: none;
 /*     font-size: 16px; */
     opacity: 0;
