@@ -422,7 +422,8 @@ nav .search-popup button[type='submit'] {
 .newsletter .primary-btn {
     position: absolute;
     right: 20px;
-    top: 4px;
+    top: 50%;
+    transform: translateY(-50%);
     line-height: 40px;
     padding: 0 30px;
     border-radius: 20px;
