@@ -1,7 +1,9 @@
 
 # Gutenberry
 
-frontend design for a blog
+for [live demo](https://mohammed-taysser.github.io/Gutenberry/)
+
+multiple frontend page design for a blog pages
 
 used tools
 
