@@ -1,5 +1,5 @@
 
-# Gutenberry v2
+# Gutenberry v1
 
 for [live demo](https://mohammed-taysser.github.io/Gutenberry/)
 
