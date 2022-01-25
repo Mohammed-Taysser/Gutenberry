@@ -1,6 +1,7 @@
 # custom ignore
 
 temp
+dist
 
 # Logs
 logs
