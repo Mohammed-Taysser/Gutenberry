@@ -76,7 +76,7 @@ function html_task() {
   require('./server.js');
   return gulp
     .src(PATHS.html.src)
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({ pretty: false }))
     .pipe(gulp.dest(PATHS.html.dest));
 }
 
