@@ -1,0 +1,43 @@
+@mixin overlay($background: #777, $color: #fff, $opacity: 0.3) {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: rgba($background, $opacity);
+  color: $color;
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: translate(-50%, -50%);
+}

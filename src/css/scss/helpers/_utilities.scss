@@ -1,0 +1,100 @@
+@font-face {
+  font-family: MontserratAlternates;
+  src: url('../fonts/MontserratAlternates-Regular.ttf');
+}
+
+body {
+  --background-color: #fff;
+  --text-color: #000;
+  font-family: MontserratAlternates, sans-serif;
+  // text-transform: capitalize;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 0 10px;
+}
+body.dark {
+  --background-color: #333;
+  --text-color: #fff;
+}
+
+.overlay{
+  position: relative;
+  &::before{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(119, 119, 119, 0.418);
+  }
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.nice-shadow {
+  box-shadow: 0 3px 15px rgba(22, 41, 124, 0.1);
+}
+
+.text-aurora {
+  color: var(--main-color);
+}
+
+.border-aurora {
+  border-color: var(--main-color);
+}
+
+.bg-aurora {
+  background-color: var(--main-color);
+}
+
+.bg-real-dark {
+  background-color: #000;
+}
+
+.custom-btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  background-color: transparent;
+  padding: 12px 32px 10px;
+  font-weight: 700;
+  transition: 0.35s ease;
+  color: var(--text-color);
+  min-width: 140px;
+  border: 2px solid var(--main-color);
+  box-sizing: border-box;
+  border-radius: 0;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  position: relative;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    transition: 0.35s ease;
+    background-color: var(--main-color);
+    transform: translate(-50%, 0) skew(25deg);
+    background-image: $main-gradient;
+  }
+
+  &:hover {
+    color: #333;
+
+    &::before {
+      width: 150%;
+    }
+  }
+}
