@@ -1,62 +1,71 @@
-$(function () {
+// $(function () {
+  // 'use strict';
+
+  //   bsCustomFileInput.init();
+
+  //   // ----------- toggle value on input
+  //   $('input.input-effect').focusout(function () {
+  //     toggle_input_effect(this);
+  //   });
+
+  //   document.querySelectorAll('input.input-effect').forEach((item) => {
+  //     toggle_input_effect(item);
+  //   });
+
+  //   function toggle_input_effect(selector) {
+  //     if (selector.value !== '') {
+  //       selector.classList.add('has-content');
+  //     } else {
+  //       selector.classList.remove('has-content');
+  //     }
+  //   }
+
+  //   $('.profile-container').addClass('pre-enter');
+  //   setTimeout(function () {
+  //     $('.profile-container').addClass('on-enter');
+  //   }, 500);
+  //   setTimeout(function () {
+  //     $('.profile-container').removeClass('pre-enter on-enter');
+  //   }, 3000);
+// });
+
+(function () {
   'use strict';
-  bsCustomFileInput.init();
-  $('[data-toggle="tooltip"]').tooltip();
-  $('[data-toggle="popover"]').popover();
 
-  // ----------- toggle value on input
-  $('input.input-effect').focusout(function () {
-    toggle_input_effect(this);
-  });
-
-  document.querySelectorAll('input.input-effect').forEach((item) => {
-    toggle_input_effect(item);
-  });
-
-  function toggle_input_effect(selector) {
-    if (selector.value !== '') {
-      selector.classList.add('has-content');
-    } else {
-      selector.classList.remove('has-content');
-    }
-  }
+  window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
 
   // toggle menu & search button
-  let close_button = document.querySelector('#close-button');
-  let menu_links = document.querySelector('#main-links ul');
+  const close_button = document.querySelector('#js-close-button'),
+    menu_links = document.querySelector('#js-main-links ul'),
+    search_button = document.querySelector('#search-button'),
+    search_popup = document.querySelector('#search-popup'),
+    search_popup_content = document.querySelector('#search-popup .content');
 
-  let search_button = document.querySelector('#search-button');
-  let search_popup = document.querySelector('#search-popup');
-  let search_popup_content = document.querySelector('#search-popup .content');
-
-  search_button.onclick = function (e) {
-    e.stopPropagation();
+  search_button.onclick = function (event) {
+    event.stopPropagation();
+    event.preventDefault();
     document.querySelector('#search-popup input.input-search').focus();
     search_popup.classList.toggle('open');
   };
 
-  search_popup_content.onclick = function (e) {
-    e.stopPropagation();
+  search_popup_content.onclick = function (event) {
+    event.stopPropagation();
   };
 
-  close_button.onclick = function (e) {
-    document.querySelector('#main-links ul').classList.toggle('open');
-    document
-      .querySelectorAll('#close-button > span')
-      .forEach((span) => span.classList.toggle('transform'));
-    e.stopPropagation();
+  close_button.onclick = function (event) {
+    menu_links.classList.toggle('open');
+    this.classList.toggle('transform');
+    event.stopPropagation();
   };
 
-  document.querySelector('#main-links ul').onclick = function (e) {
-    e.stopPropagation();
+  menu_links.onclick = function (event) {
+    event.stopPropagation();
   };
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', function (e) {
     if (e.target != menu_links && e.target != close_button) {
       if (menu_links.classList.contains('open')) {
-        document
-          .querySelectorAll('#close-button > span')
-          .forEach((span) => span.classList.toggle('transform'));
+        close_button.classList.toggle('transform');
         menu_links.classList.toggle('open');
       }
     }
@@ -68,23 +77,10 @@ $(function () {
     }
   });
 
-  $('.profile-container').addClass('pre-enter');
-  setTimeout(function () {
-    $('.profile-container').addClass('on-enter');
-  }, 500);
-  setTimeout(function () {
-    $('.profile-container').removeClass('pre-enter on-enter');
-  }, 3000);
-});
-
-(function () {
-  'use strict';
-
-  window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
-  
   document.querySelector('#current_year').textContent = new Date()
     .getFullYear()
     .toString();
+
 })();
 
 //  jQuery start from here 👾
