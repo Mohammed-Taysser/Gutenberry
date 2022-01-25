@@ -10,6 +10,22 @@
 @import "scss/layout/header";
 @import "scss/layout/navbar";
 
+.contact-us {
+  position: relative;
+  background: $main-gradient;
+  overflow: hidden;
+  z-index: 1;
+  .shape {
+    img {
+      position: absolute;
+      z-index: -1;
+      max-width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
 .view-more {
   color: #333;
   transition: all 0.5s ease-in-out;

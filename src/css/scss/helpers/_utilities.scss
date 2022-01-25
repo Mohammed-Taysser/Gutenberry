@@ -16,7 +16,7 @@ body {
   }
 }
 
-a{
+a {
   color: $main-color;
 }
 
@@ -137,7 +137,8 @@ a{
     text-transform: uppercase;
   }
 
-  &:hover {
+  &:hover,
+  &.hovered {
     .circle {
       width: 100%;
       .icon {
@@ -150,5 +151,63 @@ a{
     .button-text {
       color: #fff;
     }
+  }
+}
+
+.custom-form-input-container {
+  position: relative;
+
+  .custom-form-input {
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+    &:focus ~ .custom-form-label,
+    &.has-content ~ .custom-form-label {
+      top: -16px;
+      font-size: 12px;
+      color: $main-color;
+      transition: 0.3s;
+    }
+    &.has-content,
+    &:focus {
+      & ~ .focus-border {
+        width: 100%;
+        transition: 0.4s;
+      }
+    }
+  }
+  .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $main-color;
+    transition: 0.4s;
+  }
+  textarea.custom-form-input {
+    & ~ .focus-border {
+      bottom: 1px;
+    }
+  }
+
+  .custom-form-label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 3px;
+    color: #999;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
   }
 }
