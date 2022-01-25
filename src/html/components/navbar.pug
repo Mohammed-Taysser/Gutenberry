@@ -27,9 +27,9 @@ nav.other-background-color.py-3.position-relative
                 li.custom-dropdown-item
                   a.text-decoration-none(href='posts.html') posts
                 li.custom-dropdown-item
-                  a.text-decoration-none(href='about.html') about
+                  a(href='about-us.html' class=(current_page === "about-us" ? "text-decoration-none active" : 'text-decoration-none')) about
           li.custom-nav-link.my-2.my-md-0
-            a.nav-link(href='contact.html') contact
+            a(href='contact-us.html' class=(current_page === "contact-us" ? "nav-link active" : 'nav-link')) contact
           li.custom-nav-link.my-2.my-md-0
             a.nav-link(href='profile.html')
               img.d-inline-block.align-top.rounded-circle(src='../images/icons/icon-profile.jpg' width='25' height='25' alt='profile')
