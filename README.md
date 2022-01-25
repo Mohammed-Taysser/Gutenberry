@@ -6,7 +6,7 @@
 
 Hello world and welcome in version 2 of [`Gutenberry`][github-live]. It's multiple page designed for a blog website. I introduce a lot of technologies ond new tools to boost speed and performance.
 
-## Quick start
+## Quick start 🚀
 
 Choose one of the following options:
 
@@ -39,7 +39,7 @@ npm run start
 - Using the power of `Gulp.Js` as Task Runner
 - Minify Both `Html` And `Css` And `Javascript` For More Performance 💪
 
-## Browser Support
+## Browser Support 🛠️
 
 supports the latest, stable releases of all major browsers.
 
@@ -55,7 +55,7 @@ You can find our range of supported browsers in our package.json At present we e
 ],
 ```
 
-## Documentation
+## Documentation 📝
 
 Take a look at the [documentation table of contents](doc/TOC.md). This documentation is bundled with the project which makes it available for offline reading and provides a useful starting point for any documentation you want to write about your project
 
