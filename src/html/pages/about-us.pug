@@ -1,0 +1,25 @@
+extends ../layouts/layout
+
+block title 
+  title About Us
+
+block style 
+
+block javascript 
+
+block content 
+
+  section.py-5
+    .container
+      h1.h2.my-5.display-4.text-center about us
+      .row.justify-content-center.align-items-center 
+        .col-md-7.my-3 
+          div 
+            p I'am mohamed taysser, Frontend web developer. Well-versed in great number of languages and tools including HTML5, CSS3, JavaScript, Python, SQL and More. Very good background in web layout and principles. Interesting on writting secure and clean code. Seek to learn more and more about today technology.
+            a.btn-learn-more(href='contact-us.html')
+              span.circle(aria-hidden="true")
+                span.icon.arrow
+              span.button-text Contact me
+        .col-md-5.my-3 
+          .img-container 
+            img(src="../images/background/bg-about-us.jpg", alt="about-us" class='img-fluid')
