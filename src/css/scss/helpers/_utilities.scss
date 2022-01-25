@@ -1,25 +1,33 @@
 @font-face {
-  font-family: MontserratAlternates;
-  src: url('../fonts/MontserratAlternates-Regular.ttf');
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu-Regular.ttf");
 }
 
 body {
   --background-color: #fff;
   --text-color: #000;
-  font-family: MontserratAlternates, sans-serif;
-  // text-transform: capitalize;
+  font-family: Ubuntu, sans-serif;
+  text-transform: capitalize;
   background: var(--background-color);
   color: var(--text-color);
-  padding: 0 10px;
-}
-body.dark {
-  --background-color: #333;
-  --text-color: #fff;
+  &.dark {
+    --background-color: #333;
+    --text-color: #fff;
+  }
 }
 
-.overlay{
+a{
+  color: $main-color;
+}
+
+::selection {
+  background-color: $main-color;
+  color: #fff;
+}
+
+.overlay {
   position: relative;
-  &::before{
+  &::before {
     height: 100%;
     width: 100%;
     left: 0;
@@ -27,6 +35,16 @@ body.dark {
     position: absolute;
     background-color: rgba(119, 119, 119, 0.418);
   }
+}
+
+.special-header::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100px;
+  position: relative;
+  background-color: $main-color;
+  top: 50px;
 }
 
 .user-select-none {
@@ -38,63 +56,99 @@ body.dark {
 }
 
 .text-aurora {
-  color: var(--main-color);
+  color: $main-color;
 }
 
 .border-aurora {
-  border-color: var(--main-color);
+  border-color: $main-color;
 }
 
 .bg-aurora {
-  background-color: var(--main-color);
+  background-color: $main-color;
 }
 
 .bg-real-dark {
   background-color: #000;
 }
 
-.custom-btn {
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
-  background-color: transparent;
-  padding: 12px 32px 10px;
-  font-weight: 700;
-  transition: 0.35s ease;
-  color: var(--text-color);
-  min-width: 140px;
-  border: 2px solid var(--main-color);
-  box-sizing: border-box;
-  border-radius: 0;
-  letter-spacing: 0.1em;
-  overflow: hidden;
+.btn-learn-more {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
 
-  span {
+  width: 12rem;
+  height: auto;
+  .circle {
+    @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
     position: relative;
-    z-index: 1;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: $main-color;
+    border-radius: 1.625rem;
+    .icon {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: #fff;
+      &.arrow {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+        &::before {
+          position: absolute;
+          content: "";
+          top: -0.25rem;
+          right: 0.0625rem;
+          width: 0.625rem;
+          height: 0.625rem;
+          border-top: 0.125rem solid #fff;
+          border-right: 0.125rem solid #fff;
+          transform: rotate(45deg);
+        }
+      }
+    }
   }
-
-  &::before {
-    content: '';
+  .button-text {
+    @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
     position: absolute;
-    width: 0;
-    height: 100%;
-    z-index: -1;
     top: 0;
-    left: 50%;
-    transition: 0.35s ease;
-    background-color: var(--main-color);
-    transform: translate(-50%, 0) skew(25deg);
-    background-image: $main-gradient;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: $main-color;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &:hover {
-    color: #333;
-
-    &::before {
-      width: 150%;
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+          background: #fff;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: #fff;
     }
   }
 }
