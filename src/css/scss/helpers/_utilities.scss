@@ -313,3 +313,23 @@ a {
     }
   }
 }
+
+.form-control {
+  &.disabled,
+  &:disabled,
+  &.readonly {
+    background-color: #f8f9fa;
+  }
+  &:focus {
+    border-color: #9500ffbd;
+    // box-shadow: 0 0 0 0.25rem #9500ff48;
+    box-shadow: none;
+  }
+}
+
+.custom-input-group {
+  .input-group-text {
+    color: #6c757d;
+    background-color: #f8f9fa;
+  }
+}
