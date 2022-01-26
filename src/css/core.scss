@@ -118,8 +118,9 @@
   }
 }
 
-.login-page, .register-page{
-  .social-media-icon{
+.login-page,
+.register-page {
+  .social-media-icon {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -130,8 +131,23 @@
     margin: 0 10px;
   }
   @media (max-width: 768px) {
-    .bg-login, .login-content{
+    .bg-login,
+    .login-content {
       border-radius: 0.25rem;
+    }
+  }
+}
+
+.post-details {
+  img.main-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    img.main-image {
+      height: 500px;
     }
   }
 }
