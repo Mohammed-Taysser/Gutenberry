@@ -14,14 +14,14 @@ block content
     .container
       .row.justify-content-center.align-items-stretch.g-0
         .col-md-6.my-3
-          .p-4.rounded-start.border
+          .p-4.rounded-start.border.login-content
             h1.my-4.text-center Sign in
             .my-3.text-center 
-              .social-media-icon
-                i(class="fab fa-facebook-f")
-              .social-media-icon
+              a(href="#" title='facebook' class='text-dark social-media-icon')
+                i(class="fab fa-facebook-f") 
+              a(href="#" title='google' class='text-dark social-media-icon')
                 i(class="fab fa-google-plus-g")
-              .social-media-icon
+              a(href="#" title='github' class='text-dark social-media-icon')
                 i(class="fab fa-github")
               p.small.text-muted.mt-4 or use your account
             form.mb-3(action='' method='')
@@ -41,7 +41,7 @@ block content
                     span.icon.arrow
                   span.button-text sign in
         .col-md-6.my-3
-          .bg-aurora.p-4.rounded-end.h-100.d-flex.justify-content-center.align-items-center.align-content-center
+          .bg-aurora.p-4.rounded-end.h-100.d-flex.justify-content-center.align-items-center.align-content-center.bg-login
             .text-center.text-white  
               h2.mb-3 Hello, Friend!
               p Enter your personal details and start journey with us

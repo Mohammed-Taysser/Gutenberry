@@ -129,6 +129,11 @@
     display: inline-block;
     margin: 0 10px;
   }
+  @media (max-width: 768px) {
+    .bg-login, .login-content{
+      border-radius: 0.25rem;
+    }
+  }
 }
 
 /* profile animation */
