@@ -71,6 +71,42 @@ a {
   background-color: #000;
 }
 
+.main-background-color {
+  background: $main-gradient;
+}
+
+.secondary-background-color {
+  background: $secondary-gradient;
+}
+
+.view-more-btn {
+  color: #333;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    height: 2px;
+    top: 30px;
+    width: 100%;
+    position: absolute;
+    background-color: $main-color;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+  }
+  &:hover {
+    color: #333;
+    opacity: 0.5;
+    text-decoration: none;
+
+    &::before {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+}
+
 .btn-learn-more {
   position: relative;
   display: inline-block;
@@ -164,7 +200,7 @@ a {
     letter-spacing: 1px;
     border: 0;
     padding: 4px 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #ddd;
     background-color: transparent;
 
     &:focus {
