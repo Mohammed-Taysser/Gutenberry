@@ -1,0 +1,30 @@
+extends ../layouts/layout
+
+block title 
+  title GuttenBerry | Page Not Found
+
+block current_page 
+  - var current_page = '404'
+
+block style 
+
+block javascript 
+
+block content 
+
+  .page-404.my-5.py-5.text-center
+    h1.text-muted Page Not Found
+    p.text-muted.zoom-area
+      b Sorry
+      | , but the page you were trying to view does not exist.
+    section.error-container
+      span.four
+        span.screen-reader-text  4 
+      span.zero
+        span.screen-reader-text  0 
+      span.four
+        span.screen-reader-text  4 
+    a.btn-learn-more.hovered(href='index.html')
+      span.circle(aria-hidden="true")
+        span.icon.arrow
+      span.button-text Back to home
