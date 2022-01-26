@@ -34,7 +34,7 @@ block content
                 label.custom-form-label password
                 span.focus-border
               p.text-end
-                a.text-muted(href='#') forget password
+                a.text-muted(href='#' data-bs-toggle="modal" data-bs-target="#forget-password-modal") forget password
               .text-center
                 button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit')
                   span.circle(aria-hidden="true")
@@ -46,3 +46,19 @@ block content
               h2.mb-3 Hello, Friend!
               p Enter your personal details and start journey with us
               a(href="register.html" title='register' class='rounded-pill mt-2 px-3 py-2 btn btn-outline-light') sign up 
+
+    #forget-password-modal.modal.fade(tabindex='-1' aria-labelledby='forget-password-modal-label' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#forget-password-modal-label.modal-title forget password ?
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            p.m-0
+              | just relax and remember your password 😎
+          .modal-footer.p-1
+            button(type='button' data-bs-dismiss='modal' class='btn-learn-more hovered') 
+              span.circle(aria-hidden="true")
+                span.icon.arrow
+              span.button-text thanks
+            //- button.btn.btn-primary(type='button') Save changes
