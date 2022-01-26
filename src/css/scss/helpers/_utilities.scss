@@ -79,6 +79,12 @@ a {
   background: $secondary-gradient;
 }
 
+@media (min-width: 768px) {
+  .w-md-50{
+    width: 50%;
+  }
+}
+
 .view-more-btn {
   color: #333;
   transition: all 0.5s ease-in-out;
