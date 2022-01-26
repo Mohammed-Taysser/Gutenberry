@@ -1,6 +1,15 @@
-
 $main-color: #9400ff;
 $text-color: #000;
-$background-color:#fff;
+$background-color: #fff;
 $gray-500: #adb5bd;
-$main-gradient: linear-gradient(90deg, rgba(244,245,255,1) 10%, rgba(235,248,255,1));;
+$main-gradient: linear-gradient(
+  90deg,
+  rgba(244, 245, 255, 1) 10%,
+  rgba(235, 248, 255, 1)
+);
+$secondary-gradient: linear-gradient(
+  to top right,
+  #f5f5ff 30%,
+  #f5f5ff 100%,
+  #ffffff 70%
+);
