@@ -80,7 +80,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  .w-md-50{
+  .w-md-50 {
     width: 50%;
   }
 }
@@ -286,5 +286,30 @@ a {
   &:focus:after,
   &:hover:after {
     background-position: 100%;
+  }
+}
+
+.custom-pagination {
+  .page-item {
+    a {
+      color: $main-color;
+      &:hover {
+        color: #fff;
+        background-color: $main-color;
+        border-color: $main-color;
+      }
+      &:focus {
+        color: $main-color;
+        background-color: #fff;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #9500ff57;
+      }
+    }
+    &.active {
+      a {
+        background-color: $main-color;
+        border-color: $main-color;
+      }
+    }
   }
 }
