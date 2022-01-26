@@ -1,0 +1,74 @@
+extends ../layouts/layout
+
+block title 
+  title GuttenBerry | Contact Us
+
+block current_page 
+  - var current_page = 'contact-us'
+
+block style 
+
+block javascript 
+
+block content 
+
+  .post-details
+    .container
+      .row.justify-content-center
+        .col-md-11.mt-4
+          .post.mb-5.nice-shadow.rounded.p-2.p-md-4.p-lg-5
+            h2.mt-3 Easy tips on how to add pictures in the gallery.
+            p.text-muted September 23 2019 | 5 mins read
+            img.main-image(src='../images/background/bg-post-details.jpg' alt='post-img')
+            small.text-muted
+              | If you are looking for high-quality theme for your articles &ndash; feel free to use a new set from Gutenberg theme.
+            p.text-muted.mt-4
+              | More and more international bloggers and writers have begun recently to focus their attention to block kind of posting. If before we tried to make it just without distracting attention, so now it is a new trend &ndash; based Gutenberg theme.
+            p.text-muted
+              | Of course, when we are talking about user-friendly blogs, we mean a great function of the theme. The 
+              strong Gutenberg
+              |  theme is perfect because it includes chess layout and ready minimal design
+            p.text-muted The diversity of blocks is a new trend in blog creation.
+            p.text-muted
+              | In this article, we have prepared several options for how and where it is better to use a Gutenberg theme. You will learn about the benefits of all blocks and basic work rules.
+            .d-md-flex.justify-content-center.align-items-center.my-4
+              .img-container.my-3.text-center
+                img.img-fluid(src='../images/background/bg-post-details-sidebar.png' alt='img-1')
+              .content.w-md-50.ms-3.my-3
+                p.text-muted
+                  | You can call special feelings in the viewer by using several shades of the same color in the picture. Try mixing colors to see what happens. As more you experiment as better you will begin to understand what looks good and what is just bright.
+                p.mt-md-4
+                  strong Example: 
+                  | Special features.
+                p.text-muted
+                  | For the effective color using, pay attention not only to the right shades but also to the lighting. The colors which were taken pictures in harsh sunlight will look very different compared to those shot in dim light indoors. The key to how to make perception blog is perfectly content with the right choose media files framed with the appropriated color.
+            p.text-muted
+              | ach block created by Gutenberg consists of HTML comments, typically using opening and closing tags, using syntax created by Gutenberg developers.
+              | Gutenberg Editor has excellent assets that could really help people write better texts.
+            p.text-muted
+              strong.text-dark Tags
+              | : 
+              a(href='#')  Gutenberg ,
+              a(href='#')  New Editor ,
+              a(href='#')  blog ,
+              a(href='#')  posts 
+          .my-3.mb-4.related-posts.latest-news
+            h2.mb-4.special-header related posts
+            .row.justify-content-center.align-items-center
+
+              - let counter = 0
+              each news in news_arr
+                - if (counter == 3) break
+                .col-md-6.col-lg-4.my-3
+                  .single-news.bg-white.nice-shadow.rounded.h-100
+                    .img-container.rounded-top 
+                      img(src=news.img, alt=news.title width='100%' height='200px' class='img-fluid rounded-top')
+                    .content.p-3
+                      h5.my-2 
+                        a(href="post-details.html" title=news.title)=news.title
+                      p.text-muted=news.info 
+                      a.text-danger(href='post-details.html')
+                        | read more
+                        i(class="fas fa-arrow-right ms-1")
+                - counter ++
+              
