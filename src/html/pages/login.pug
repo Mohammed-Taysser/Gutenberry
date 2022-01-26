@@ -1,0 +1,48 @@
+extends ../layouts/layout
+
+
+block title 
+  title GuttenBerry | Login
+
+block style 
+
+block javascript 
+
+block content 
+
+  .login-page.my-5.py-5
+    .container
+      .row.justify-content-center.align-items-stretch.g-0
+        .col-md-6.my-3
+          .p-4.rounded-start.border
+            h1.my-4.text-center Sign in
+            .my-3.text-center 
+              .social-media-icon
+                i(class="fab fa-facebook-f")
+              .social-media-icon
+                i(class="fab fa-google-plus-g")
+              .social-media-icon
+                i(class="fab fa-github")
+              p.small.text-muted.mt-4 or use your account
+            form.mb-3(action='' method='')
+              .custom-form-input-container.my-4
+                input.custom-form-input(type='email' placeholder='' required)
+                label.custom-form-label email
+                span.focus-border
+              .custom-form-input-container.my-4
+                input.custom-form-input(type='password' placeholder='' required)
+                label.custom-form-label password
+                span.focus-border
+              p.text-end
+                a.text-muted(href='#') forget password
+              .text-center
+                button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit')
+                  span.circle(aria-hidden="true")
+                    span.icon.arrow
+                  span.button-text sign in
+        .col-md-6.my-3
+          .bg-aurora.p-4.rounded-end.h-100.d-flex.justify-content-center.align-items-center.align-content-center
+            .text-center.text-white  
+              h2.mb-3 Hello, Friend!
+              p Enter your personal details and start journey with us
+              a(href="register.html" title='register' class='rounded-pill mt-2 px-3 py-2 btn btn-outline-light') sign up 
