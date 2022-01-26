@@ -264,7 +264,7 @@
         }, {
           "enforceForRenamedProperties": false
         }],
-        "one-var": ["error", "always"],
+        // "one-var": ["error", "always"],
         "jsx-quotes": ["error", "prefer-single"],
         "key-spacing": ["error", { "afterColon": true, "mode": "strict"  }],
         "implicit-arrow-linebreak": ["error", "beside"],
