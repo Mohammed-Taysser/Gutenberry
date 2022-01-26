@@ -16,14 +16,15 @@ block content
     .container
       .row.justify-content-center   
         .col-md-11
-          h1.h2.mb-5.text-muted.special-header Personal Account Settings
+          h1.h2.mb-5.special-header Personal Account Settings
           .nice-shadow.my-3.rounded.p-3
             section.latest-news.py-2
               h4.pb-3.border-bottom your posts
               ul.ps-0.mt-4.user-posts
                 each news in news_arr
                   li.m-2.single-post
-                    img(src=news.img alt=news.title width='80px' height='80px' class='rounded-circle' data-bs-toggle="tooltip" data-bs-placement="top" title=news.title)
+                    a(href="post-details.html" title=news.title)
+                      img(src=news.img alt=news.title width='80px' height='80px' class='rounded-circle' data-bs-toggle="tooltip" data-bs-placement="top" title=news.title) 
 
           .card.my-4
             .card-body
@@ -38,7 +39,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Please use 48 characters at maximum.
-                button.btn.btn-dark.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
 
           .card.my-4
             .card-body
@@ -51,7 +52,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Please use 16 characters at minimum.
-                button.btn.btn-dark.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
 
           .card.my-4
             .card-body
@@ -64,7 +65,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted We will email you to verify the change.
-                button.btn.btn-dark.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
 
 
           .card.my-4
@@ -75,13 +76,14 @@ block content
                   p.card-text his is your avatar.
                     | Click on the avatar to upload a custom one from your files. 
                 .flex-shrink-0
-                  a(href="#" title='change avatar') 
-                    img(src='../images/icons/icon-profile.jpg' alt='user avatar' width='80px' height='80px' class='img-fluid rounded-circle')
+                  label(for="js-profile-avatar-file-uploader") 
+                    img(src='../images/icons/icon-profile.jpg' alt='user avatar' width='80px' height='80px' class='img-fluid rounded-circle cursor-pointer' id='js-profile-avatar')
+                  input(type="file" class="custom-file-input d-none" id="js-profile-avatar-file-uploader" accept='image/*')
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted An avatar is optional but strongly recommended.
-                //- button.btn.btn-dark.btn-sm.px-3(type='submit') save
+                //- button.btn.btn-aurora.btn-sm.px-3(type='submit') save
 
           .card.my-4
             .card-body
@@ -91,13 +93,13 @@ block content
                 .col-md-5
                   .input-group.input-group-sm
                     input.form-control(type='text' placeholder="ID" aria-label="your id" aria-describedby='js-profile-user-btn' disabled value='rXnB5e5aQpkYm2dC1uciGVLr' id='js-profile-user-input')
-                    button.btn.btn-dark(type='button' id='js-profile-user-btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Copy To Clipboard") 
+                    button.btn.btn-aurora(type='button' id='js-profile-user-btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Copy To Clipboard") 
                       i.far.fa-clipboard
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Used when interacting with the guttenBerry API.
-                button.btn.btn-dark.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
 
 
           .card.my-4.border-danger
@@ -108,3 +110,17 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-end.align-items-center
                 button.btn.btn-danger.btn-sm.px-3(type='submit') Delete Personal Account
+
+
+    #change-avatar-modal.modal.fade(tabindex='-1' aria-labelledby='change-avatar-modal-label' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#change-avatar-modal-label.modal-title crop image
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            .img-container.text-center 
+              img(src="../images/icons/icon-profile.jpg", alt="user-avatar" class='img-fluid w-100' id='js-profile-modal-image')
+          .modal-footer.p-1
+            button.btn.btn-danger(data-bs-dismiss='modal') cancel 
+            button.btn.btn-aurora(type='button' id='js-profile-save-avatar-btn') save 
