@@ -32,17 +32,24 @@
 // eslint-disable-next-line max-statements
 (function () {
   'use strict';
-
   window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
 
-  // toggle menu & search button
-  const close_button = document.querySelector('#js-close-button'),
+  //  Enable tooltips everywhere
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')),
+    tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    }),
+
+    close_button = document.querySelector('#js-close-button'),
     menu_links = document.querySelector('#js-main-links ul'),
     search_button = document.querySelector('#search-button'),
     search_popup = document.querySelector('#search-popup'),
     search_popup_content = document.querySelector('#search-popup .content'),
-    form_container = document.querySelectorAll('.custom-form-input-container .custom-form-input');
-
+    form_container = document.querySelectorAll('.custom-form-input-container .custom-form-input'),
+    user_id_btn = document.getElementById('js-profile-user-btn'),
+    user_id_input = document.getElementById('js-profile-user-input');
+    
+  // toggle menu & search button
   search_button.onclick = function (event) {
     event.stopPropagation();
     event.preventDefault();
@@ -112,6 +119,27 @@
       }
     }
   }
+
+  // profile copy user ID
+  if (user_id_btn && user_id_input) {
+    user_id_btn.onclick = function () {
+      copy_to_clipboard(user_id_input.value);
+    };
+  }
+
+  /**
+   * copy text to clipboard
+   * @param {String} text text to be copy
+   */
+  function copy_to_clipboard(text) {
+    const temp_textarea = document.createElement('textarea');
+    temp_textarea.value = text;
+    document.body.appendChild(temp_textarea);
+    temp_textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp_textarea);
+  }
+
 })();
 
 //  jQuery start from here 👾
