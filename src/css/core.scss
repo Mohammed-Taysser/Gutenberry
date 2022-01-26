@@ -26,198 +26,131 @@
   }
 }
 
-.view-more {
+.view-more-btn {
   color: #333;
   transition: all 0.5s ease-in-out;
   position: relative;
-}
-
-.view-more:hover {
-  color: #333;
-  opacity: 0.5;
   text-decoration: none;
-}
-.view-more:hover::before {
-  opacity: 0;
-  transform: translateY(10px);
-}
 
-.view-more::before {
-  content: "";
-  height: 2px;
-  top: 30px;
-  width: 100%;
-  position: absolute;
-  background-color: $main-color;
-  transition: all 0.5s ease-in-out;
-  transform: translateY(0);
+  &::before {
+    content: "";
+    height: 2px;
+    top: 30px;
+    width: 100%;
+    position: absolute;
+    background-color: $main-color;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+  }
+  &:hover {
+    color: #333;
+    opacity: 0.5;
+    text-decoration: none;
+
+    &::before {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
 }
 
 .main-background-color {
-  background: linear-gradient(
-    90deg,
-    rgba(244, 245, 255, 1) 10%,
-    rgba(235, 248, 255, 1)
-  );
+  background: $main-gradient;
 }
 
-.other-background-color {
-  background-image: linear-gradient(
-    to top right,
-    #f5f5ff 30%,
-    #f5f5ff 100%,
-    #ffffff 70%
-  );
+.secondary-background-color {
+  background: $secondary-gradient;
 }
 
-.bg-purple {
-  background-color: $main-color;
+.latest-news {
+  .single-news {
+    .img-container {
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    .content {
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
 }
-
-.text-purple {
-  color: $main-color;
-}
-
-.page-link {
-  color: $main-color;
-  border: 1px solid #9500ff48;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-}
-
-.page-link:hover {
-  color: #fff;
-  background-color: #9717f3;
-  border-color: #9500ffd7;
-}
-
-.page-link:focus {
-  box-shadow: 0 0 0 0.2rem #9717f32a;
-}
-
-.page-item.active .page-link {
-  background-color: $main-color;
-  border-color: $main-color;
-}
-
-label > svg {
-  padding-bottom: 3px;
-  width: 20px;
-  height: 20px;
-}
-
-/* latest-news */
-
-.latest-news .new .img,
-.related-posts .new .img {
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-/* .newsletter */
-
 .newsletter {
   background-position: center;
   background-size: cover;
   overflow: hidden;
   background-repeat: no-repeat;
-}
+  input {
+    width: 100%;
+    line-height: 50px;
+    padding: 0 180px 0 25px;
+    border: 2px solid #a387ffea;
+    outline: none;
+    font-weight: 300;
+    border-radius: 50px;
+    background: #f2f2f2;
+    transition: 0.3s;
 
-.newsletter input {
-  width: 100%;
-  line-height: 50px;
-  padding: 0 180px 0 25px;
-  border: 2px solid #a387ff;
-  outline: none;
-  font-weight: 300;
-  border-radius: 50px;
-  background: #f9f9ff;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-}
-.newsletter input:focus {
-  box-shadow: 0 0 0 0.2rem #a387ff5e;
-}
-
-.newsletter .primary-btn {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 40px;
-  padding: 0 30px;
-  border-radius: 20px;
-  background: transparent;
-  border: 1px solid transparent;
-  display: inline-block;
-  font-weight: 500;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-
-.newsletter .primary-btn:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 20px;
-  transition: all 0.3s ease-in-out;
-  z-index: 1;
-  background-image: -moz-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
-  background-image: -webkit-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
-  background-image: -ms-linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
-  -ms-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-}
-.newsletter .primary-btn span {
-  z-index: 3;
-}
-.newsletter .primary-btn:focus:after,
-.newsletter .primary-btn:hover:after {
-  background-image: -moz-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
-  background-image: -webkit-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
-  background-image: -ms-linear-gradient(100deg, #a387ff 10%, #91d1ff 70%);
-}
-
-@media (max-width: 767px) {
-  .newsletter input {
-    padding: 0 25px;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem #a387ffb4;
+    }
   }
-  .newsletter .primary-btn {
-    position: relative;
-    margin-top: 10px;
-    right: 0;
-    bottom: 0;
-    top: auto;
-    transform: none;
+  .news-letter-btn {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 767px) {
+    input {
+      padding: 0 25px;
+    }
+    .news-letter-btn {
+      position: relative;
+      margin-top: 10px;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      transform: none;
+    }
   }
 }
 
-.recent-trends .trend .img {
-  height: 300px;
-  width: 650px;
-  background-position: center;
-  background-size: cover;
+.recent-trends {
+  .single-trend {
+    .img-container {
+      width: 250px;
+      img {
+        height: 250px;
+        object-fit: cover;
+      }
+    }
+    .content {
+      width: calc(100% - 250px);
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .img-container,
+      .content {
+        width: 100%;
+      }
+      .img-container img{
+        border-bottom-left-radius: 0 !important;
+        border-top-right-radius: .25rem;
+        width: 100%;
+      }
+      .content {
+        padding: 1rem;
+      }
+    }
+  }
 }
 
 /* profile animation */

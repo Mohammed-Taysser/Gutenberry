@@ -1,14 +1,48 @@
 extends ../layouts/layout
 
 block title 
-	title Home
+  title GuttenBerry | Home
 
 block style 
-	//- link(rel="stylesheet", href="../css/home.min.css")
+  //- link(rel="stylesheet", href="../css/home.min.css")
 
 block javascript 
-	//- script(src="../javascript/build/glide.min.js") 
+  //- script(src="../javascript/build/glide.min.js") 
 
 block content 
-	// any class or id used i JS should start with 'js-'
-	h1.js-any_used  home 
+  
+  include ../components/header
+
+  section.latest-news.main-background-color.py-5
+    .container
+      h2.mb-4.special-header.h1 Latest news
+      .row.justify-content-center.align-items-center.align-items-stretch
+        
+        include ../components/latest_news
+
+      .text-center.my-5
+        a.h5.view-more-btn(href='articles.html') View all articles
+
+  section.newsletter.text-center.text-lg-left.py-5(style="background-image: linear-gradient(#000000a3, #0000009c), url('../images/background/bg-newslatter.jpg');")
+    .container.my-5.py-5
+      .row.justify-content-center.align-items-center
+        .col-lg-6.my-3
+          h3.my-3.text-white SIGN UP FOR OUR NEWSLETTER AND BE THE FIRST WHO KNOW OUR LATEST NEWS!
+        .col-lg-6.my-3
+          form.subscription.position-relative(method='' action='')
+            input(type='email' name='email' placeholder='Email address' required='')
+            button.news-letter-btn.gradient-btn.transition.d-inline-flex.align-items-center
+              span.text-white
+                | Get Started  
+                i(class="fas fa-arrow-right ms-1")
+
+
+  section.recent-trends.py-5
+    .container
+      h2.mb-4.special-header.h1 Recent trends
+      .row.justify-content-center.align-items-center
+        
+        include ../components/trend_news
+
+      .text-center.my-5
+        a.h5.view-more-btn(href='trends.html') View all trends
