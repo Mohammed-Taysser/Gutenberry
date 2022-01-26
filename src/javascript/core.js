@@ -124,21 +124,23 @@
     profile_save_avatar_btn = document.getElementById('js-profile-save-avatar-btn'),
     avatar_uploader = document.querySelector('#js-profile-avatar-file-uploader');
 
-  avatar_uploader.onchange = function () {
-    const file_uploaded = this.files[0];
-    if (file_uploaded) {
-      if (URL) {
-        upload_image_to_cropper(URL.createObjectURL(file_uploaded));
-      } else if (FileReader) {
-        const reader = new FileReader();
-        reader.onload = function () {
-          upload_image_to_cropper(reader.result);
-        };
-        reader.readAsDataURL(file_uploaded);
+  if (avatar_uploader) {
+    avatar_uploader.onchange = function () {
+      const file_uploaded = this.files[0];
+      if (file_uploaded) {
+        if (URL) {
+          upload_image_to_cropper(URL.createObjectURL(file_uploaded));
+        } else if (FileReader) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            upload_image_to_cropper(reader.result);
+          };
+          reader.readAsDataURL(file_uploaded);
+        }
       }
-    }
 
-  };
+    };
+  }
 
   function upload_image_to_cropper(url) {
     avatar_uploader.value = '';
@@ -146,45 +148,49 @@
     bootstrap.Modal.getOrCreateInstance(change_avatar_modal).show();
   }
 
-  change_avatar_modal.addEventListener('show.bs.modal', function () {
-    avatar_cropper_instance = new Cropper(profile_modal_image, {
-      aspectRatio: 1,
-      dragMode: 'none',
-      zoomable: false,
-      minContainerWidth: 466,
-      minContainerHeight: 466,
-      toggleDragModeOnDblclick: false,
-      zoomOnWheel: false,
-      viewMode: 3,
+  if (change_avatar_modal) {
+    change_avatar_modal.addEventListener('show.bs.modal', function () {
+      avatar_cropper_instance = new Cropper(profile_modal_image, {
+        aspectRatio: 1,
+        dragMode: 'none',
+        zoomable: false,
+        minContainerWidth: 466,
+        minContainerHeight: 466,
+        toggleDragModeOnDblclick: false,
+        zoomOnWheel: false,
+        viewMode: 3,
+      });
     });
-  });
-  change_avatar_modal.addEventListener('hide.bs.modal', function () {
-    setTimeout(() => {
-      avatar_cropper_instance.destroy();
-    }, 1000);
-  });
+    change_avatar_modal.addEventListener('hide.bs.modal', function () {
+      setTimeout(() => {
+        avatar_cropper_instance.destroy();
+      }, 1000);
+    });
+  }
 
-  profile_save_avatar_btn.onclick = function () {
-    const output = avatar_cropper_instance.getCroppedCanvas({
-      width: 80,
-      height: 80,
-      fillColor: '#fff',
-      imageSmoothingEnabled: true,
-      imageSmoothingQuality: 'high',
-    }),
-      new_url = output.toDataURL();
+  if (profile_save_avatar_btn) {
+    profile_save_avatar_btn.onclick = function () {
+      const output = avatar_cropper_instance.getCroppedCanvas({
+        width: 80,
+        height: 80,
+        fillColor: '#fff',
+        imageSmoothingEnabled: true,
+        imageSmoothingQuality: 'high',
+      }),
+        new_url = output.toDataURL();
 
-    bootstrap.Modal.getOrCreateInstance(change_avatar_modal).hide();
-    profile_avatar.src = new_url;
+      bootstrap.Modal.getOrCreateInstance(change_avatar_modal).hide();
+      profile_avatar.src = new_url;
 
-    // incase: send to server
-    // output.toBlob(function (blob) {
-    //   const formData = new FormData();
-    //   formData.append('avatar', blob, 'avatar.jpg');
-    //  then make AJAX request here
-    // });
-    // localStorage.setItem('profile-user-avatar', new_url);
-  };
+      // incase: send to server
+      // output.toBlob(function (blob) {
+      //   const formData = new FormData();
+      //   formData.append('avatar', blob, 'avatar.jpg');
+      //  then make AJAX request here
+      // });
+      // localStorage.setItem('profile-user-avatar', new_url);
+    };
+  }
 
   // * --------------------
   // * footer current year
