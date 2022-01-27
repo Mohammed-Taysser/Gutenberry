@@ -156,12 +156,12 @@
           }
       ],
       "no-eq-null": "error",
-      "no-else-return": [
-          "error",
-          {
-              "allowElseIf": false
-          }
-      ],
+      // "no-else-return": [
+      //     "error",
+      //     {
+      //         "allowElseIf": false
+      //     }
+      // ],
       "no-empty": "error",
       "no-new-object": "error",
       "no-new-wrappers": "error",
