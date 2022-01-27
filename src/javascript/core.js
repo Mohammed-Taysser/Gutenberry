@@ -197,10 +197,10 @@ function input_has_content(event) {
 function profile_copy_user_id() {
   'use strict';
   const user_id_btn = document.getElementById('js-profile-user-btn'),
-    user_id_input = document.getElementById('js-profile-user-input'),
-    old_data_copy_title = user_id_btn.dataset.bsOriginalTitle;
+    user_id_input = document.getElementById('js-profile-user-input');
 
   if (user_id_btn && user_id_input) {
+    const old_data_copy_title = user_id_btn.dataset.bsOriginalTitle;
     user_id_btn.onclick = function () {
       copy_to_clipboard(user_id_input.value);
       user_id_btn.dataset.bsOriginalTitle = 'copied';
