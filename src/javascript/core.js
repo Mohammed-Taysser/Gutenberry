@@ -1,16 +1,15 @@
+// eslint-disable-next-line complexity
 // eslint-disable-next-line max-statements
 (function () {
   'use strict';
+
   // eslint-disable-next-line max-len
   window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
 
   // * ----------------------------
   // *  Enable tooltips everywhere
   // * ----------------------------
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')),
-    tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
+  enable_bootstrap_tooltip();
 
   // * ----------------------------
   // * toggle menu & search button
@@ -70,23 +69,7 @@
   const form_container = document.querySelectorAll('.custom-form-input-container .custom-form-input');
 
   if (form_container) {
-    form_container.forEach(input => {
-      input.addEventListener('blur', input_has_content);
-      input.addEventListener('focus', input_has_content);
-    });
-  }
-
-  /**
-  * use to add or remove animation if input has content
-  * @param {Element} event the input target of effect
-  * @returns {Void} no return
-  */
-  function input_has_content(event) {
-    if (event.target.value.length > 0) {
-      event.target.classList.add('has-content');
-    } else {
-      event.target.classList.remove('has-content');
-    }
+    active_custom_input_effect(form_container);
   }
 
   // * ---------------------
@@ -101,95 +84,11 @@
     };
   }
 
-  /**
-   * copy text to clipboard
-   * @param {String} text text to be copy
-   */
-  function copy_to_clipboard(text) {
-    const temp_textarea = document.createElement('textarea');
-    temp_textarea.value = text;
-    document.body.appendChild(temp_textarea);
-    temp_textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(temp_textarea);
-  }
-
   // * ------------------------------
   // * profile change avatar cropper
   // * ------------------------------
-  let avatar_cropper_instance = null;
-  const change_avatar_modal = document.getElementById('change-avatar-modal'),
-    profile_avatar = document.getElementById('js-profile-avatar'),
-    profile_modal_image = document.getElementById('js-profile-modal-image'),
-    profile_save_avatar_btn = document.getElementById('js-profile-save-avatar-btn'),
-    avatar_uploader = document.querySelector('#js-profile-avatar-file-uploader');
-
-  if (avatar_uploader) {
-    avatar_uploader.onchange = function () {
-      const file_uploaded = this.files[0];
-      if (file_uploaded) {
-        if (URL) {
-          upload_image_to_cropper(URL.createObjectURL(file_uploaded));
-        } else if (FileReader) {
-          const reader = new FileReader();
-          reader.onload = function () {
-            upload_image_to_cropper(reader.result);
-          };
-          reader.readAsDataURL(file_uploaded);
-        }
-      }
-
-    };
-  }
-
-  function upload_image_to_cropper(url) {
-    avatar_uploader.value = '';
-    profile_modal_image.src = url;
-    bootstrap.Modal.getOrCreateInstance(change_avatar_modal).show();
-  }
-
-  if (change_avatar_modal) {
-    change_avatar_modal.addEventListener('show.bs.modal', function () {
-      avatar_cropper_instance = new Cropper(profile_modal_image, {
-        aspectRatio: 1,
-        dragMode: 'none',
-        zoomable: false,
-        minContainerWidth: 466,
-        minContainerHeight: 466,
-        toggleDragModeOnDblclick: false,
-        zoomOnWheel: false,
-        viewMode: 3,
-      });
-    });
-    change_avatar_modal.addEventListener('hide.bs.modal', function () {
-      setTimeout(() => {
-        avatar_cropper_instance.destroy();
-      }, 1000);
-    });
-  }
-
-  if (profile_save_avatar_btn) {
-    profile_save_avatar_btn.onclick = function () {
-      const output = avatar_cropper_instance.getCroppedCanvas({
-        width: 80,
-        height: 80,
-        fillColor: '#fff',
-        imageSmoothingEnabled: true,
-        imageSmoothingQuality: 'high',
-      }),
-        new_url = output.toDataURL();
-
-      bootstrap.Modal.getOrCreateInstance(change_avatar_modal).hide();
-      profile_avatar.src = new_url;
-
-      // incase: send to server
-      // output.toBlob(function (blob) {
-      //   const formData = new FormData();
-      //   formData.append('avatar', blob, 'avatar.jpg');
-      //  then make AJAX request here
-      // });
-      // localStorage.setItem('profile-user-avatar', new_url);
-    };
+  if (document.getElementById('js-profile-avatar')) {
+    change_user_avatar();
   }
 
   // * --------------------
@@ -199,6 +98,161 @@
   document.querySelector('#current_year').textContent = current_year;
 
 })();
+
+/**
+ * copy text to clipboard
+ * @param {String} text text to be copy
+ * @returns {Void} no return
+ */
+function copy_to_clipboard(text) {
+  'use strict';
+  const temp_textarea = document.createElement('textarea');
+  temp_textarea.value = text;
+  document.body.appendChild(temp_textarea);
+  temp_textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(temp_textarea);
+}
+
+/**
+ * use to enable bootstrap tooltip everywhere
+ * see docs for further info
+ * https://getbootstrap.com/docs/5.1/components/tooltips/#example-enable-tooltips-everywhere
+ */
+function enable_bootstrap_tooltip() {
+  'use strict';
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+}
+
+/**
+* use to add or remove animation if input has content
+* @param {Element} event the input target of effect
+* @returns {Void} no return
+*/
+function input_has_content(event) {
+  'use strict';
+  if (event.target.value.length > 0) {
+    event.target.classList.add('has-content');
+  } else {
+    event.target.classList.remove('has-content');
+  }
+}
+
+/**
+ * get canvas drawn of the cropped image.
+ * @param {*} cropped_avatar 
+ * @returns {HTMLCanvasElement} canvas drawn of the cropped image.
+ */
+function get_cropped_avatar(cropped_avatar) {
+  'use strict';
+  return cropped_avatar.getCroppedCanvas({
+    width: 80,
+    height: 80,
+    fillColor: '#fff',
+    imageSmoothingEnabled: true,
+    imageSmoothingQuality: 'high',
+  });
+}
+
+/**
+ * generate cropper instance
+ * @param {Element} image The target image or canvas element for cropping.
+ * @returns {Object} cropped image as object 
+ */
+function create_avatar_cropper_instance(image) {
+  'use strict';
+  return new Cropper(image, {
+    aspectRatio: 1,
+    dragMode: 'none',
+    zoomable: false,
+    minContainerWidth: 350,
+    minContainerHeight: 350,
+    toggleDragModeOnDblclick: false,
+    zoomOnWheel: false,
+    viewMode: 3,
+  });
+}
+
+/**
+ * check needed technology to generate url of uploaded image
+ * @param {File} image file object of uploaded image
+ * @returns {String} url of uploaded image
+ */
+function generate_new_avatar_url(image) {
+  'use strict';
+  if (URL) {
+    return URL.createObjectURL(image);
+  }
+  return '';
+}
+
+/**
+ * addEventListener for both focus and blur of input element
+ * @param {NodeList} input_container array of input elements
+ */
+function active_custom_input_effect(input_container) {
+  'use strict';
+  input_container.forEach(input => {
+    input.addEventListener('blur', input_has_content);
+    input.addEventListener('focus', input_has_content);
+  });
+}
+
+// eslint-disable-next-line max-lines-per-function
+function change_user_avatar() {
+  'use strict';
+  let avatar_cropper_instance = null;
+
+  const modal = document.getElementById('change-avatar-modal'),
+    profile_modal_image = modal.querySelector('#js-profile-modal-image');
+
+  document.getElementById('js-profile-avatar-file-uploader').onchange = function () {
+    if (this.files[0]) {
+      send_image_to_cropper(generate_new_avatar_url(this.files[0]));
+    }
+  };
+
+  function send_image_to_cropper(url) {
+    profile_modal_image.src = url;
+    bootstrap.Modal.getOrCreateInstance(modal).show();
+  }
+
+  modal.addEventListener('show.bs.modal', function () {
+    avatar_cropper_instance = create_avatar_cropper_instance(profile_modal_image);
+  });
+  modal.addEventListener('hide.bs.modal', function () {
+    setTimeout(() => {
+      avatar_cropper_instance.destroy();
+    }, 1000);
+  });
+
+  document.getElementById('js-profile-save-avatar-btn').onclick = function () {
+    const output = get_cropped_avatar(avatar_cropper_instance);
+    bootstrap.Modal.getOrCreateInstance(modal).hide();
+    document.getElementById('js-profile-avatar').src = output.toDataURL();
+    send_new_avatar_to_server(output);
+  };
+}
+
+/**
+ * not complete yet
+ * @param {*} cropped_avatar 
+ */
+function send_new_avatar_to_server(cropped_avatar) {
+  'use strict';
+
+  //? incase: send cropped avatar to server
+  cropped_avatar.toBlob(function (blob) {
+    const formData = new FormData();
+    formData.append('avatar', blob, 'avatar.jpg');
+
+    //*  then make AJAX request here
+  });
+}
 
 //  jQuery start from here 👾
 // $(document).ready(function () {});
