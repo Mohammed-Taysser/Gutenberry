@@ -1,14 +1,24 @@
-// eslint-disable-next-line complexity
-// eslint-disable-next-line max-statements
-(function () {
+window.onload = function () {
   'use strict';
 
   // eslint-disable-next-line max-len
   window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
 
-  // * ----------------------------
-  // *  Enable tooltips everywhere
-  // * ----------------------------
+  document.body.classList.remove('load');
+
+  main_skilition();
+
+  // * --------------------
+  // * footer current year
+  // * --------------------
+  const current_year = new Date().getFullYear().toString();
+  document.querySelector('#current_year').textContent = current_year;
+};
+
+// eslint-disable-next-line max-lines-per-function
+function main_skilition() {
+  'use strict';
+
   enable_bootstrap_tooltip();
 
   // * ----------------------------
@@ -63,26 +73,9 @@
     }
   }
 
-  // * -------------------------
-  // * custom form moved effect
-  // * -------------------------
-  const form_container = document.querySelectorAll('.custom-form-input-container .custom-form-input');
+  active_moved_label_effect();
 
-  if (form_container) {
-    active_custom_input_effect(form_container);
-  }
-
-  // * ---------------------
-  // * profile copy user ID
-  // * ---------------------
-  const user_id_btn = document.getElementById('js-profile-user-btn'),
-    user_id_input = document.getElementById('js-profile-user-input');
-
-  if (user_id_btn && user_id_input) {
-    user_id_btn.onclick = function () {
-      copy_to_clipboard(user_id_input.value);
-    };
-  }
+  profile_copy_user_id();
 
   // * ------------------------------
   // * profile change avatar cropper
@@ -90,14 +83,7 @@
   if (document.getElementById('js-profile-avatar')) {
     change_user_avatar();
   }
-
-  // * --------------------
-  // * footer current year
-  // * --------------------
-  const current_year = new Date().getFullYear().toString();
-  document.querySelector('#current_year').textContent = current_year;
-
-})();
+};
 
 /**
  * copy text to clipboard
@@ -126,20 +112,6 @@ function enable_bootstrap_tooltip() {
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
-}
-
-/**
-* use to add or remove animation if input has content
-* @param {Element} event the input target of effect
-* @returns {Void} no return
-*/
-function input_has_content(event) {
-  'use strict';
-  if (event.target.value.length > 0) {
-    event.target.classList.add('has-content');
-  } else {
-    event.target.classList.remove('has-content');
-  }
 }
 
 /**
@@ -192,14 +164,51 @@ function generate_new_avatar_url(image) {
 
 /**
  * addEventListener for both focus and blur of input element
- * @param {NodeList} input_container array of input elements
  */
-function active_custom_input_effect(input_container) {
+function active_moved_label_effect() {
   'use strict';
-  input_container.forEach(input => {
-    input.addEventListener('blur', input_has_content);
-    input.addEventListener('focus', input_has_content);
-  });
+  const input_container = document.querySelectorAll('.custom-form-input-container .custom-form-input');
+
+  if (input_container) {
+    input_container.forEach(input => {
+      input.addEventListener('blur', input_has_content);
+      input.addEventListener('focus', input_has_content);
+    });
+  }
+}
+
+/**
+* use to add or remove animation if input has content
+* @param {Element} event the input target of effect
+* @returns {Void} no return
+*/
+function input_has_content(event) {
+  'use strict';
+  if (event.target.value.length > 0) {
+    event.target.classList.add('has-content');
+  } else {
+    event.target.classList.remove('has-content');
+  }
+}
+
+/**
+ * profile page: copy user id from input
+ */
+function profile_copy_user_id() {
+  'use strict';
+  const user_id_btn = document.getElementById('js-profile-user-btn'),
+    user_id_input = document.getElementById('js-profile-user-input'),
+    old_data_copy_title = user_id_btn.dataset.bsOriginalTitle;
+
+  if (user_id_btn && user_id_input) {
+    user_id_btn.onclick = function () {
+      copy_to_clipboard(user_id_input.value);
+      user_id_btn.dataset.bsOriginalTitle = 'copied';
+      setTimeout(() => {
+        user_id_btn.dataset.bsOriginalTitle = old_data_copy_title;
+      }, 1000);
+    };
+  }
 }
 
 // eslint-disable-next-line max-lines-per-function
