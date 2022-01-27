@@ -217,6 +217,7 @@
         border-radius: 999px;
         background: linear-gradient(135deg, #ff6fd8 10%, #9400ff 100%);
         overflow: hidden;
+        margin: 0 15px;
         animation: bg_shadow 5s infinite;
 
         &:before {
@@ -257,7 +258,7 @@
           left: 43px;
           bottom: 43px;
           background: #fdfaf5;
-          box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.1);
         }
       }
     }
@@ -291,20 +292,8 @@
     }
   }
   @media (max-width: 576px) {
-    .error-container > span {
-      &.zero {
-        width: 100px;
-        height: 100px;
-
-        &::after {
-          width: 40px;
-          height: 40px;
-          left: 30px;
-          bottom: 32px;
-        }
-      }
-      &.four {
-      }
+    .error-container {
+      margin: 80px auto;
     }
   }
 }
