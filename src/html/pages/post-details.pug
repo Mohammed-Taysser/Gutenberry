@@ -15,7 +15,7 @@ block content
   .post-details
     .container
       .row.justify-content-center
-        .col-md-11.mt-4
+        .col-lg-11.mt-4
           .post.mb-5.nice-shadow.rounded.p-3.p-md-4.p-lg-5
             h2.mt-3 Easy tips on how to add pictures in the gallery.
             p.text-muted September 23 2019 | 5 mins read
@@ -54,12 +54,12 @@ block content
               a(href='#')  posts 
           .my-3.mb-4.related-posts.latest-news
             h2.mb-4.special-header related posts
-            .row.justify-content-center.align-items-center
+            .row.justify-content-center.align-items-center.align-items-stretch
 
               - let counter = 0
               each news in news_arr
                 - if (counter == 3) break
-                .col-md-6.col-lg-4.my-3
+                .col-sm-6.col-lg-4.my-3
                   .single-news.bg-white.nice-shadow.rounded.h-100
                     .img-container.rounded-top 
                       img(src=news.img, alt=news.title width='100%' height='200px' class='img-fluid rounded-top')
