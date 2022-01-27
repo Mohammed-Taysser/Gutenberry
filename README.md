@@ -68,10 +68,12 @@ Take a look at the [documentation table of contents](doc/TOC.md). This documenta
 - [`html-to-pug`][html-to-pug] online converter
 - [`Fontawesome v5.15`][fontAwesome-v5] vector icons and social logos
 - [`Bootstrap v5.1`][bootstrap-v5] customize & responsive mobile-first framework
-- [`Montserrat-Alternates font`][Montserrat-Alternates]
-- [`glide.js`][glide-js] Javascript Es6 Slider And Carouse
-- [`simple-bar`][simple-bar] replace the browser's default scrollbar
-- [`nice-select2`][nice-select2] Customizable Dropdowns.
+- [`ubuntu-font`][ubuntu-font]
+- [`cropper.js`][cropper]
+
+<!-- - [`glide.js`][glide-js] Javascript Es6 Slider And Carouse -->
+<!-- - [`simple-bar`][simple-bar] replace the browser's default scrollbar -->
+<!-- - [`nice-select2`][nice-select2] Customizable Dropdowns. -->
 
 [github-live]: <https://mohammed-taysser.github.io/Gutenberry/>
 [github-releases]: <https://github.com/Mohammed-Taysser/Gutenberry/releases>
@@ -79,6 +81,7 @@ Take a look at the [documentation table of contents](doc/TOC.md). This documenta
 [fontAwesome-v5]: <https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free>
 [bootstrap-v5]: <https://getbootstrap.com/docs/5.1/getting-started/introduction/>
 [Montserrat-Alternates]: <https://fonts.google.com/specimen/Montserrat+Alternates?query=Montserrat>
+[ubuntu-font]: <https://fonts.google.com/specimen/Ubuntu>
 [browserslist]: <https://github.com/browserslist/browserslist>
 [browserslist-translate]: <https://browserslist.dev/?q=ID4gMC41JSwgICAgIGxhc3QgMiB2ZXJzaW9ucywgICAgbm90IGRlYWQsICAgICBJRSAxMA%3D%3D>
 [nice-select2]: <https://bluzky.github.io/nice-select2/>
@@ -90,3 +93,4 @@ Take a look at the [documentation table of contents](doc/TOC.md). This documenta
 [html-to-pug]: <https://html-to-pug.com/>
 [simple-bar]: <https://github.com/Grsmto/simplebar>
 [howler]: <https://github.com/goldfire/howler.js>
+[cropper]: <https://github.com/fengyuanchen/cropperjs>
