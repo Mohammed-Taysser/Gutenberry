@@ -30,7 +30,7 @@ nav.secondary-background-color.py-3.position-relative
             a(href='contact-us.html' class=(current_page === "contact-us" ? "nav-link active" : 'nav-link')) contact
           li.custom-nav-link.my-2.my-md-0
             a.nav-link(href='profile.html'  class=(current_page === "profile" ? "nav-link active" : 'nav-link'))
-              img.d-inline-block.align-top.rounded-circle(src='../images/icons/icon-profile.jpg' width='25' height='25' alt='profile')
+              img.d-inline-block.align-top.rounded-circle(src='../images/icons/icon-profile.webp' width='25' height='25' alt='profile')
               |  hello Mohammed
           li.custom-nav-link.my-2.my-md-0
             a#search-button.search-button.nav-link.ms-3.ms-ms-0(href='#')
@@ -40,7 +40,7 @@ nav.secondary-background-color.py-3.position-relative
               //- span.d-md-none  search
       #search-popup.search-popup
         .content.w-75.position-relative
-          form(action='')
+          form(action='search.html')
             input.input-search.w-100(type='search' placeholder='What are you looking for ?' value='' name='query')
             button(type='submit')
               i(class="fas fa-search text-aurora")

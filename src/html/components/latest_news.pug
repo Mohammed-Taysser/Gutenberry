@@ -7,6 +7,6 @@ each news in news_arr
         h5.my-2 
           a(href="post-details.html" title=news.title)=news.title
         p.text-muted=news.info 
-        a.text-danger(href='post-details.html')
+        a.text-danger(href='post-details.html' title=news.title)
           | read more
           i(class="fas fa-arrow-right ms-1")
