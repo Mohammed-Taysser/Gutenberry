@@ -1,6 +1,7 @@
 const gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   babel = require('gulp-babel'),
+  webp = require('gulp-webp'),
 
   // responsive = require('gulp-responsive'),
   imageResize = require('gulp-image-resize'),
@@ -44,7 +45,7 @@ const gulp = require('gulp'),
       },
     },
     images: {
-      src: ['src/images/**/*.{png,jpg,jpeg,svg}'],
+      src: ['src/images/**/*.{png,jpg,jpeg,svg}', '!src/images/icons/favicon.{png,jpg,jpeg,svg}'],
       dest: 'dist/images/',
     },
     favicon: {
@@ -55,7 +56,7 @@ const gulp = require('gulp'),
 
 function clean() {
   'use strict';
-  return del([ 'dist/**', '!dist' ]);
+  return del(['dist/**', '!dist']);
 }
 
 function scss_task() {
@@ -65,8 +66,7 @@ function scss_task() {
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(
-      rename(function (path) {path.extname = '.min.css';}))
+    .pipe(rename(function (path) { path.extname = '.min.css'; }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.scss.dest));
 }
@@ -110,7 +110,9 @@ function statics_js_task() {
 
 function images_task() {
   'use strict';
-  return gulp.src(PATHS.images.src).pipe(gulp.dest(PATHS.images.dest));
+  return gulp.src(PATHS.images.src)
+    .pipe(webp())
+    .pipe(gulp.dest(PATHS.images.dest));
 }
 
 /**
@@ -130,23 +132,23 @@ function imageSizeConfig(width, height) {
 
 function favicon_task() {
   'use strict';
-  return (gulp.src(PATHS.favicon.src)
-    .pipe(imageSizeConfig(180, 180))
-    .pipe(rename(path => {path.basename = 'apple-touch-icon';}))
-    .pipe(gulp.dest(PATHS.favicon.dest))
-    .pipe(imageSizeConfig(16, 16))
-    .pipe(rename(path => {path.basename = 'favicon@3x';}))
-    .pipe(gulp.dest(PATHS.favicon.dest))
-    .pipe(imageSizeConfig(32, 32))
-    .pipe(rename(path => {path.basename = 'favicon@2x';}))
-    .pipe(gulp.dest(PATHS.favicon.dest))
-    .pipe(imageSizeConfig(192, 192))
-    .pipe(rename(path => {path.basename = 'favicon@192';}))
-    .pipe(gulp.dest(PATHS.favicon.dest))
-    .pipe(imageSizeConfig(512, 512))
-    .pipe(rename(path => {path.basename = 'favicon@512';}))
-    .pipe(gulp.dest(PATHS.favicon.dest))
-  );
+  const default_favicon = gulp.src(PATHS.favicon.src).pipe(gulp.dest(PATHS.favicon.dest)),
+    SIZE_CONFIG = [
+      { width: 180, height: 180, label: 'apple-touch-icon' },
+      { width: 512, height: 512, label: 'favicon@512' },
+      { width: 192, height: 192, label: 'favicon@192' },
+      { width: 32, height: 32, label: 'favicon@3x' },
+      { width: 16, height: 16, label: 'favicon@2x' },
+    ];
+
+  SIZE_CONFIG.forEach(format => {
+    default_favicon
+      .pipe(imageSizeConfig(format.width, format.height))
+      .pipe(rename(path => { path.basename = format.label; }))
+      .pipe(gulp.dest(PATHS.favicon.dest));
+  });
+
+  return default_favicon;
 }
 
 function music_task() {
