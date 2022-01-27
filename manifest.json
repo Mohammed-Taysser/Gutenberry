@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GuttenBerry",
+  "name": "Creat Perfect Blog With GuttenBerry",
   "dir": "ltl",
-"lang": "en",
-"scope": "https://example.com/",
+  "lang": "en",
+  "scope": "https://mohammed-taysser.github.io/Gutenberry/",
   "icons": [
     {
       "src": "favicon.png",
@@ -23,19 +23,12 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "description": "A readable Hacker News app.",
-  "background_color": "#ffffff",
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.example.app1",
-      "id": "com.example.app1"
-    }, {
-      "platform": "itunes",
-      "url": "https://itunes.apple.com/app/example-app1/id123456789"
-    }
+  "theme_color": "#9400ff",
+  "description": "How to Creat a Perfect Blog With GuttenBerry.",
+  "background_color": "#9400ff",
+  "categories": [
+    "blog",
+    "post",
+    "news"
   ]
-  ,
-  "categories": ["books", "education", "medical"]
 }
