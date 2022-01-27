@@ -96,7 +96,8 @@ html(lang="en")
 
         noscript You need to enable JavaScript to run this app.
 
-    body 
+    body.load 
+        include ../components/loader
         include ../components/navbar
         block content 
         include ../components/footer
