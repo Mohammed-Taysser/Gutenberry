@@ -1,6 +1,7 @@
 @font-face {
   font-family: Ubuntu;
   src: url("../fonts/Ubuntu-Regular.ttf");
+  font-display: swap;
 }
 
 body {
@@ -452,14 +453,3 @@ body.load {
     display: block;
   }
 }
-
-// @media (min-width: 48rem) {
-//   .loading-container {
-//     transform: scale(0.725rem);
-//   }
-// }
-// @media (min-width: 62rem) {
-//   .loading-container {
-//     transform: scale(0.85);
-//   }
-// }
