@@ -16,6 +16,7 @@
 - work offline
 - change mobile menu close button
 - replace bootstrap.js with only css (see spectra framework)
+- replace font awesome with lighter icon library or use svg
 
 ### search page
 
