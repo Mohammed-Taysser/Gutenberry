@@ -56,5 +56,8 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.49.0",
     "static-server": "^2.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }
