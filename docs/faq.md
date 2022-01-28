@@ -1,12 +1,8 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com/) | [Documentation
-table of contents](TOC.md)
+[GuttenBerry homepage][homepage] | [Documentation & table of contents](TOC.md)
+
+[homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
 # Frequently asked questions
-
-* [Do I need to upgrade my site each time a new version of HTML5 Boilerplate is
-  released?](#do-i-need-to-upgrade-my-site-each-time-a-new-version-of-html5-boilerplate-is-released)
-* [Where can I get help with support
-  questions?](#where-can-i-get-help-with-support-questions)
 
 ## Do I need to upgrade my site each time a new version of HTML5 Boilerplate is released?
 
@@ -17,4 +13,4 @@ changes, but you'll have to assess the costs/benefits of doing so.
 ## Where can I get help with support questions?
 
 Please ask for help on
-[StackOverflow](https://stackoverflow.com/questions/tagged/html5boilerplate).
+[StackOverflow](https://stackoverflow.com/questions/tagged/guttenberry).

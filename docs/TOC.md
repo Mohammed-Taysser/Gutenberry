@@ -1,11 +1,13 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com/)
+[GuttenBerry homepage][homepage] | [Documentation & table of contents](TOC.md)
+
+[homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
 ## Getting started
 
 * [Usage](usage.md) — Overview of the project contents.
 * [FAQ](faq.md) — Frequently asked questions along with their answers.
 
-## HTML5 Boilerplate core
+## GuttenBerry core
 
 * [HTML](html.md) — Guide to the default HTML.
 * [CSS](css.md) — Guide to the default CSS.

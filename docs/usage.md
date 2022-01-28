@@ -1,5 +1,6 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com/) | [Documentation
-table of contents](TOC.md)
+[GuttenBerry homepage][homepage] | [Documentation & table of contents](TOC.md)
+
+[homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
 # Usage
 
@@ -29,30 +30,208 @@ A basic HTML5 Boilerplate site initially looks something like this:
 
 ```
 .
-├── css
-│   ├── normalize.css
-│   └── style.css
-├── doc
-├── img
-├── js
-│   ├── app.js
-│   └── vendor
-│       └── modernizr.min.js
-├── .editorconfig
-├── .htaccess
-├── 404.html
-├── browserconfig.xml
-├── favicon.ico
+├── CHANGELOG.md
+├── dist
+│   ├── css
+│   │   ├── core.min.css
+│   │   ├── core.min.css.map
+│   │   ├── libs
+│   │   │   └── fontawesome.min.css
+│   │   ├── style.min.css
+│   │   └── style.min.css.map
+│   ├── fonts
+│   │   ├── Tajawal-Regular.ttf
+│   │   ├── Ubuntu-Regular.ttf
+│   │   └── webfonts
+│   │       ├── fa-brands-400.eot
+│   │       ├── fa-brands-400.svg
+│   │       ├── fa-brands-400.ttf
+│   │       ├── fa-brands-400.woff
+│   │       ├── fa-brands-400.woff2
+│   │       ├── fa-regular-400.eot
+│   │       ├── fa-regular-400.svg
+│   │       ├── fa-regular-400.ttf
+│   │       ├── fa-regular-400.woff
+│   │       ├── fa-regular-400.woff2
+│   │       ├── fa-solid-900.eot
+│   │       ├── fa-solid-900.svg
+│   │       ├── fa-solid-900.ttf
+│   │       ├── fa-solid-900.woff
+│   │       └── fa-solid-900.woff2
+│   ├── html
+│   │   ├── 404.html
+│   │   ├── about-us.html
+│   │   ├── articles.html
+│   │   ├── contact-us.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── post-details.html
+│   │   ├── profile.html
+│   │   ├── register.html
+│   │   └── search.html
+│   ├── images
+│   │   ├── background
+│   │   │   ├── bg-about-us.webp
+│   │   │   ├── bg-header.webp
+│   │   │   ├── bg-newslatter.webp
+│   │   │   ├── bg-post-details-sidebar.webp
+│   │   │   ├── bg-post-details.webp
+│   │   │   └── blog
+│   │   │       ├── bg-blog-1.webp
+│   │   │       ├── bg-blog-2.webp
+│   │   │       ├── bg-blog-3.webp
+│   │   │       ├── bg-blog-4.webp
+│   │   │       ├── bg-blog-5.webp
+│   │   │       └── bg-blog-6.webp
+│   │   └── icons
+│   │       ├── apple-touch-icon.png
+│   │       ├── dotted-shape.svg
+│   │       ├── favicon@192.png
+│   │       ├── favicon@2x.png
+│   │       ├── favicon@3x.png
+│   │       ├── favicon@512.png
+│   │       ├── favicon.png
+│   │       ├── icon-avatar.webp
+│   │       ├── icon-profile.webp
+│   │       ├── rounded-shape.svg
+│   │       └── shadow.svg
+│   └── javascript
+│       ├── core.min.js
+│       ├── core.min.js.map
+│       ├── libs
+│       │   ├── bootstrap.bundle.min.js
+│       │   ├── cropper.min.js
+│       │   ├── html5shiv.min.js
+│       │   └── respond.min.js
+│       ├── scripts.min.js
+│       └── scripts.min.js.map
+├── docs
+│   ├── css.md
+│   ├── extend.md
+│   ├── faq.md
+│   ├── html.md
+│   ├── js.md
+│   ├── misc.md
+│   ├── TOC.md
+│   └── usage.md
+├── gulpfile.js
 ├── humans.txt
-├── icon.png
-├── icon.svg
-├── index.html
+├── LICENSE.txt
+├── manifest.json
 ├── package.json
+├── package-lock.json
+├── README.md
 ├── robots.txt
-├── site.webmanifest
-├── tile.png
-├── tile-wide.png
-└── webpack.config.js
+├── server.js
+├── src
+│   ├── css
+│   │   ├── core.scss
+│   │   ├── libs
+│   │   │   └── fontawesome.min.css
+│   │   ├── scss
+│   │   │   ├── helpers
+│   │   │   │   ├── _keyframes.scss
+│   │   │   │   ├── _mixins.scss
+│   │   │   │   ├── _utilities.scss
+│   │   │   │   └── _variables.scss
+│   │   │   ├── layout
+│   │   │   │   ├── _footer.scss
+│   │   │   │   ├── _header.scss
+│   │   │   │   └── _navbar.scss
+│   │   │   └── libs
+│   │   │       └── _cropper.scss
+│   │   └── style.scss
+│   ├── fonts
+│   │   ├── Tajawal-Regular.ttf
+│   │   ├── Ubuntu-Regular.ttf
+│   │   └── webfonts
+│   │       ├── fa-brands-400.eot
+│   │       ├── fa-brands-400.svg
+│   │       ├── fa-brands-400.ttf
+│   │       ├── fa-brands-400.woff
+│   │       ├── fa-brands-400.woff2
+│   │       ├── fa-regular-400.eot
+│   │       ├── fa-regular-400.svg
+│   │       ├── fa-regular-400.ttf
+│   │       ├── fa-regular-400.woff
+│   │       ├── fa-regular-400.woff2
+│   │       ├── fa-solid-900.eot
+│   │       ├── fa-solid-900.svg
+│   │       ├── fa-solid-900.ttf
+│   │       ├── fa-solid-900.woff
+│   │       └── fa-solid-900.woff2
+│   ├── html
+│   │   ├── components
+│   │   │   ├── footer.pug
+│   │   │   ├── header.pug
+│   │   │   ├── latest_news.pug
+│   │   │   ├── loader.pug
+│   │   │   ├── navbar.pug
+│   │   │   └── trend_news.pug
+│   │   ├── helpers
+│   │   │   └── variables.pug
+│   │   ├── layouts
+│   │   │   └── layout.pug
+│   │   └── pages
+│   │       ├── 404.pug
+│   │       ├── about-us.pug
+│   │       ├── articles.pug
+│   │       ├── contact-us.pug
+│   │       ├── index.pug
+│   │       ├── login.pug
+│   │       ├── post-details.pug
+│   │       ├── profile.pug
+│   │       ├── register.pug
+│   │       └── search.pug
+│   ├── images
+│   │   ├── background
+│   │   │   ├── bg-about-us.jpg
+│   │   │   ├── bg-header.png
+│   │   │   ├── bg-login.webp
+│   │   │   ├── bg-newslatter.jpg
+│   │   │   ├── bg-post-details.jpg
+│   │   │   ├── bg-post-details-sidebar.png
+│   │   │   └── blog
+│   │   │       ├── bg-blog-1.jpg
+│   │   │       ├── bg-blog-2.jpg
+│   │   │       ├── bg-blog-3.jpg
+│   │   │       ├── bg-blog-4.jpg
+│   │   │       ├── bg-blog-5.jpg
+│   │   │       └── bg-blog-6.jpg
+│   │   └── icons
+│   │       ├── dotted-shape.svg
+│   │       ├── favicon.png
+│   │       ├── icon-avatar.png
+│   │       ├── icon-profile.jpg
+│   │       ├── rounded-shape.svg
+│   │       └── shadow.svg
+│   ├── javascript
+│   │   ├── core.js
+│   │   ├── libs
+│   │   │   ├── bootstrap.bundle.min.js
+│   │   │   ├── bootstrap.bundle.min.js.map
+│   │   │   ├── cropper.min.js
+│   │   │   ├── html5shiv.min.js
+│   │   │   └── respond.min.js
+│   │   └── scripts.js
+│   └── music
+├── temp
+│   ├── old
+│   │   └── pages
+│   │       ├── 404.html
+│   │       ├── about.html
+│   │       ├── contact.html
+│   │       ├── index.html
+│   │       ├── login.html
+│   │       ├── post_details.html
+│   │       ├── posts.html
+│   │       ├── profile.html
+│   │       ├── register.html
+│   │       ├── trends.html
+│   │       └── update_profile.html
+│   ├── todo.md
+│   └── tree.txt
+└── __test__
 ```
 
 What follows is a general overview of each major part and how to use them.
@@ -60,8 +239,7 @@ What follows is a general overview of each major part and how to use them.
 ### css
 
 This directory should contain all your project's CSS files. It includes some
-initial CSS to help get you started from a solid foundation. [About the
-CSS](css.md).
+initial CSS to help get you started from a solid foundation. [About the CSS](css.md).
 
 ### doc
 
@@ -77,13 +255,10 @@ get you started. [About the JavaScript](js.md).
 ### .htaccess
 
 The default web server configs are for Apache. For more information, please
-refer to the [Apache Server Configs
-repository](https://github.com/h5bp/server-configs-apache).
+refer to the [Apache Server Configs repository](https://github.com/h5bp/server-configs-apache).
 
 Host your site on a server other than Apache? You're likely to find the
-corresponding server configs project listed in our [Server
-Configs](https://github.com/h5bp/server-configs/blob/master/README.md)
-repository.
+corresponding server configs project listed in our [Server Configs](https://github.com/h5bp/server-configs/blob/master/README.md) repository.
 
 ### 404.html
 

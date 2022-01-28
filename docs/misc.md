@@ -1,31 +1,16 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com/) | [Documentation
-table of contents](TOC.md)
+[GuttenBerry homepage][homepage] | [Documentation & table of contents](TOC.md)
+
+[homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
 # Miscellaneous
 
-- [Miscellaneous](#miscellaneous)
-  - [.gitignore](#gitignore)
-  - [.editorconfig](#editorconfig)
-  - [Server Configuration](#server-configuration)
-  - [robots.txt](#robotstxt)
-  - [browserconfig.xml](#browserconfigxml)
-  - [package.json](#packagejson)
+## `.gitignore`
 
---
+GuttenBerry includes a basic project-level `.gitignore`. This should primarily be used to avoid certain project-level files and directories from being kept under source control. Different development-environments will benefit from different collections of ignores.
 
-## .gitignore
+OS-specific and editor-specific files should be ignored using a "global ignore" that applies to all repositories on your system.
 
-HTML5 Boilerplate includes a basic project-level `.gitignore`. This should
-primarily be used to avoid certain project-level files and directories from
-being kept under source control. Different development-environments will
-benefit from different collections of ignores.
-
-OS-specific and editor-specific files should be ignored using a "global
-ignore" that applies to all repositories on your system.
-
-For example, add the following to your `~/.gitconfig`, where the `.gitignore`
-in your HOME directory contains the files and directories you'd like to
-globally ignore:
+For example, add the following to your `~/.gitconfig`, where the `.gitignore` in your HOME directory contains the files and directories you'd like to globally ignore:
 
 ```gitignore
 [core]
@@ -33,9 +18,9 @@ globally ignore:
 ```
 
 * More on global ignores: [https://help.github.com/articles/ignoring-files/](https://help.github.com/en/github/using-git/ignoring-files)
-* Comprehensive set of ignores on GitHub: https://github.com/github/gitignore
+* Comprehensive set of ignores on GitHub: <https://github.com/github/gitignore>
 
-## .editorconfig
+## `.editorconfig`
 
 The `.editorconfig` file is provided in order to encourage and help you and
 your team define and maintain consistent coding styles between different
@@ -48,20 +33,15 @@ them to better suit your needs.
 
 In order for your editor/IDE to apply the
 [properties](https://editorconfig.org/#supported-properties) from the
-`.editorconfig` file, you may need to [install a
-plugin]( https://editorconfig.org/#download).
+`.editorconfig` file, you may need to [install a plugin](https://editorconfig.org/#download).
 
-__N.B.__ If you aren't using the server configurations provided by HTML5
-Boilerplate, we highly encourage you to configure your server to block
-access to `.editorconfig` files, as they can disclose sensitive information!
+__N.B.__ If you aren't using the server configurations provided by GuttenBerry, we highly encourage you to configure your server to block access to `.editorconfig` files, as they can disclose sensitive information!
 
-For more details, please refer to the [EditorConfig
-project](https://editorconfig.org/).
+For more details, please refer to the [EditorConfig project](https://editorconfig.org/).
 
 ## Server Configuration
 
-H5BP includes a [`.htaccess`](#htaccess) file for the [Apache HTTP
-server](https://httpd.apache.org/docs/). If you are not using Apache
+H5BP includes a [`.htaccess`](#htaccess) file for the [Apache HTTP server](https://httpd.apache.org/docs/). If you are not using Apache
 as your web server, then you are encouraged to download a
 [server configuration](https://github.com/h5bp/server-configs) that
 corresponds to your web server and environment.

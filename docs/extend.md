@@ -1,5 +1,6 @@
-[HTML5 Boilerplate homepage](https://html5boilerplate.com) | [Documentation
-table of contents](TOC.md)
+[GuttenBerry homepage][homepage] | [Documentation & table of contents](TOC.md)
+
+[homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
 # Extend and customise HTML5 Boilerplate
 
@@ -23,11 +24,7 @@ everything fits with everyone's needs.
 
 ### Smart App Banners in iOS 6+ Safari
 
-Stop bothering everyone with gross modals advertising your entry in the App
-Store. Including the following [meta
-tag](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners)
-will unobtrusively give the user the option to download your iOS app, or open it
-with some data about the user's current state on the website.
+Stop bothering everyone with gross modals advertising your entry in the App Store. Including the following [meta tag](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners) will unobtrusively give the user the option to download your iOS app, or open it with some data about the user's current state on the website.
 
 ```html
 <meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
@@ -67,17 +64,14 @@ for example) then you can queue up a domain name to be prefetched.
 ```
 
 You can use as many of these as you need, but it's best if they are all
-immediately after the [Meta
-Charset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset)
+immediately after the [Meta Charset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset)
 element (which should go right at the top of the `head`), so the browser can act
 on them ASAP.
 
-
 ### Further reading about DNS prefetching
 
-* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
-* https://dev.chromium.org/developers/design-documents/dns-prefetching
-
+* <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control>
+* <https://dev.chromium.org/developers/design-documents/dns-prefetching>
 
 ## Internet Explorer
 
@@ -85,9 +79,7 @@ on them ASAP.
 
 Enabling your application for pinning will allow IE users to add it to their
 Windows Taskbar and Start Menu. This comes with a range of new tools that you
-can easily configure with the elements below. See more [documentation on IE
-Pinned
-Sites](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/gg491731(v%3dvs.85)).
+can easily configure with the elements below. See more [documentation on IE Pinned Sites](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/gg491731(v%3dvs.85)).
 
 ### Name the Pinned Site for Windows
 
@@ -111,8 +103,7 @@ mouse over your Pinned Site's icon.
 
 If the site should go to a specific URL when it is pinned (such as the
 homepage), enter it here. One idea is to send it to a special URL so you can
-track the number of pinned users, like so:
-`https://www.example.com/index.html?pinned=true`
+track the number of pinned users, like so: `https://www.example.com/index.html?pinned=true`
 
 ```html
 <meta name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true">
@@ -151,8 +142,7 @@ right-click. Each Task goes to the specified URL, and gets its own mini icon
 ### (Windows 8) High quality visuals for Pinned Sites
 
 Windows 8 adds the ability for you to provide a PNG tile image and specify the
-tile's background color. [Full details on the IE
-blog](https://docs.microsoft.com/en-us/archive/blogs/ie/high-quality-visuals-for-pinned-sites-in-windows-8).
+tile's background color. [Full details on the IE blog](https://docs.microsoft.com/en-us/archive/blogs/ie/high-quality-visuals-for-pinned-sites-in-windows-8).
 
 * Create a 144x144 image of your site icon, filling all of the canvas, and using
   a transparent background.
@@ -168,10 +158,8 @@ in the Start screen. The user will be able to receive these badge updates even
 when your app isn't actively running. The badge's value can be a number, or one
 of a predefined list of glyphs.
 
-* [Tutorial on IEBlog with link to badge XML
-schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
-* [Available badge
-  values](https://docs.microsoft.com/en-us/uwp/schemas/tiles/badgeschema/element-badge)
+* [Tutorial on IEBlog with link to badge XML schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
+* [Available badge values](https://docs.microsoft.com/en-us/uwp/schemas/tiles/badgeschema/element-badge)
 
 ```html
 <meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
@@ -184,11 +172,12 @@ schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-window
 After creating a [sitemap](https://www.sitemaps.org/protocol.html)
 
 Submit it to search engine tool:
+
 * [Google](https://www.google.com/webmasters/tools/sitemap-list)
 * [Bing](https://www.bing.com/toolbox/webmaster)
 * [Yandex](https://webmaster.yandex.com/)
-* [Baidu](https://zhanzhang.baidu.com/) OR Insert the following line anywhere in
-  your robots.txt file, specifying the path to your sitemap:
+* [Baidu](https://zhanzhang.baidu.com/) OR Insert the following line anywhere in your robots.txt file, specifying the path to your sitemap:
+
 ```
 Sitemap: https://example.com/sitemap_location.xml
 ```
@@ -209,45 +198,33 @@ value your sanity. This is an HTML-centric way of achieving that.
 
 Sites with in-site search functionality should be strongly considered for a
 browser search plugin. A "search plugin" is an XML file which defines how your
-plugin behaves in the browser. [How to make a browser search
-plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plugin).
+plugin behaves in the browser. [How to make a browser search plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plugin).
 
 ```html
 <link rel="search" title="" type="application/opensearchdescription+xml" href="">
 ```
 
-
 ## Miscellaneous
 
-* Use
-  [polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
+* Use [polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
 
-* Use [Microformats](http://microformats.org/wiki/Main_Page) (via
-  [microdata](http://microformats.org/wiki/microdata)) for optimum search
-  results
-  [visibility](https://webmasters.googleblog.com/2009/05/introducing-rich-snippets.html).
+* Use [Microformats](http://microformats.org/wiki/Main_Page) (via [microdata](http://microformats.org/wiki/microdata)) for optimum search results [visibility](https://webmasters.googleblog.com/2009/05/introducing-rich-snippets.html).
 
 * If you want to disable the translation prompt in Chrome or block Google
-  Translate from translating your web page, use [`<meta name="google"
-  content="notranslate">`](https://support.google.com/webmasters/answer/79812).
+  Translate from translating your web page, use [`<meta name="google" content="notranslate">`](https://support.google.com/webmasters/answer/79812).
   To disable translation for a particular section of the web page, add
   [`class="notranslate"`](https://support.google.com/translate/?hl=en#2641276).
 
 * If you want to disable the automatic detection and formatting of possible
-  phone numbers in Safari on iOS, use [`<meta name="format-detection"
-  content="telephone=no">`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html).
+  phone numbers in Safari on iOS, use [`<meta name="format-detection" content="telephone=no">`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html).
 
-* Avoid development/stage websites "leaking" into SERPs (search engine results
-  page) by [implementing X-Robots-tag
-  headers](https://github.com/h5bp/html5-boilerplate/issues/804).
-
+* Avoid development/stage websites "leaking" into SERPs (search engine results page) by [implementing X-Robots-tag headers](https://github.com/h5bp/html5-boilerplate/issues/804).
 
 ## News Feeds
 
 ### RSS
 
-Have an RSS feed? Link to it here. Want to [learn how to write an RSS feed from
-scratch](https://www.rssboard.org/rss-specification)?
+Have an RSS feed? Link to it here. Want to [learn how to write an RSS feed from scratch](https://www.rssboard.org/rss-specification)?
 
 ```html
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
@@ -256,8 +233,7 @@ scratch](https://www.rssboard.org/rss-specification)?
 ### Atom
 
 Atom is similar to RSS, and you might prefer to use it instead of or in addition
-to it. [See what Atom's all
-about](https://en.wikipedia.org/wiki/Atom_(Web_standard)).
+to it. [See what Atom's all about](https://en.wikipedia.org/wiki/Atom_(Web_standard)).
 
 ```html
 <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
@@ -273,13 +249,11 @@ should contain the location of your pingback service.
 ```
 
 * High-level explanation:
-  https://codex.wordpress.org/Introduction_to_Blogging#Pingbacks
+  <https://codex.wordpress.org/Introduction_to_Blogging#Pingbacks>
 * Step-by-step example case:
-  https://www.hixie.ch/specs/pingback/pingback-1.0#TOC5
+  <https://www.hixie.ch/specs/pingback/pingback-1.0#TOC5>
 * PHP pingback service:
-  https://web.archive.org/web/20131211032834/http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/
-
-
+  <https://web.archive.org/web/20131211032834/http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/>
 
 ## Social Networks
 
@@ -287,17 +261,13 @@ should contain the location of your pingback service.
 
 You can control the information that Facebook and others display when users
 share your site. Below are just the most basic data points you might need. For
-specific content types (including "website"), see [Facebook's built-in Open
-Graph content
-templates](https://developers.facebook.com/docs/sharing/opengraph/using-objects).
+specific content types (including "website"), see [Facebook's built-in Open Graph content templates](https://developers.facebook.com/docs/sharing/opengraph/using-objects).
 Take full advantage of Facebook's support for complex data and activity by
-following the [Open Graph
-tutorial](https://developers.facebook.com/docs/sharing/webmasters/getting-started).
+following the [Open Graph tutorial](https://developers.facebook.com/docs/sharing/webmasters/getting-started).
 
 For a reference of Open Graph's markup and properties, you may check [Facebook's
 Open Graph Protocol reference](https://ogp.me). Finally, you can validate your
-markup with the [Facebook Object
-Debugger](https://developers.facebook.com/tools/debug/) (needs registration to
+markup with the [Facebook Object Debugger](https://developers.facebook.com/tools/debug/) (needs registration to
 Facebook).
 
 ```html
@@ -342,8 +312,7 @@ this reason, this metadata is more generic for SEO, notably for Google's
 search-engine, although this vocabulary is also used by Microsoft, Pinterest and
 Yandex.
 
-You can validate your markup with the [Structured Data Testing
-Tool](https://search.google.com/structured-data/testing-tool). Also, please
+You can validate your markup with the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool). Also, please
 note that this markup requires to add attributes to your top `html` tag.
 
 ```html
@@ -391,10 +360,7 @@ added to the Home Screen on iOS:
 <meta name="apple-mobile-web-app-title" content="">
 ```
 
-For further information please read the [official
-documentation](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
-on Apple's site.
-
+For further information please read the [official documentation](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html) on Apple's site.
 
 ### Apple Touch Icons
 
@@ -409,9 +375,7 @@ Though the dimensions of the icon can vary between iOS devices and versions one
 <link rel="apple-touch-icon" href="icon.png">
 ```
 
-For a more comprehensive overview, please refer to Mathias' [article on Touch
-Icons](https://mathiasbynens.be/notes/touch-icons).
-
+For a more comprehensive overview, please refer to Mathias' [article on Touch Icons](https://mathiasbynens.be/notes/touch-icons).
 
 ### Apple Touch Startup Image
 
@@ -425,11 +389,9 @@ for an iPhone:
 <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/startup.png">
 ```
 
-
 ### Chrome Mobile web apps
 
-Chrome Mobile has a specific meta tag for making apps [installable to the
-homescreen](https://developer.chrome.com/multidevice/android/installtohomescreen)
+Chrome Mobile has a specific meta tag for making apps [installable to the homescreen](https://developer.chrome.com/multidevice/android/installtohomescreen)
 which tries to be a more generic replacement to Apple's proprietary meta tag:
 
 ```html
@@ -444,8 +406,7 @@ Same applies to the touch icons:
 
 ### Theme Color
 
-You can add the [`theme-color` meta
-extension](https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color)
+You can add the [`theme-color` meta extension](https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color)
 in the `<head>` of your pages to suggest the color that browsers and OSes should
 use if they customize the display of individual pages in their UIs with varying
 colors.
@@ -456,16 +417,14 @@ colors.
 
 The `content` attribute extension can take any valid CSS color.
 
-Currently, the `theme-color` meta extension is supported by [Chrome 39+ for
-Android
-Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
+Currently, the `theme-color` meta extension is supported by [Chrome 39+ for Android Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
 
 ### humans.txt
 
 You can include a `humans.txt` file in the root of your site which can be used
 to provide information about people involved with the website.
 
-For more information about `humans.txt`, please see: https://humanstxt.org/
+For more information about `humans.txt`, please see: <https://humanstxt.org/>
 
 ### security.txt
 
