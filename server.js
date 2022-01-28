@@ -1,10 +1,12 @@
-let StaticServer = require('static-server'),
+const PORT = 8000,
+  StaticServer = require('static-server'),
   server = new StaticServer({
-    rootPath: './dist',
-    port: 8000
+    rootPath: './',
+    port:     PORT,
   });
 
 
-server.start(function () {
-  console.log('Server listening to', server.port);
+server.start(() => {
+  'use strict';
+  window.console.log('Server listening to', server.port);
 });
