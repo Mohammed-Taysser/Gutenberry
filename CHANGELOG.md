@@ -22,6 +22,7 @@
 - back to normal like stylesheet
 - add github card
 - create website_card image
+- add 404 page to links
 
 ### search page
 
