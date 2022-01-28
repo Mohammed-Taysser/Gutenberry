@@ -21,13 +21,13 @@ block content
         .col-md-6.col-lg-4.my-3
           .contact-item.text-center.h-100
             .contact-icon
-              i.fas.fa-envelope-open-text.text-aurora.h1
+              i.far.fa-envelope.text-aurora.h1
             .contact-content.mt-3
               a.h5(href='mailto:info@yourdomain.com') info@yourdomain.com
         .col-md-6.col-lg-4.my-3
           .contact-item.text-center.h-100
             .contact-icon
-              i.fas.fa-map-marker-alt.text-aurora.h1
+              i.fas.fa-map-marker.text-aurora.h1
             .contact-content.mt-3.h5
               a.h5(href="https://www.google.com/maps/place/Al-Azhar+University/@30.0591754,31.311457,17z/data=!3m1!4b1!4m5!3m4!1s0x14583e5404444859:0x3b0f48bf5e16c523!8m2!3d30.0591708!4d31.313651") 
                 | Egypt, Cairo, Nasser City
@@ -43,17 +43,17 @@ block content
             .row
               .col-md-6.my-3
                 .custom-form-input-container
-                  input.custom-form-input(type='text' placeholder='')
-                  label.custom-form-label Name
+                  input.custom-form-input(type='text' placeholder='' id='contact-us-name')
+                  label.custom-form-label(for='contact-us-name') Name
                   span.focus-border
               .col-md-6.my-3
                 .custom-form-input-container
-                  input.custom-form-input(type='email' placeholder='')
-                  label.custom-form-label Email
+                  input.custom-form-input(type='email' placeholder='' id='contact-us-email')
+                  label.custom-form-label(for='contact-us-email') Email
                   span.focus-border
             .custom-form-input-container
-              textarea.custom-form-input(placeholder='' rows='5')
-              label.custom-form-label Message
+              textarea.custom-form-input(placeholder='' rows='5' id='contact-us-message')
+              label.custom-form-label(for='contact-us-message') Message
               span.focus-border
             .text-center
               button.btn-learn-more.hovered.mt-4(type='submit' aria-label='contact me')
