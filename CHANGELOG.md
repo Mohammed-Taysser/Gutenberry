@@ -6,6 +6,16 @@
 
 - add comments, starts numbers for each post
 - create page for update & create post
+- multi-language support
+- toggle dark & light theme
+- ensure that scss colors & gradient are stored in `scss/helpers/variables`
+- ensure that `keyframes` found only in `scss/helpers/keyframes`
+- use bootstrap from npm as separate scss files
+- perform more refactor in js code
+- more practices with PWA
+- work offline
+- change mobile menu close button
+- replace bootstrap.js with only css (see spectra framework)
 
 ### search page
 
@@ -37,6 +47,8 @@
 - Create `.editorconfig` for editor config
 - Create  Both `.htaccess`, `robots`
 - Add `manifest` for `PWA` Support
+- Create 404 page
+- Serve images in modern formats `webp`
 
 ## 1.0.0 (Aug 24, 2021)
 
