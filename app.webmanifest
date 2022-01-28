@@ -1,0 +1,34 @@
+{
+  "short_name": "GuttenBerry",
+  "name": "GuttenBerry Blog Creator",
+  "dir": "ltl",
+  "lang": "en",
+  "scope": "https://mohammed-taysser.github.io/Gutenberry/",
+  "icons": [
+    {
+      "src": "https://mohammed-taysser.github.io/Gutenberry/dist/images/icons/favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "https://mohammed-taysser.github.io/Gutenberry/dist/images/icons/favicon@192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://mohammed-taysser.github.io/Gutenberry/dist/images/icons/favicon@512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://mohammed-taysser.github.io/Gutenberry/dist/html/index.html",
+  "display": "standalone",
+  "theme_color": "#9400ff",
+  "description": "How to Create A Perfect Blog With GuttenBerry.",
+  "background_color": "#fff",
+  "categories": [
+    "blog",
+    "post",
+    "news"
+  ]
+}
