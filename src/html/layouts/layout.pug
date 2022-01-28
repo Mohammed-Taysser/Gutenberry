@@ -78,10 +78,13 @@ html(lang="en")
         meta(name='twitter:app:id:iphone' content='')
                 
         // style sheet
-        //- link(rel="stylesheet", href="../css/libs/bootstrap.min.css")
-        link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
-        //- link(rel="stylesheet", href="../css/libs/cropper.min.css")
-        link(rel="stylesheet", href="../css/core.min.css")
+        //- link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
+        //- link(rel="stylesheet", href="../css/core.min.css")
+
+        //- defer-non-critical-css
+        link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        
         block style
 
         // Standard favicon
