@@ -1,11 +1,7 @@
 {
   "name": "gutenberry",
   "version": "2.1.0",
-<<<<<<< HEAD
-  "description": "How to Create a Perfect Blog With GuttenBerry",
-=======
   "description": "How to Create A Perfect Blog With GuttenBerry",
->>>>>>> 9e104a5686ea81a742f171cf0cfcb8a9880dfa54
   "author": {
     "name": "Mohammed Taysser",
     "url": "https://github.com/Mohammed-Taysser/"
@@ -19,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Mohammed-Taysser/Gutenberry.git"
