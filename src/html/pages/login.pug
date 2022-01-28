@@ -28,12 +28,12 @@ block content
               p.small.text-muted.mt-4 or use your account
             form.mb-3(action='' method='')
               .custom-form-input-container.my-4
-                input.custom-form-input(type='email' placeholder='' required)
-                label.custom-form-label email
+                input.custom-form-input(type='email' placeholder='' required id='login-email')
+                label.custom-form-label(for='login-email') email
                 span.focus-border
               .custom-form-input-container.my-4
-                input.custom-form-input(type='password' placeholder='' required)
-                label.custom-form-label password
+                input.custom-form-input(type='password' placeholder='' required id='login-password')
+                label.custom-form-label(for='login-password') password
                 span.focus-border
               p.text-end
                 a.text-muted(href='#' data-bs-toggle="modal" data-bs-target="#forget-password-modal") forget password
