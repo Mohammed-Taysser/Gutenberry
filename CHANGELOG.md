@@ -20,6 +20,8 @@
 - replace site.webmanifest
 - reorganize docs content
 - back to normal like stylesheet
+- add github card
+- create website_card image
 
 ### search page
 
