@@ -19,6 +19,7 @@
 - replace font awesome with lighter icon library or use svg
 - replace site.webmanifest
 - reorganize docs content
+- back to normal like stylesheet
 
 ### search page
 
