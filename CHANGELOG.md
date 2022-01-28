@@ -17,6 +17,8 @@
 - change mobile menu close button
 - replace bootstrap.js with only css (see spectra framework)
 - replace font awesome with lighter icon library or use svg
+- replace site.webmanifest
+- reorganize docs content
 
 ### search page
 
