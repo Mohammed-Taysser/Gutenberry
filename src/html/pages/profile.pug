@@ -19,7 +19,7 @@ block content
           h1.h2.mb-5.special-header Personal Account Settings
           .nice-shadow.my-3.rounded.p-3
             section.latest-news.py-2
-              h4.pb-3.border-bottom your posts
+              h2.h4.pb-3.border-bottom your posts
               ul.ps-0.mt-4.user-posts
                 each news in news_arr
                   li.m-2.single-post
@@ -28,7 +28,7 @@ block content
 
           .card.my-4
             .card-body
-              h2.h4.card-title your name
+              h3.h4.card-title your name
               p.card-text This is your URL namespace within guttenBerry.
               .d-md-flex
                 .col-md-5
@@ -38,12 +38,12 @@ block content
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
-                p.m-0.small.text-muted Please use 48 characters at maximum.
+                p.m-0.small.text-dark Please use 48 characters at maximum.
                 button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
 
           .card.my-4
             .card-body
-              h2.h4.card-title your username
+              h4.card-title your username
               p.card-text This is your URL namespace within guttenBerry.
               .d-md-flex
                 .col-md-5
@@ -51,12 +51,12 @@ block content
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
-                p.m-0.small.text-muted Please use 16 characters at minimum.
+                p.m-0.small.text-dark Please use 16 characters at minimum.
                 button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
           .card.my-4
             .card-body
-              h2.h4.card-title your email
+              h4.card-title your email
               p.card-text Please enter the email address you want to use to log in with guttenBerry.
               .d-md-flex
                 .col-md-5
@@ -64,7 +64,7 @@ block content
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
-                p.m-0.small.text-muted We will email you to verify the change.
+                p.m-0.small.text-dark We will email you to verify the change.
                 button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
 
@@ -72,7 +72,7 @@ block content
             .card-body
               .d-flex.align-items-center
                 .flex-grow-1.me-3
-                  h2.h4.card-title your Avatar
+                  h4.card-title your Avatar
                   p.card-text his is your avatar.
                     | Click on the avatar to upload a custom one from your files. 
                 .flex-shrink-0
@@ -82,12 +82,12 @@ block content
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
-                p.m-0.small.text-muted An avatar is optional but strongly recommended.
+                p.m-0.small.text-dark An avatar is optional but strongly recommended.
                 //- button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
 
           .card.my-4
             .card-body
-              h2.h4.card-title your ID
+              h4.card-title your ID
               p.card-text This is your user ID within guttenBerry.
               .d-md-flex
                 .col-md-5
@@ -98,13 +98,13 @@ block content
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
-                p.m-0.small.text-muted Used when interacting with the guttenBerry API.
+                p.m-0.small.text-dark Used when interacting with the guttenBerry API.
                 button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
 
           .card.my-4.border-danger
             .card-body
-              h2.h4.card-title Delete Personal Account
+              h4.card-title Delete Personal Account
               p.card-text Permanently remove your Personal Account and all of its contents from the guttenBerry platform. This action is not reversible, so please continue with caution.
     
             .card-footer.bg-light
