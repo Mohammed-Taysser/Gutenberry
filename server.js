@@ -8,5 +8,5 @@ const PORT = 8000,
 
 server.start(() => {
   'use strict';
-  window.console.log('Server listening to', server.port);
+  console.info('Server listening to', server.port);
 });
