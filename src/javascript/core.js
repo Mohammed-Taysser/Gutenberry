@@ -1,29 +1,31 @@
+/* global bootstrap */
+/* Vanilla JS start here 🌟 */
+
 window.onload = function () {
   'use strict';
 
-  // eslint-disable-next-line max-len
+  // warn user from console
   window.console.info('This is a browser feature intended for developers. Do not paste any code here given to you by someone else. It may compromise your account or have other negative side effects. have a good day');
 
+  // remove loader class from body
   document.body.classList.remove('load');
 
-  main_skilition();
+  // call main function
+  main_function();
 
-  // * --------------------
-  // * footer current year
-  // * --------------------
+  // footer current year
   const current_year = new Date().getFullYear().toString();
   document.querySelector('#current_year').textContent = current_year;
 };
 
 // eslint-disable-next-line max-lines-per-function
-function main_skilition() {
+function main_function() {
   'use strict';
 
   enable_bootstrap_tooltip();
 
-  // * ----------------------------
-  // * toggle menu & search button
-  // * ----------------------------
+  /* toggle menu & search button  */
+
   const close_button = document.querySelector('#js-close-button'),
     menu_links = document.querySelector('#js-main-links ul'),
     search_button = document.querySelector('#search-button'),
@@ -51,7 +53,7 @@ function main_skilition() {
     menu_links.classList.toggle('open');
   };
 
-  document.addEventListener('click', function (event) {
+  document.addEventListener('click', (event) => {
     window_toggle_navbar_menu(event);
     window_toggle_searchbar(event);
   });
@@ -67,9 +69,9 @@ function main_skilition() {
 
   function window_toggle_searchbar(event) {
     if (event.target !== search_popup_content && event.target !== search_button) {
-      if (search_popup.classList.contains('open')) {
+      if (search_popup.classList.contains('open'))
         search_popup.classList.toggle('open');
-      }
+
     }
   }
 
@@ -77,13 +79,11 @@ function main_skilition() {
 
   profile_copy_user_id();
 
-  // * ------------------------------
-  // * profile change avatar cropper
-  // * ------------------------------
-  if (document.getElementById('js-profile-avatar')) {
+  /* profile change avatar cropper */
+  if (document.getElementById('js-profile-avatar'))
     change_user_avatar();
-  }
-};
+
+}
 
 /**
  * copy text to clipboard
@@ -109,22 +109,20 @@ function enable_bootstrap_tooltip() {
   'use strict';
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+  tooltipTriggerList.map(tooltip_element => new bootstrap.Tooltip(tooltip_element));
 }
 
 /**
  * get canvas drawn of the cropped image.
- * @param {*} cropped_avatar 
+ * @param {*} cropped_avatar
  * @returns {HTMLCanvasElement} canvas drawn of the cropped image.
  */
 function get_cropped_avatar(cropped_avatar) {
   'use strict';
   return cropped_avatar.getCroppedCanvas({
-    width: 80,
-    height: 80,
-    fillColor: '#fff',
+    width:                 80,
+    height:                80,
+    fillColor:             '#fff',
     imageSmoothingEnabled: true,
     imageSmoothingQuality: 'high',
   });
@@ -133,19 +131,19 @@ function get_cropped_avatar(cropped_avatar) {
 /**
  * generate cropper instance
  * @param {Element} image The target image or canvas element for cropping.
- * @returns {Object} cropped image as object 
+ * @returns {Object} cropped image as object
  */
 function create_avatar_cropper_instance(image) {
   'use strict';
   return new Cropper(image, {
-    aspectRatio: 1,
-    dragMode: 'none',
-    zoomable: false,
-    minContainerWidth: 350,
-    minContainerHeight: 350,
+    aspectRatio:              1,
+    dragMode:                 'none',
+    zoomable:                 false,
+    minContainerWidth:        350,
+    minContainerHeight:       350,
     toggleDragModeOnDblclick: false,
-    zoomOnWheel: false,
-    viewMode: 3,
+    zoomOnWheel:              false,
+    viewMode:                 3,
   });
 }
 
@@ -156,9 +154,9 @@ function create_avatar_cropper_instance(image) {
  */
 function generate_new_avatar_url(image) {
   'use strict';
-  if (URL) {
+  if (URL)
     return URL.createObjectURL(image);
-  }
+
   return '';
 }
 
@@ -170,7 +168,7 @@ function active_moved_label_effect() {
   const input_container = document.querySelectorAll('.custom-form-input-container .custom-form-input');
 
   if (input_container) {
-    input_container.forEach(input => {
+    input_container.forEach((input) => {
       input.addEventListener('blur', input_has_content);
       input.addEventListener('focus', input_has_content);
     });
@@ -178,17 +176,16 @@ function active_moved_label_effect() {
 }
 
 /**
-* use to add or remove animation if input has content
-* @param {Element} event the input target of effect
-* @returns {Void} no return
-*/
+ * use to add or remove animation if input has content
+ * @param {Element} event the input target of effect
+ * @returns {Void} no return
+ */
 function input_has_content(event) {
   'use strict';
-  if (event.target.value.length > 0) {
+  if (event.target.value.length > 0)
     event.target.classList.add('has-content');
-  } else {
+  else
     event.target.classList.remove('has-content');
-  }
 }
 
 /**
@@ -197,7 +194,8 @@ function input_has_content(event) {
 function profile_copy_user_id() {
   'use strict';
   const user_id_btn = document.getElementById('js-profile-user-btn'),
-    user_id_input = document.getElementById('js-profile-user-input');
+    user_id_input = document.getElementById('js-profile-user-input'),
+    DELAY_AFTER_COPY = 1000;
 
   if (user_id_btn && user_id_input) {
     const old_data_copy_title = user_id_btn.dataset.bsOriginalTitle;
@@ -206,7 +204,7 @@ function profile_copy_user_id() {
       user_id_btn.dataset.bsOriginalTitle = 'copied';
       setTimeout(() => {
         user_id_btn.dataset.bsOriginalTitle = old_data_copy_title;
-      }, 1000);
+      }, DELAY_AFTER_COPY);
     };
   }
 }
@@ -220,23 +218,22 @@ function change_user_avatar() {
     profile_modal_image = modal.querySelector('#js-profile-modal-image');
 
   document.getElementById('js-profile-avatar-file-uploader').onchange = function () {
-    if (this.files[0]) {
+    if (this.files[0])
       send_image_to_cropper(generate_new_avatar_url(this.files[0]));
-    }
   };
 
   function send_image_to_cropper(url) {
     profile_modal_image.src = url;
+    avatar_cropper_instance = create_avatar_cropper_instance(profile_modal_image);
     bootstrap.Modal.getOrCreateInstance(modal).show();
   }
 
-  modal.addEventListener('show.bs.modal', function () {
-    avatar_cropper_instance = create_avatar_cropper_instance(profile_modal_image);
+  modal.addEventListener('show.bs.modal', () => {
+
+    // avatar_cropper_instance = create_avatar_cropper_instance(profile_modal_image);
   });
-  modal.addEventListener('hide.bs.modal', function () {
-    setTimeout(() => {
-      avatar_cropper_instance.destroy();
-    }, 1000);
+  modal.addEventListener('hide.bs.modal', () => {
+    avatar_cropper_instance.destroy();
   });
 
   document.getElementById('js-profile-save-avatar-btn').onclick = function () {
@@ -249,19 +246,19 @@ function change_user_avatar() {
 
 /**
  * not complete yet
- * @param {*} cropped_avatar 
+ * @param {*} cropped_avatar
  */
 function send_new_avatar_to_server(cropped_avatar) {
   'use strict';
 
-  //? incase: send cropped avatar to server
-  cropped_avatar.toBlob(function (blob) {
+  // incase: send cropped avatar to server
+  cropped_avatar.toBlob((blob) => {
     const formData = new FormData();
     formData.append('avatar', blob, 'avatar.jpg');
 
-    //*  then make AJAX request here
+    // then make AJAX request here
   });
 }
 
-//  jQuery start from here 👾
+/* jQuery start from here 👾 */
 // $(document).ready(function () {});
