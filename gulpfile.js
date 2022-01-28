@@ -2,6 +2,7 @@ const gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   babel = require('gulp-babel'),
   webp = require('gulp-webp'),
+  imagemin = require('gulp-imagemin'),
 
   // responsive = require('gulp-responsive'),
   imageResize = require('gulp-image-resize'),
@@ -14,43 +15,53 @@ const gulp = require('gulp'),
   PATHS = {
     html: {
       watch: 'src/html/**/*.pug',
-      src: 'src/html/pages/*.pug',
-      dest: 'dist/html',
+      src:   'src/html/pages/*.pug',
+      dest:  'dist/html',
     },
     scss: {
       watch: 'src/css/**/*.scss',
-      src: 'src/css/*.scss',
-      dest: 'dist/css/',
+      src:   'src/css/*.scss',
+      dest:  'dist/css/',
     },
     javascript: {
-      src: 'src/javascript/*.js',
+      src:  'src/javascript/*.js',
       dest: 'dist/javascript/',
     },
     statics: {
       fonts: {
-        src: 'src/fonts/**/*',
+        src:  'src/fonts/**/*',
         dest: 'dist/fonts/',
       },
       music: {
-        src: 'src/music/**/*',
+        src:  'src/music/**/*',
         dest: 'dist/music/',
       },
       css: {
-        src: 'src/css/libs/*',
+        src:  'src/css/libs/*',
         dest: 'dist/css/libs/',
       },
       javascript: {
-        src: 'src/javascript/libs/*.js',
+        src:  'src/javascript/libs/*.js',
         dest: 'dist/javascript/libs/',
       },
     },
     images: {
-      src: ['src/images/**/*.{png,jpg,jpeg,svg}', '!src/images/icons/favicon.{png,jpg,jpeg,svg}'],
+      src: [
+        'src/images/**/*.{png,jpg,jpeg,svg}',
+        '!src/images/icons/favicon.{png,jpg,jpeg,svg}',
+      ],
       dest: 'dist/images/',
     },
     favicon: {
-      src: 'src/images/icons/favicon.{png,jpg,jpeg,svg}',
+      src:  'src/images/icons/favicon.{png,jpg,jpeg,svg}',
       dest: 'dist/images/icons/',
+      size: [
+        { width: 180, height: 180, label: 'apple-touch-icon' },
+        { width: 512, height: 512, label: 'favicon@512' },
+        { width: 192, height: 192, label: 'favicon@192' },
+        { width: 32, height: 32, label: 'favicon@3x' },
+        { width: 16, height: 16, label: 'favicon@2x' },
+      ],
     },
   };
 
@@ -59,19 +70,21 @@ function clean() {
   return del(['dist/**', '!dist']);
 }
 
-function scss_task() {
+function scssTask() {
   'use strict';
   return gulp
     .src(PATHS.scss.src)
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(rename(function (path) { path.extname = '.min.css'; }))
+    .pipe(rename((path) => {
+      path.extname = '.min.css';
+    }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(PATHS.scss.dest));
 }
 
-function html_task() {
+function htmlTask() {
   'use strict';
   require('./server.js');
   return gulp
@@ -80,37 +93,37 @@ function html_task() {
     .pipe(gulp.dest(PATHS.html.dest));
 }
 
-function js_task() {
+function javascriptTask() {
   'use strict';
-  return (
-    gulp
-      .src(PATHS.javascript.src)
-      .pipe(sourcemaps.init())
-      .pipe(babel({ presets: ['@babel/env'] }))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(uglify())
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(PATHS.javascript.dest))
-  );
+  return gulp
+    .src(PATHS.javascript.src)
+    .pipe(sourcemaps.init())
+    .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(PATHS.javascript.dest));
 }
 
-function statics_css_task() {
+function staticsCSSTask() {
   'use strict';
   return gulp
     .src(PATHS.statics.css.src)
     .pipe(gulp.dest(PATHS.statics.css.dest));
 }
 
-function statics_js_task() {
+function staticsJavascriptTask() {
   'use strict';
   return gulp
     .src(PATHS.statics.javascript.src)
     .pipe(gulp.dest(PATHS.statics.javascript.dest));
 }
 
-function images_task() {
+function imagesTask() {
   'use strict';
-  return gulp.src(PATHS.images.src)
+  return gulp
+    .src(PATHS.images.src)
+    .pipe(imagemin({ verbose: true }))
     .pipe(webp())
     .pipe(gulp.dest(PATHS.images.dest));
 }
@@ -124,70 +137,55 @@ function images_task() {
 function imageSizeConfig(width, height) {
   'use strict';
   return imageResize({
-    width: width,
-    height: height,
+    width,
+    height,
     format: 'png',
   });
 }
 
-function favicon_task() {
+function faviconTask() {
   'use strict';
-  const default_favicon = gulp.src(PATHS.favicon.src).pipe(gulp.dest(PATHS.favicon.dest)),
-    SIZE_CONFIG = [
-      { width: 180, height: 180, label: 'apple-touch-icon' },
-      { width: 512, height: 512, label: 'favicon@512' },
-      { width: 192, height: 192, label: 'favicon@192' },
-      { width: 32, height: 32, label: 'favicon@3x' },
-      { width: 16, height: 16, label: 'favicon@2x' },
-    ];
+  const favicon = gulp
+    .src(PATHS.favicon.src)
+    .pipe(gulp.dest(PATHS.favicon.dest));
 
-  SIZE_CONFIG.forEach(format => {
-    default_favicon
+  PATHS.favicon.size.forEach((format) => {
+    favicon
       .pipe(imageSizeConfig(format.width, format.height))
-      .pipe(rename(path => { path.basename = format.label; }))
+      .pipe(rename((path) => {
+        path.basename = format.label;
+      }))
       .pipe(gulp.dest(PATHS.favicon.dest));
   });
 
-  return default_favicon;
+  return favicon;
 }
 
-function music_task() {
+function musicTask() {
   'use strict';
   return gulp
     .src(PATHS.statics.music.src)
     .pipe(gulp.dest(PATHS.statics.music.dest));
 }
 
-function fonts_task() {
+function fontsTask() {
   'use strict';
   return gulp
     .src(PATHS.statics.fonts.src)
     .pipe(gulp.dest(PATHS.statics.fonts.dest));
 }
 
-function watch_fun() {
+function watchChange() {
   'use strict';
-  gulp.watch(PATHS.html.watch, html_task);
-  gulp.watch(PATHS.scss.watch, scss_task);
-  gulp.watch(PATHS.javascript.src, js_task);
-  gulp.watch(PATHS.statics.javascript.src, statics_js_task);
-  gulp.watch(PATHS.statics.css.src, statics_css_task);
-  gulp.watch(PATHS.statics.fonts.src, fonts_task);
-  gulp.watch(PATHS.images.src, images_task);
-  gulp.watch(PATHS.statics.music.src, music_task);
-  gulp.watch(PATHS.favicon.src, favicon_task);
+  gulp.watch(PATHS.html.watch, htmlTask);
+  gulp.watch(PATHS.scss.watch, scssTask);
+  gulp.watch(PATHS.javascript.src, javascriptTask);
+  gulp.watch(PATHS.statics.javascript.src, staticsJavascriptTask);
+  gulp.watch(PATHS.statics.css.src, staticsCSSTask);
+  gulp.watch(PATHS.statics.fonts.src, fontsTask);
+  gulp.watch(PATHS.images.src, imagesTask);
+  gulp.watch(PATHS.statics.music.src, musicTask);
+  gulp.watch(PATHS.favicon.src, faviconTask);
 }
 
-exports.default = gulp.series(
-  clean,
-  html_task,
-  js_task,
-  statics_js_task,
-  statics_css_task,
-  scss_task,
-  fonts_task,
-  images_task,
-  music_task,
-  favicon_task,
-  watch_fun,
-);
+exports['default'] = gulp.series(clean, htmlTask, javascriptTask, staticsJavascriptTask, staticsCSSTask, scssTask, fontsTask, imagesTask, musicTask, faviconTask, watchChange);
