@@ -39,7 +39,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Please use 48 characters at maximum.
-                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
 
           .card.my-4
             .card-body
@@ -52,7 +52,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Please use 16 characters at minimum.
-                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
           .card.my-4
             .card-body
@@ -65,7 +65,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted We will email you to verify the change.
-                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
 
           .card.my-4
@@ -83,7 +83,7 @@ block content
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted An avatar is optional but strongly recommended.
-                //- button.btn.btn-aurora.btn-sm.px-3(type='submit') save
+                //- button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
 
           .card.my-4
             .card-body
@@ -93,13 +93,13 @@ block content
                 .col-md-5
                   .input-group.input-group-sm
                     input.form-control(type='text' placeholder="ID" aria-label="your id" aria-describedby='js-profile-user-btn' disabled value='rXnB5e5aQpkYm2dC1uciGVLr' id='js-profile-user-input')
-                    button.btn.btn-aurora(type='button' id='js-profile-user-btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Copy To Clipboard") 
+                    button.btn.btn-aurora(type='button' id='js-profile-user-btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Copy To Clipboard" aria-label='Copy To Clipboard') 
                       i.far.fa-clipboard
 
             .card-footer.bg-light
               .d-flex.justify-content-between.align-items-center
                 p.m-0.small.text-muted Used when interacting with the guttenBerry API.
-                button.btn.btn-aurora.btn-sm.px-3(type='submit') save
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
 
 
           .card.my-4.border-danger
@@ -109,7 +109,7 @@ block content
     
             .card-footer.bg-light
               .d-flex.justify-content-end.align-items-center
-                button.btn.btn-danger.btn-sm.px-3(type='submit') Delete Personal Account
+                button.btn.btn-danger.btn-sm.px-3(type='submit' aria-label='save changes') Delete Personal Account
 
 
     #change-avatar-modal.modal.fade(tabindex='-1' aria-labelledby='change-avatar-modal-label' aria-hidden='true')
@@ -123,4 +123,4 @@ block content
               img(src="../images/icons/icon-profile.webp", alt="user-avatar" class='img-fluid w-100' id='js-profile-modal-image')
           .modal-footer.p-1
             button.btn.btn-danger(data-bs-dismiss='modal') cancel 
-            button.btn.btn-aurora(type='button' id='js-profile-save-avatar-btn') save 
+            button.btn.btn-aurora(type='button' id='js-profile-save-avatar-btn' aria-label='save changes') save 

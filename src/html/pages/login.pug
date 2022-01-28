@@ -38,7 +38,7 @@ block content
               p.text-end
                 a.text-muted(href='#' data-bs-toggle="modal" data-bs-target="#forget-password-modal") forget password
               .text-center
-                button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit')
+                button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit' aria-label='sign in')
                   span.circle(aria-hidden="true")
                     span.icon.arrow
                   span.button-text sign in
@@ -59,8 +59,8 @@ block content
             p.m-0
               | just relax and remember your password 😎
           .modal-footer.p-1
-            button(type='button' data-bs-dismiss='modal' class='btn-learn-more hovered') 
+            button(type='button' data-bs-dismiss='modal' class='btn-learn-more hovered' aria-label='close modal') 
               span.circle(aria-hidden="true")
                 span.icon.arrow
               span.button-text thanks
-            //- button.btn.btn-primary(type='button') Save changes
+            //- button.btn.btn-primary(type='button' aria-label='save changes') Save changes
