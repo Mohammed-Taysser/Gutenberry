@@ -1,0 +1,126 @@
+extends ../layouts/layout
+
+block title 
+  title GuttenBerry | Profile
+
+block current_page 
+  - var current_page = 'profile'
+
+block style 
+
+block javascript 
+
+block content 
+
+  section.profile-page.my-5
+    .container
+      .row.justify-content-center   
+        .col-md-11
+          h1.h2.mb-5.special-header Personal Account Settings
+          .nice-shadow.my-3.rounded.p-3
+            section.latest-news.py-2
+              h2.h4.pb-3.border-bottom your posts
+              ul.ps-0.mt-4.user-posts
+                each news in news_arr
+                  li.m-2.single-post
+                    a(href="post-details.html" title=news.title)
+                      img(src=news.img alt=news.title width='80px' height='80px' class='rounded-circle' data-bs-toggle="tooltip" data-bs-placement="top" title=news.title) 
+
+          .card.my-4
+            .card-body
+              h3.h4.card-title your name
+              p.card-text This is your URL namespace within guttenBerry.
+              .d-md-flex
+                .col-md-5
+                  .input-group.custom-input-group.input-group-sm
+                    span#full-name-input.input-group-text guttenBerry.com/
+                    input.form-control(type='text' placeholder='Full Name' aria-label='Full Name' aria-describedby='full-name-input' value='Mohammed Taysser')
+
+            .card-footer.bg-light
+              .d-flex.justify-content-between.align-items-center
+                p.m-0.small.text-dark Please use 48 characters at maximum.
+                button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
+
+          .card.my-4
+            .card-body
+              h4.card-title your username
+              p.card-text This is your URL namespace within guttenBerry.
+              .d-md-flex
+                .col-md-5
+                  input(class="form-control form-control-sm" type="text" value='Mohammed-Taysser' placeholder="Username" aria-label="Username")
+
+            .card-footer.bg-light
+              .d-flex.justify-content-between.align-items-center
+                p.m-0.small.text-dark Please use 16 characters at minimum.
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
+
+          .card.my-4
+            .card-body
+              h4.card-title your email
+              p.card-text Please enter the email address you want to use to log in with guttenBerry.
+              .d-md-flex
+                .col-md-5
+                  input(class="form-control form-control-sm" type="email" value='info@yourdomain.com' placeholder="email address" aria-label="your email address")
+
+            .card-footer.bg-light
+              .d-flex.justify-content-between.align-items-center
+                p.m-0.small.text-dark We will email you to verify the change.
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
+
+
+          .card.my-4
+            .card-body
+              .d-flex.align-items-center
+                .flex-grow-1.me-3
+                  h4.card-title your Avatar
+                  p.card-text his is your avatar.
+                    | Click on the avatar to upload a custom one from your files. 
+                .flex-shrink-0
+                  label(for="js-profile-avatar-file-uploader") 
+                    img(src='../images/icons/icon-profile.webp' alt='user avatar' width='80px' height='80px' class='img-fluid rounded-circle cursor-pointer' id='js-profile-avatar')
+                  input(type="file" class="custom-file-input d-none" id="js-profile-avatar-file-uploader" accept='image/*')
+
+            .card-footer.bg-light
+              .d-flex.justify-content-between.align-items-center
+                p.m-0.small.text-dark An avatar is optional but strongly recommended.
+                //- button.btn.btn-aurora.btn-sm.px-3(type='submit'  aria-label='save changes') save
+
+          .card.my-4
+            .card-body
+              h4.card-title your ID
+              p.card-text This is your user ID within guttenBerry.
+              .d-md-flex
+                .col-md-5
+                  .input-group.input-group-sm
+                    input.form-control(type='text' placeholder="ID" aria-label="your id" aria-describedby='js-profile-user-btn' disabled value='rXnB5e5aQpkYm2dC1uciGVLr' id='js-profile-user-input')
+                    button.btn.btn-aurora(type='button' id='js-profile-user-btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Copy To Clipboard" aria-label='Copy To Clipboard') 
+                      i.far.fa-clipboard
+
+            .card-footer.bg-light
+              .d-flex.justify-content-between.align-items-center
+                p.m-0.small.text-dark Used when interacting with the guttenBerry API.
+                button.btn.btn-aurora.btn-sm.px-3(type='submit' aria-label='save changes') save
+
+
+          .card.my-4.border-danger
+            .card-body
+              h4.card-title Delete Personal Account
+              p.card-text Permanently remove your Personal Account and all of its contents from the guttenBerry platform. This action is not reversible, so please continue with caution.
+    
+            .card-footer.bg-light
+              .d-flex.justify-content-end.align-items-center
+                button.btn.btn-danger.btn-sm.px-3(type='submit' aria-label='save changes') Delete Personal Account
+
+
+    #change-avatar-modal.modal.fade(tabindex='-1' aria-labelledby='change-avatar-modal-label' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#change-avatar-modal-label.modal-title crop image
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body#change-avatar-modal-body
+            .img-container.d-flex.justify-content-center 
+              img(src="../images/icons/icon-profile.webp", alt="user-avatar" class='img-fluid w-100' id='js-profile-modal-image')
+          .modal-footer.p-1
+            button.btn.btn-danger(data-bs-dismiss='modal') cancel 
+            button.btn.btn-aurora(type='button' id='js-profile-save-avatar-btn' aria-label='save changes') save 

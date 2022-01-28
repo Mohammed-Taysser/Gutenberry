@@ -1,0 +1,71 @@
+extends ../layouts/layout
+
+block current_page 
+  - var current_page = 'register'
+
+block title 
+  title GuttenBerry | Register
+
+block style 
+
+block javascript 
+
+block content 
+
+  .register-page.my-5.py-5
+    .container
+      .row.justify-content-center.align-items-stretch.g-0
+        .col-md-6.my-3
+          .p-4.rounded-start.border.login-content
+            h1.my-4.text-center Sign up
+            .my-3.text-center 
+              a(href="#" title='facebook' class='text-dark social-media-icon')
+                i(class="fab fa-facebook-f") 
+              a(href="#" title='google' class='text-dark social-media-icon')
+                i(class="fab fa-google-plus-g")
+              a(href="#" title='github' class='text-dark social-media-icon')
+                i(class="fab fa-github")
+              p.small.text-muted.mt-4 or use your account
+            form.mb-3(action='' method='')
+              .row.g-3
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='text' placeholder='' required id='first-name-id')
+                    label.custom-form-label(for='first-name-id') first name
+                    span.focus-border
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='text' placeholder='' required id='last-name-id')
+                    label.custom-form-label(for='last-name-id') last name
+                    span.focus-border
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='text' placeholder='' required id='username-id')
+                    label.custom-form-label(for='username-id') username
+                    span.focus-border
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='email' placeholder='' required id='email-id')
+                    label.custom-form-label(for='email-id') email
+                    span.focus-border
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='password' placeholder='' required id='password-id')
+                    label.custom-form-label(for='password-id') password
+                    span.focus-border
+                .col-sm-6.my-4
+                  .custom-form-input-container
+                    input.custom-form-input(type='password' placeholder='' required id='confirm-password-id')
+                    label.custom-form-label(for='confirm-password-id') confirm password
+                    span.focus-border
+              .text-center
+                button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit' aria-label='sign up')
+                  span.circle(aria-hidden="true")
+                    span.icon.arrow
+                  span.button-text sign up
+        .col-md-6.my-3
+          .bg-aurora.p-4.rounded-end.h-100.d-flex.justify-content-center.align-items-center.align-content-center.bg-login
+            .text-center.text-white  
+              h2.mb-3 Hello, Friend!
+              p Enter your personal details and start journey with us
+              a(href="login.html" title='login' class='rounded-pill mt-2 px-3 py-2 btn btn-outline-light') sign in 

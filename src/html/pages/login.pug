@@ -1,0 +1,66 @@
+extends ../layouts/layout
+
+block current_page 
+  - var current_page = 'login'
+
+block title 
+  title GuttenBerry | Login
+
+block style 
+
+block javascript 
+
+block content 
+
+  .login-page.my-5.py-5
+    .container
+      .row.justify-content-center.align-items-stretch.g-0
+        .col-md-6.my-3
+          .p-4.rounded-start.border.login-content
+            h1.my-4.text-center Sign in
+            .my-3.text-center 
+              a(href="#" title='facebook' class='text-dark social-media-icon')
+                i(class="fab fa-facebook-f") 
+              a(href="#" title='google' class='text-dark social-media-icon')
+                i(class="fab fa-google-plus-g")
+              a(href="#" title='github' class='text-dark social-media-icon')
+                i(class="fab fa-github")
+              p.small.text-muted.mt-4 or use your account
+            form.mb-3(action='' method='')
+              .custom-form-input-container.my-4
+                input.custom-form-input(type='email' placeholder='' required id='login-email')
+                label.custom-form-label(for='login-email') email
+                span.focus-border
+              .custom-form-input-container.my-4
+                input.custom-form-input(type='password' placeholder='' required id='login-password')
+                label.custom-form-label(for='login-password') password
+                span.focus-border
+              p.text-end
+                a.text-muted(href='#' data-bs-toggle="modal" data-bs-target="#forget-password-modal") forget password
+              .text-center
+                button.btn-learn-more.hovered.d-inline-block.mt-4(type='submit' aria-label='sign in')
+                  span.circle(aria-hidden="true")
+                    span.icon.arrow
+                  span.button-text sign in
+        .col-md-6.my-3
+          .bg-aurora.p-4.rounded-end.h-100.d-flex.justify-content-center.align-items-center.align-content-center.bg-login
+            .text-center.text-white  
+              h2.mb-3 Hello, Friend!
+              p Enter your personal details and start journey with us
+              a(href="register.html" title='register' class='rounded-pill mt-2 px-3 py-2 btn btn-outline-light') sign up 
+
+    #forget-password-modal.modal.fade(tabindex='-1' aria-labelledby='forget-password-modal-label' aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5#forget-password-modal-label.modal-title forget password ?
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+          .modal-body
+            p.m-0
+              | just relax and remember your password 😎
+          .modal-footer.p-1
+            button(type='button' data-bs-dismiss='modal' class='btn-learn-more hovered' aria-label='close modal') 
+              span.circle(aria-hidden="true")
+                span.icon.arrow
+              span.button-text thanks
+            //- button.btn.btn-primary(type='button' aria-label='save changes') Save changes

@@ -1,0 +1,35 @@
+extends ../layouts/layout
+
+block title 
+  title GuttenBerry | Articles
+
+block current_page 
+  - var current_page = 'Profile'
+
+block style 
+
+block javascript 
+
+block content 
+
+  section.latest-news.my-5
+    .container
+      h2.mb-4.text-muted.special-header.h1 Latest posts
+      .row.justify-content-center.align-items-center.align-items-stretch
+        
+        include ../components/latest_news
+
+        include ../components/latest_news
+
+      .mt-5(aria-label='Page navigation example')
+        ul.pagination.justify-content-center.custom-pagination
+          li.page-item.disabled
+            a.page-link(href='#' tabindex='-1' aria-disabled='true') Previous
+          li.page-item.active
+            a.page-link(href='#') 1
+          li.page-item
+            a.page-link(href='#') 2
+          li.page-item
+            a.page-link(href='#') 3
+          li.page-item
+            a.page-link(href='#') Next

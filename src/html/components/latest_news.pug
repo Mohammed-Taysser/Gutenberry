@@ -1,0 +1,11 @@
+each news in news_arr
+  .col-sm-6.col-lg-4.my-3
+    .single-news.bg-white.nice-shadow.rounded.h-100
+      .img-container.rounded-top 
+        img(src=news.img, alt=news.title width='100%' height='200px' class='img-fluid rounded-top')
+      .content.p-3
+        a(href="post-details.html" title=news.title class='h5 d-inline-block my-2')=news.title
+        p.text-muted=news.info 
+        a.text-danger(href='post-details.html' title=news.title)
+          | continue reading
+          i(class="fas fa-arrow-right ms-1")

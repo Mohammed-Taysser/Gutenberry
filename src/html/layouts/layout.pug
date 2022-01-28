@@ -1,0 +1,113 @@
+include ../helpers/variables
+
+block current_page 
+  - var current_page = 'home'
+
+doctype html 
+// HTML5
+html(lang="en")
+    head
+
+        // Set character encoding for the document
+        meta(charset="UTF-8")
+
+        // Document Title
+        block title
+            title layout
+
+        // Meta Description
+        meta(name="description" content="multi page design as first project")
+        meta(name="author" content="Mohammed Taysser" href='../../humans.txt')
+        meta(name="keywords" content="HTML, CSS, JavaScript, bootstrap")
+
+        link(rel="canonical", href="https://mohammed-taysser.github.io/Gutenberry/")
+
+        // To run web application in full-screen
+        meta(name='apple-mobile-web-app-capable' content='yes')
+
+        // Status Bar Style (see Supported Meta Tags below for available values)
+        // Has no effect unless you have the previous meta tag
+        meta(name='apple-mobile-web-app-status-bar-style' content='black')
+
+        // for IE
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        //if lt IE 9
+            script(src='../javascript/libs/html5shiv.min.js')
+            script(src='../javascript/libs/respond.min.js')
+
+        // Viewport for responsive web design
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        // deal with search engin
+        //- meta(name='robots' content='noindex,nofollow')
+        link(rel='manifest' href='../../manifest.json')
+        
+        // Open Graph
+        meta(property='og:type' content='profile')
+        meta(property='og:title' content='Home')
+        meta(property='og:description' content='Description of the page less than 150 characters')
+        meta(property='og:url' content='')
+        meta(property='og:image' content='../images/background/bg-website_card.webp')
+        meta(property='profile:first_name' content='')
+        meta(property='profile:last_name' content='')
+
+
+        // twitter cards
+        meta(name='twitter:card' content='app')
+        meta(name='twitter:title' content='Home')
+        meta(name='twitter:site' content='@username')
+
+        // username
+        meta(name='twitter:description' content='Description of the page less than 150 characters')
+        meta(name='twitter:image' content='../images/background/bg-website_card.jpg')
+        // alt for image
+        meta(name='twitter:image:alt' content='website_title')
+
+
+        // android devices
+        meta(name='twitter:app:name:googleplay' content='')
+        meta(name='twitter:app:url:googleplay' content='')
+        meta(name='twitter:app:id:googleplay' content='')
+        // ipad devices
+        meta(name='twitter:app:name:ipad' content='')
+        meta(name='twitter:app:url:ipad' content='')
+        meta(name='twitter:app:id:ipad' content='')
+        // iphone devices
+        meta(name='twitter:app:name:iphone' content='')
+        meta(name='twitter:app:url:iphone' content='')
+        meta(name='twitter:app:id:iphone' content='')
+                
+        // style sheet
+        //- link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
+        //- link(rel="stylesheet", href="../css/core.min.css")
+
+        //- defer-non-critical-css
+        link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        
+        block style
+
+        // Standard favicon
+        // <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
+        // Recommended favicon format
+        link(rel='icon' type='image/png' href='../images/icons/favicon.png')
+        // favicon
+        link(rel='apple-touch-icon' sizes='180x180' href='../images/icons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='../images/icons/favicon@3x.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='../images/icons/favicon@2x.png')
+        link(rel='mask-icon' href='../images/icons/favicon.png' color='#9400ff')
+        meta(name='msapplication-TileColor' content='#603cba')
+        meta(name='theme-color' content='#ffffff')
+
+        noscript You need to enable JavaScript to run this app.
+
+    body.load 
+        include ../components/loader
+        include ../components/navbar
+        block content 
+        include ../components/footer
+
+    script(src='../javascript/libs/bootstrap.bundle.min.js')
+    script(src='../javascript/libs/cropper.min.js')
+    script(src='../javascript/core.min.js')
+    block javascript
