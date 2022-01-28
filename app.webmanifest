@@ -3,7 +3,7 @@
   "name": "GuttenBerry Blog Creator",
   "dir": "ltl",
   "lang": "en",
-  "scope": "https://mohammed-taysser.github.io/Gutenberry/",
+  "scope": "/",
   "icons": [
     {
       "src": "https://mohammed-taysser.github.io/Gutenberry/dist/images/icons/favicon.png",
@@ -22,7 +22,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "https://mohammed-taysser.github.io/Gutenberry/dist/html/index.html",
+  "start_url": "/?source=pwa",
   "display": "standalone",
   "theme_color": "#9400ff",
   "description": "How to Create A Perfect Blog With GuttenBerry.",
