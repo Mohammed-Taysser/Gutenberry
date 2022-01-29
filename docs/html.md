@@ -329,6 +329,7 @@ src/html/
   │   ├── latest_news.pug
   │   ├── loader.pug
   │   ├── navbar.pug
+  │   ├── our_team.pug
   │   └── trend_news.pug
   ├── helpers
   │   └── variables.pug
@@ -346,7 +347,7 @@ src/html/
       ├── register.pug
       └── search.pug
 
-4 directories, 18 files
+4 directories, 19 files
 ```
 
 ### `dist` directory
