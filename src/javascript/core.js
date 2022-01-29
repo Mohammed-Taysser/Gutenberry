@@ -86,6 +86,9 @@ function main_function() {
   // about-us page: our team slider
   our_team_slider();
 
+  // powerful s\auto complete
+  search_auto_complete();
+
 }
 
 /**
@@ -288,6 +291,168 @@ function our_team_slider() {
   if(our_team_container)
     new Glide('#js-our-team', OUR_TEAM_SLIDER_CONFIG).mount();
 
+}
+
+/*
+ * ---------------------
+ * auto complete setting
+ * ---------------------
+ */
+
+const SEARCH_HISTORY = load_history(),
+  MAX_HISTORY_NUMBER = 3,
+  SEARCH_DATA = [
+    'How to work with the chess layout for Gutenberg?',
+    'Top-5 ways to minimalism with the grid layouts.',
+    'Easy tips on how to add pictures in the gallery.',
+    'New ZeGuten plugin with widgets for content.',
+    'Main steps to perfect content with Gutenberg.',
+    'Your site can work quickly without errors.',
+  ];
+
+/**
+ * get stored search history from localStorage if exist else, return empty array
+ * @returns {(Array| [])} history item
+ */
+function load_history() {
+  'use strict';
+  if(localStorage.getItem('search-history'))
+    return localStorage.getItem('search-history').split(',');
+  return [];
+}
+
+/**
+ * get message of number of results found
+ * @param {Object} search_Data data of user searching query
+ * @returns {HTMLDivElement} html element content message
+ */
+function no_results_message(search_Data) {
+  'use strict';
+  const message = document.createElement('div');
+  message.setAttribute('class', 'result-message');
+  message.innerHTML = `<span>No Results Found for "${ search_Data.query }"</span>`;
+  return message;
+}
+
+/**
+ * get message that there no results found
+ * @param {Object} search_Data data of user searching query
+ * @returns {HTMLDivElement} html element content message
+ */
+function show_results_number(search_Data) {
+  'use strict';
+  const { query, matches } = search_Data,
+    message = document.createElement('div');
+  message.setAttribute('class', 'result-message');
+  message.innerHTML = `Found <strong>${ matches.length }</strong> matching results for <strong>"${ query }"</strong>`;
+  return message;
+}
+
+/**
+ * determine to show number of results if there exist a matching items else show no results found
+ * @param {Object} search_Data data of user searching query
+ * @returns {HTMLDivElement} html element content message
+ */
+function show_result_message(search_Data) {
+  'use strict';
+  if (search_Data.results.length)
+    return show_results_number(search_Data);
+
+  return no_results_message(search_Data);
+}
+
+/**
+ * create a html element contain recent history items
+ * @param {Object} recentSearch data of recent search items
+ * @returns {HTMLDivElement}
+ */
+function create_history(recentSearch) {
+  'use strict';
+  const historyBlock = document.createElement('div');
+  historyBlock.setAttribute('class', 'history');
+  historyBlock.innerHTML = '<small class="recent-text">Recent Searches</small>';
+  recentSearch.slice(0, MAX_HISTORY_NUMBER).forEach((item) => {
+    const recentItem = document.createElement('div');
+    recentItem.setAttribute('class', 'history-item');
+    recentItem.innerHTML = item;
+    historyBlock.append(recentItem);
+  });
+
+  const separator = document.createElement('hr');
+  separator.setAttribute('style', 'margin: 5px 0 0 0;');
+  historyBlock.append(separator);
+  return historyBlock;
+}
+
+const AUTO_COMPLETE_CONFIG = {
+  selector:    '#js-search-page',
+  placeHolder: 'What are you looking for ?',
+  data:        {
+    src: SEARCH_DATA,
+  },
+  resultItem: {
+    highlight: {
+      render: true,
+    },
+  },
+  resultsList: {
+    element: (list, results_data) => {
+      'use strict';
+      const recent_search = SEARCH_HISTORY.reverse();
+
+      if(recent_search.length)
+        list.prepend(create_history(recent_search));
+
+      list.prepend(show_result_message(results_data));
+    },
+    noResults: true,
+  },
+};
+
+/**
+ * modify current history with new search item. the save a copy to localStorage
+ * @param {String} current_selected title of selected item
+ */
+function save_to_history(current_selected) {
+  'use strict';
+  SEARCH_HISTORY.filter(item => item !== current_selected);
+  SEARCH_HISTORY.push(current_selected);
+  localStorage.setItem('search-history', SEARCH_HISTORY.toString());
+}
+
+/**
+ * add event click to history items to work as original search items
+ * @param {Object} auto_complete instance of autoComplete
+ * @param {HTMLElement} input search input
+ */
+function make_history_clickable(auto_complete, input) {
+  'use strict';
+  input.addEventListener('open', () => {
+    input.nextElementSibling.querySelectorAll('.history .history-item').forEach((item) => {
+      item.onclick = function(event){
+        input.value = event.target.textContent;
+        auto_complete.close();
+      };
+    });
+  });
+}
+
+function search_auto_complete() {
+  'use strict';
+  const search_input = document.getElementById('js-search-page');
+  if(search_input){
+    const autoCompleteJS = new autoComplete(AUTO_COMPLETE_CONFIG);
+    search_input.addEventListener('selection', (event) => {
+      const current_selected = event.detail.selection.value;
+      save_to_history(current_selected);
+      search_input.value = current_selected;
+    });
+    search_input.addEventListener('focus', () => {
+      autoCompleteJS.start();
+    });
+
+    make_history_clickable(autoCompleteJS, search_input);
+  }
 }
 
 /* jQuery start from here 👾 */
