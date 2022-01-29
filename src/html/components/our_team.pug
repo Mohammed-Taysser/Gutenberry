@@ -1,0 +1,28 @@
+section.our-team.my-5 
+  .slider-container
+    .glide#js-our-team
+      .glide__track(data-glide-el='track')
+        ul.glide__slides.py-3
+          each news in news_arr
+            li.glide__slide
+              .single-member.text-center.nice-shadow.p-3.rounded.m-2
+                .images-shapes 
+                    //- img(src="../images/icons/favicon.png", alt="website-logo", class='website-logo')
+                    img(src="../images/icons/rounded-shape.svg", alt="rounded-shape", class='rounded-shape')
+                .img-container.mb-3 
+                    img(src="../images/icons/icon-profile.webp", alt="member name", class='rounded-circle border p-2 mx-auto')
+                .content    
+                    a(href="#" class='h5')  Member Name 
+                    p.small.text-muted.h6.mt-2 Job Title
+                    .social-media.mt-3 
+                        a.hovered.icon.mx-2.h6(href='#' title='instagram link') 
+                          i(class="fab fa-instagram")
+                        a.hovered.icon.mx-2.h6(href='#' title='facebook link') 
+                          i(class="fab fa-facebook-f")
+                        a.hovered.icon.mx-2.h6(href='#' title='twitter link') 
+                          i(class="fab fa-twitter")
+
+      
+      //- .glide__arrows(data-glide-el="controls")
+      //-   button(class="glide__arrow glide__arrow--left" data-glide-dir="<") prev 
+      //-   button(class="glide__arrow glide__arrow--right" data-glide-dir=">") next 
