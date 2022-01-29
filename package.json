@@ -4,7 +4,8 @@
   "description": "How to Create A Perfect Blog With GuttenBerry",
   "author": {
     "name": "Mohammed Taysser",
-    "url": "https://github.com/Mohammed-Taysser/"
+    "url": "https://github.com/Mohammed-Taysser/",
+    "email": "mohamedtaysser@gmail.com"
   },
   "homepage": "https://mohammed-taysser.github.io/Gutenberry/",
   "main": "gulpfile.js",
