@@ -6,6 +6,7 @@
 [cropper]: <https://github.com/fengyuanchen/cropperjs>
 [html5shiv]: <https://github.com/aFarkas/html5shiv>
 [Respond]: <https://github.com/scottjehl/Respond>
+[glide]: <https://github.com/glidejs/glide>
 
 Information about the default JavaScript included in the project.
 
@@ -41,6 +42,12 @@ use to enable responsive web designs in browsers that don’t support CSS3 Media
 
 for further information visit [`Respond` github page][Respond]
 
+### `Glide.min.js`
+
+Glide.js is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more
+
+for further information visit [`glide` github page][glide]
+
 ### `cropper.min.js`
 
 javascript library use to crop user avatar before upload
@@ -68,11 +75,12 @@ src/javascript/
   │   ├── bootstrap.bundle.min.js
   │   ├── bootstrap.bundle.min.js.map
   │   ├── cropper.min.js
+  │   ├── glide.min.js
   │   ├── html5shiv.min.js
   │   └── respond.min.js
   └── scripts.js
 
-  1 directory, 7 files
+1 directory, 8 files
 ```
 
 ### `dist` directory
@@ -82,12 +90,13 @@ dist/javascript/
   ├── core.min.js
   ├── core.min.js.map
   ├── libs
-  │   ├── bootstrap.bundle.min.js
-  │   ├── cropper.min.js
-  │   ├── html5shiv.min.js
-  │   └── respond.min.js
+  │  ├── bootstrap.bundle.min.js
+  │  ├── cropper.min.js
+  │  ├── glide.min.js
+  │  ├── html5shiv.min.js
+  │  └── respond.min.js
   ├── scripts.min.js
   └── scripts.min.js.map
 
-1 directory, 8 files
+1 directory, 9 files
 ```
