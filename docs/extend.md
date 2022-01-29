@@ -2,10 +2,9 @@
 
 [homepage]: <https://mohammed-taysser.github.io/Gutenberry/>
 
-# Extend and customise HTML5 Boilerplate
+# Extend and customise GuttenBerry
 
-Here is some useful advice for how you can make your project with HTML5
-Boilerplate even better. We don't want to include it all by default, as not
+Here is some useful advice for how you can make your project with GuttenBerry even better. We don't want to include it all by default, as not
 everything fits with everyone's needs.
 
 * [App Stores](#app-stores)
@@ -86,8 +85,8 @@ can easily configure with the elements below. See more [documentation on IE Pinn
 Without this rule, Windows will use the page title as the name for your
 application.
 
-```html
-<meta name="application-name" content="Sample Title">
+```pug
+meta(name="application-name" content="GuttenBerry")
 ```
 
 ### Give your Pinned Site a tooltip
@@ -95,8 +94,8 @@ application.
 You know — a tooltip. A little textbox that appears when the user holds their
 mouse over your Pinned Site's icon.
 
-```html
-<meta name="msapplication-tooltip" content="A description of what this site does.">
+```pug
+meta(name="msapplication-tooltip" content="A description of what this site does.")
 ```
 
 ### Set a default page for your Pinned Site
@@ -105,8 +104,8 @@ If the site should go to a specific URL when it is pinned (such as the
 homepage), enter it here. One idea is to send it to a special URL so you can
 track the number of pinned users, like so: `https://www.example.com/index.html?pinned=true`
 
-```html
-<meta name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true">
+```pug
+meta(name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true")
 ```
 
 ### Recolor IE's controls manually for a Pinned Site
@@ -115,8 +114,8 @@ IE will automatically use the overall color of your Pinned Site's favicon to
 shade its browser buttons. UNLESS you give it another color here. Only use named
 colors (`red`) or hex colors (`#ff0000`).
 
-```html
-<meta name="msapplication-navbutton-color" content="#ff0000">
+```pug
+meta(name="msapplication-navbutton-color" content="#9400ff")
 ```
 
 ### Manually set the window size of a Pinned Site
@@ -124,8 +123,8 @@ colors (`red`) or hex colors (`#ff0000`).
 If the site should open at a certain window size once pinned, you can specify
 the dimensions here. It only supports static pixel dimensions. 800x600 minimum.
 
-```html
-<meta name="msapplication-window" content="width=800;height=600">
+```pug
+meta(name="msapplication-window" content="width=800;height=600")
 ```
 
 ### Jump List "Tasks" for Pinned Sites
@@ -134,9 +133,9 @@ Add Jump List Tasks that will appear when the Pinned Site's icon gets a
 right-click. Each Task goes to the specified URL, and gets its own mini icon
 (essentially a favicon, a 16x16 .ICO). You can add as many of these as you need.
 
-```html
-<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
-<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
+```pug
+meta(name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico")
+meta(name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico")
 ```
 
 ### (Windows 8) High quality visuals for Pinned Sites
@@ -161,8 +160,8 @@ of a predefined list of glyphs.
 * [Tutorial on IEBlog with link to badge XML schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
 * [Available badge values](https://docs.microsoft.com/en-us/uwp/schemas/tiles/badgeschema/element-badge)
 
-```html
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
+```pug
+meta(name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml")
 ```
 
 ## Search
@@ -188,8 +187,8 @@ According to Heather Champ, former community manager at Flickr, you should not
 allow search engines to index your "Contact Us" or "Complaints" page if you
 value your sanity. This is an HTML-centric way of achieving that.
 
-```html
-<meta name="robots" content="noindex">
+```pug
+meta(name="robots" content="noindex")
 ```
 
 **_WARNING:_** DO NOT INCLUDE ON PAGES THAT SHOULD APPEAR IN SEARCH ENGINES.
