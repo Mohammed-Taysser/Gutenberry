@@ -7,14 +7,16 @@ block current_page
   - var current_page = 'about-us'
 
 block style 
+    link(rel="stylesheet", href="../css/libs/glide.min.css")
 
 block scripts 
+  script(src='../javascript/libs/glide.min.js')
 
 block content 
 
   section.py-5
     .container
-      h1.h2.my-5.display-4.text-center about us
+      h1.h2.my-5.special-header.text-center about us
       .row.justify-content-center.align-items-center 
         .col-md-7.my-3 
           div 
@@ -26,3 +28,7 @@ block content
         .col-md-5.my-3 
           .img-container 
             img(src="../images/background/bg-about-us.webp", alt="about-us" class='img-fluid')
+      
+      h2.my-5.special-header.text-center about us
+
+      include ../components/our_team
