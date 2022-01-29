@@ -78,17 +78,17 @@ html(lang="en")
         meta(name='twitter:app:id:iphone' content='')
                 
         // style sheet
-        //- link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
-        //- link(rel="stylesheet", href="../css/core.min.css")
+        link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
+        link(rel="stylesheet", href="../css/core.min.css")
 
         //- defer-non-critical-css
-        link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
-        link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        //- link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        //- link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
         
         block style
 
         // Standard favicon
-        // <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
+        // link(rel="icon" type="image/x-icon" href="https://example.com/favicon.ico")
         // Recommended favicon format
         link(rel='icon' type='image/png' href='../images/icons/favicon.png')
         // favicon
@@ -97,7 +97,9 @@ html(lang="en")
         link(rel='icon' type='image/png' sizes='16x16' href='../images/icons/favicon@2x.png')
         link(rel='mask-icon' href='../images/icons/favicon.png' color='#9400ff')
         meta(name='msapplication-TileColor' content='#603cba')
-        meta(name='theme-color' content='#ffffff')
+        meta(name='theme-color' content='#9400ff')
+        meta(name="theme-color" media="(prefers-color-scheme: light)" content="#9400ff")
+        meta(name="theme-color" media="(prefers-color-scheme: dark)" content="#9400ff")
 
         noscript You need to enable JavaScript to run this app.
 
@@ -109,5 +111,5 @@ html(lang="en")
 
     script(src='../javascript/libs/bootstrap.bundle.min.js')
     script(src='../javascript/libs/cropper.min.js')
+    block scripts
     script(src='../javascript/core.min.js')
-    block javascript
