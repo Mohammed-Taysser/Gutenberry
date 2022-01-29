@@ -27,6 +27,15 @@ block current_page
   - var current_page = 'home'
 ```
 
+the in [`navbar.pug`](../src/html/components/navbar.pug) we use it as condition to check if it the page we are ? yeah it is then add `active` class. if not the don't add `active` class
+
+```pug
+a(href='index.html' class=(current_page === "home" ? "nav-link active" : 'nav-link')) Home
+```
+
+**note:** `active` class can be change but you must change the style to work with it.
+you will find the style in [`navbar.scss`](../src/css/scss/layout/_navbar.scss)
+
 ### The `no-js` Class
 
 The `no-js` class is provided in order to allow you to more easily and
@@ -271,6 +280,42 @@ To load `jQuery` from a CDN with a local fallback you can use the following:
 ```pug
 script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
 ```
+
+### Create New Page
+
+so 😮 for now we din't take how to start writing a new page.
+don't worry we will discuss it now 😉
+
+as first step and after long taken you should now know what is the component in your website like `current_page` variable or even `block style` ... etc.
+
+please if you didn't know what is that you will find them in [`html.md`](html.md) docs
+
+now let's see what is page structure
+
+```pug
+extends ../layouts/layout
+
+block title 
+  title GuttenBerry | Page Title
+
+block current_page 
+  - var current_page = 'page-title'
+
+block style 
+  link(rel="stylesheet" href="../css/style.min.css")
+
+block scripts 
+  script(href="../javascript/scripts.min.js")
+
+block content 
+  h1 your content start here
+```
+
+that's it. change `title` as you need, also `current_page` and don't forget to modify condition in [`navbar.pug`](../src/html/components/navbar.pug) to verify which page is active.
+
+both `style` and `scripts` block are optional so you can let them empty or even remove them.
+
+happy hacking 💻
 
 ## Project Structure Tree
 
