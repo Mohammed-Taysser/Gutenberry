@@ -41,7 +41,7 @@ const gulp = require('gulp'),
         dest: 'dist/css/libs/',
       },
       javascript: {
-        src:  'src/javascript/libs/*.js',
+        src:  'src/javascript/libs/*',
         dest: 'dist/javascript/libs/',
       },
     },
