@@ -11,10 +11,12 @@ nav.secondary-background-color.py-3.position-relative
         ul.list-unstyled.m-0
           li.custom-nav-link.active
             a(href='index.html' class=(current_page === "home" ? "nav-link active" : 'nav-link')) Home
+          li.custom-nav-link.my-2.my-md-0
+            a(href='articles.html' class=(current_page === "articles" ? "nav-link active" : 'nav-link')) articles
           li.custom-nav-link.position-relative
             .custom-dropdown
               a.nav-link.custom-dropdown-link(href='#')
-                | More
+                | pages
                 svg.bi.bi-caret-down-fill.d-none.d-md-inline-block(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
                   path(d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z')
               ul.custom-dropdown-menu.list-unstyled.ps-4
@@ -23,11 +25,11 @@ nav.secondary-background-color.py-3.position-relative
                 li.custom-dropdown-item
                   a(href='register.html' class=(current_page === "register" ? "text-decoration-none active" : 'text-decoration-none')) register
                 li.custom-dropdown-item
-                  a(href='articles.html' class=(current_page === "articles" ? "text-decoration-none active" : 'text-decoration-none')) articles
+                  a(href='about-us.html' class=(current_page === "about-us" ? "text-decoration-none active" : 'text-decoration-none')) about us
                 li.custom-dropdown-item
-                  a(href='about-us.html' class=(current_page === "about-us" ? "text-decoration-none active" : 'text-decoration-none')) about
+                  a(href='404.html' class=(current_page === "404" ? "text-decoration-none active" : 'text-decoration-none')) 404 page
           li.custom-nav-link.my-2.my-md-0
-            a(href='contact-us.html' class=(current_page === "contact-us" ? "nav-link active" : 'nav-link')) contact
+            a(href='contact-us.html' class=(current_page === "contact-us" ? "nav-link active" : 'nav-link')) contact us
           li.custom-nav-link.my-2.my-md-0
             a.nav-link(href='profile.html'  class=(current_page === "profile" ? "nav-link active" : 'nav-link'))
               img.d-inline-block.align-top.rounded-circle(src='../images/icons/icon-profile.webp' width='25' height='25' alt='profile')
