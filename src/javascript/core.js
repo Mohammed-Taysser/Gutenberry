@@ -83,6 +83,9 @@ function main_function() {
   if (document.getElementById('js-profile-avatar'))
     change_user_avatar();
 
+  // about-us page: our team slider
+  our_team_slider();
+
 }
 
 /**
@@ -258,6 +261,33 @@ function send_new_avatar_to_server(cropped_avatar) {
 
     // then make AJAX request here
   });
+}
+
+/**
+ * create slider for our team
+ */
+const OUR_TEAM_SLIDER_CONFIG = {
+  type:        'carousel',
+  perView:     3,
+  focusAt:     'center',
+  autoplay:    5000,
+  hoverpause:  false,
+  breakpoints: {
+    992: {
+      perView: 2,
+    },
+    768: {
+      perView: 1,
+    },
+  },
+};
+
+function our_team_slider() {
+  'use strict';
+  const our_team_container = document.getElementById('js-our-team');
+  if(our_team_container)
+    new Glide('#js-our-team', OUR_TEAM_SLIDER_CONFIG).mount();
+
 }
 
 /* jQuery start from here 👾 */

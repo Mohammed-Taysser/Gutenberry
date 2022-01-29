@@ -42,14 +42,20 @@ a {
   }
 }
 
-.special-header::before {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 100px;
+.special-header {
   position: relative;
-  background-color: $main-color;
-  top: 50px;
+  &::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100px;
+    position: relative;
+    background-color: $main-color;
+    top: 50px;
+  }
+  &.text-center::before {
+    margin: auto;
+  }
 }
 
 .user-select-none {
