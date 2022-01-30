@@ -7,6 +7,7 @@
 [html5shiv]: <https://github.com/aFarkas/html5shiv>
 [Respond]: <https://github.com/scottjehl/Respond>
 [glide]: <https://github.com/glidejs/glide>
+[autoComplete]: <https://github.com/TarekRaafat/autoComplete.js>
 
 Information about the default JavaScript included in the project.
 
@@ -60,6 +61,12 @@ bootstrap js bundle file to provide interactivity for component like tooltip
 
 for further information visit [bootstrap docs](https://getbootstrap.com/docs/5.1/getting-started/javascript/)
 
+### `autoComplete.min.js`
+
+autoComplete.js is a simple, pure vanilla Javascript library progressively designed for speed, high versatility, and seamless integration with a wide range of projects & systems
+
+for further information visit [`autoComplete` github page][autoComplete]
+
 ### `scripts.min.js`
 
 empty js file to write custom & additional code
@@ -70,33 +77,36 @@ empty js file to write custom & additional code
 
 ```text
 src/javascript/
-  ├── core.js
-  ├── libs
-  │   ├── bootstrap.bundle.min.js
-  │   ├── bootstrap.bundle.min.js.map
-  │   ├── cropper.min.js
-  │   ├── glide.min.js
-  │   ├── html5shiv.min.js
-  │   └── respond.min.js
-  └── scripts.js
+├── core.js
+├── libs
+│  ├── autoComplete.min.js
+│  ├── bootstrap.bundle.min.js
+│  ├── bootstrap.bundle.min.js.map
+│  ├── cropper.min.js
+│  ├── glide.min.js
+│  ├── html5shiv.min.js
+│  └── respond.min.js
+└── scripts.js
 
-1 directory, 8 files
+1 directory, 9 files
 ```
 
 ### `dist` directory
 
 ```text
 dist/javascript/
-  ├── core.min.js
-  ├── core.min.js.map
-  ├── libs
-  │  ├── bootstrap.bundle.min.js
-  │  ├── cropper.min.js
-  │  ├── glide.min.js
-  │  ├── html5shiv.min.js
-  │  └── respond.min.js
-  ├── scripts.min.js
-  └── scripts.min.js.map
+├── core.min.js
+├── core.min.js.map
+├── libs
+│   ├── autoComplete.min.js
+│   ├── bootstrap.bundle.min.js
+│   ├── bootstrap.bundle.min.js.map
+│   ├── cropper.min.js
+│   ├── glide.min.js
+│   ├── html5shiv.min.js
+│   └── respond.min.js
+├── scripts.min.js
+└── scripts.min.js.map
 
-1 directory, 9 files
+1 directory, 11 files
 ```
