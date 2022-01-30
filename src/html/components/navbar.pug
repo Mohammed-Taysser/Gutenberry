@@ -43,7 +43,7 @@ nav.secondary-background-color.py-3.position-relative
       #search-popup.search-popup
         .content.w-75.position-relative
           form(action='search.html')
-            input.input-search.w-100(type='search' placeholder='What are you looking for ?' value='' name='query')
+            input.input-search.w-100(type='search' placeholder='What are you looking for ?' value='' name='query' id='js-search-navbar' spellcheck=false autocomplete="off" maxlength="2048" tabindex="1")
             button(type='submit' aria-label='search')
               i(class="fas fa-search text-aurora")
               //- svg.bi.bi-search(xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' viewbox='0 0 16 16')
