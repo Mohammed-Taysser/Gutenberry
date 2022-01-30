@@ -422,17 +422,25 @@ function save_to_history(current_selected) {
 
 /**
  * add event click to history items to work as original search items
+ * then remove that event on close search item menu
  * @param {Object} auto_complete instance of autoComplete
  * @param {HTMLElement} input search input
  */
 function make_history_clickable(auto_complete, input) {
   'use strict';
+  const history_items = input.nextElementSibling.querySelectorAll('.history .history-item');
+  function select_new_value(event){
+    input.value = event.target.textContent;
+    auto_complete.close();
+  }
   input.addEventListener('open', () => {
-    input.nextElementSibling.querySelectorAll('.history .history-item').forEach((item) => {
-      item.onclick = function(event){
-        input.value = event.target.textContent;
-        auto_complete.close();
-      };
+    history_items.forEach((item) => {
+      item.addEventListener('click', select_new_value);
+    });
+  });
+  input.addEventListener('close', () => {
+    history_items.forEach((item) => {
+      item.removeEventListener('click', select_new_value);
     });
   });
 }
