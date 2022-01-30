@@ -24,6 +24,8 @@ function main_function() {
 
   enable_bootstrap_tooltip();
 
+  navbar_search_auto_complete();
+
   /* toggle menu & search button  */
 
   const close_button = document.querySelector('#js-close-button'),
@@ -448,17 +450,7 @@ function search_auto_complete() {
   'use strict';
   const search_input = document.getElementById('js-search-page');
   if(search_input){
-    const autoCompleteJS = new autoComplete(AUTO_COMPLETE_CONFIG);
-    search_input.addEventListener('selection', (event) => {
-      const current_selected = event.detail.selection.value;
-      save_to_history(current_selected);
-      search_input.value = current_selected;
-    });
-    search_input.addEventListener('focus', () => {
-      autoCompleteJS.start();
-    });
-
-    make_history_clickable(autoCompleteJS, search_input);
+    custom_autoComplete(search_input, AUTO_COMPLETE_CONFIG);
   }
 }
 
@@ -486,6 +478,28 @@ const NAVBAR_AUTO_COMPLETE_CONFIG = {
     noResults: true,
   },
 };
+
+function custom_autoComplete(selector, config) {
+  'use strict';
+  const autoCompleteJS = new autoComplete(config);
+
+  selector.addEventListener('selection', (event) => {
+    const current_selected = event.detail.selection.value;
+    save_to_history(current_selected);
+    selector.value = current_selected;
+  });
+  selector.addEventListener('focus', () => {
+    autoCompleteJS.start();
+  });
+
+  make_history_clickable(autoCompleteJS, selector);
+}
+
+function navbar_search_auto_complete() {
+  'use strict';
+  const search_input = document.getElementById('js-search-navbar');
+  custom_autoComplete(search_input, NAVBAR_AUTO_COMPLETE_CONFIG);
+}
 
 /* jQuery start from here 👾 */
 // $(document).ready(function () {});
