@@ -1,5 +1,6 @@
 $main-color: #9400ff;
 $text-color: #000;
+$main-font: Ubuntu, sans-serif;
 $background-color: #fff;
 $gray-500: #adb5bd;
 $main-gradient: linear-gradient(
@@ -13,3 +14,4 @@ $secondary-gradient: linear-gradient(
   #f5f5ff 100%,
   #ffffff 70%
 );
+$btn-gradient: linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);

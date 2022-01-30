@@ -7,7 +7,7 @@
 body {
   --background-color: #fff;
   --text-color: #000;
-  font-family: Ubuntu, sans-serif;
+  font-family: $main-font;
   text-transform: capitalize;
   background: var(--background-color);
   color: var(--text-color);
@@ -310,7 +310,7 @@ a {
     transition: all 0.3s ease-in-out;
     z-index: 1;
     background-size: 150%;
-    background-image: linear-gradient(135deg, #a387ff 0%, #91d1ff 100%);
+    background-image: $btn-gradient;
   }
   span {
     z-index: 3;
@@ -325,6 +325,7 @@ a {
   .page-item {
     a {
       color: $main-color;
+      transition: 0.4s;
       &:hover {
         color: #fff;
         background-color: $main-color;
@@ -334,7 +335,7 @@ a {
         color: $main-color;
         background-color: #fff;
         outline: 0;
-        box-shadow: 0 0 0 0.25rem #9500ff57;
+        box-shadow: 0 0 0 0.25rem rgba($color:$main-color , $alpha: 0.4);
       }
     }
     &.active {
@@ -353,8 +354,8 @@ a {
     background-color: #f8f9fa;
   }
   &:focus {
-    border-color: #9500ffbd;
-    // box-shadow: 0 0 0 0.25rem #9500ff48;
+    border-color: rgba($color:$main-color , $alpha: 0.6);
+    // box-shadow: 0 0 0 0.25rem rgba($color:$main-color , $alpha: 0.2);
     box-shadow: none;
   }
 }
@@ -368,7 +369,7 @@ a {
 
 .loading-overlay {
   position: fixed;
-  background: linear-gradient(90deg, #f4f5ff 10%, #ebf8ff);
+  background: $main-gradient;
   width: 100%;
   height: 100%;
   z-index: 90;
@@ -391,7 +392,7 @@ a {
     left: 200px;
     width: 50px;
     height: 15px;
-    background: linear-gradient(90deg, #f4f5ff 10%, #ebf8ff);
+    background: $main-gradient;
   }
   .loading-text {
     position: relative;
@@ -428,7 +429,7 @@ a {
           left: 0;
           width: 14px;
           height: 36px;
-          background: linear-gradient(90deg, #f4f5ff 10%, #ebf8ff);
+          background: $main-gradient;
           transform-origin: 100% 0;
           animation: lineStretch 1800ms cubic-bezier(0.25, 0.25, 0.75, 0.75)
             infinite;
@@ -446,7 +447,7 @@ a {
           left: 3px;
           width: 9px;
           height: 15px;
-          background: linear-gradient(90deg, #f4f5ff 10%, #ebf8ff);
+          background: $main-gradient;
         }
       }
     }
