@@ -324,17 +324,17 @@ happy hacking 💻
 ```text
 src/html/
   ├── components
-  │   ├── latest_news.pug
-  │   ├── loader.pug
-  │   ├── our_team.pug
-  │   └── trend_news.pug
+  │   ├── _latest_news.pug
+  │   ├── _loader.pug
+  │   ├── _our_team.pug
+  │   └── _trend_news.pug
   ├── helpers
-  │   └── variables.pug
+  │   └── _variables.pug
   ├── layouts
-  │   ├── footer.pug
-  │   ├── header.pug
-  │   ├── layout.pug
-  │   └── navbar.pug
+  │   ├── _footer.pug
+  │   ├── _header.pug
+  │   ├── _layout.pug
+  │   └── _navbar.pug
   └── pages
       ├── 404.pug
       ├── about-us.pug
