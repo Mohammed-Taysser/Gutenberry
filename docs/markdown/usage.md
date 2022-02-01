@@ -4,7 +4,7 @@
 
 # Usage
 
-The most basic usage of HTML5 Boilerplate is to create a static site or simple
+The most basic usage of GuttenBerry is to create a static site or simple
 app. Once you've downloaded or cloned the project, that process looks something
 like this:
 
@@ -14,29 +14,31 @@ like this:
 4. Deploy your site.
 
 Cool, right? _It is_. That said, the smart defaults, baseline elements, default
-attribute values and various other utilities that HTML5 Boilerplate offers can
+attribute values and various other utilities that GuttenBerry offers can
 serve as the foundation for whatever you're interested in building.
 
 Even the basic use-case of a simple static site can be enhanced by manipulating
-the code through an automated build process. Moving up in complexity HTML5
-Boilerplate can be integrated with whatever front-end framework, CMS or
+the code through an automated build process. Moving up in complexity GuttenBerry can be integrated with whatever front-end framework, CMS or
 e-commerce platform you're working with. Mix-and-match to your heart's content.
 Use what you need (toss it in a blender if you need to) and discard the rest.
-HTML5 Boilerplate is a starting point, not a destination.
+GuttenBerry is a starting point, not a destination.
 
 ## Basic structure
 
-A basic HTML5 Boilerplate site initially looks something like this:
+A basic GuttenBerry site initially looks something like this:
 
-```
+```text
 .
+├── app.webmanifest
+├── browserconfig.xml
 ├── CHANGELOG.md
 ├── dist
 │   ├── css
 │   │   ├── core.min.css
 │   │   ├── core.min.css.map
 │   │   ├── libs
-│   │   │   └── fontawesome.min.css
+│   │   │   ├── fontawesome.min.css
+│   │   │   └── glide.min.css
 │   │   ├── style.min.css
 │   │   └── style.min.css.map
 │   ├── fonts
@@ -101,6 +103,7 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │       ├── libs
 │       │   ├── bootstrap.bundle.min.js
 │       │   ├── cropper.min.js
+│       │   ├── glide.min.js
 │       │   ├── html5shiv.min.js
 │       │   └── respond.min.js
 │       ├── scripts.min.js
@@ -116,8 +119,8 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   └── usage.md
 ├── gulpfile.js
 ├── humans.txt
+├── index.html
 ├── LICENSE.txt
-├── manifest.json
 ├── package.json
 ├── package-lock.json
 ├── README.md
@@ -127,7 +130,8 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   ├── css
 │   │   ├── core.scss
 │   │   ├── libs
-│   │   │   └── fontawesome.min.css
+│   │   │   ├── fontawesome.min.css
+│   │   │   └── glide.min.css
 │   │   ├── scss
 │   │   │   ├── helpers
 │   │   │   │   ├── _keyframes.scss
@@ -167,6 +171,7 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   │   │   ├── latest_news.pug
 │   │   │   ├── loader.pug
 │   │   │   ├── navbar.pug
+│   │   │   ├── our_team.pug
 │   │   │   └── trend_news.pug
 │   │   ├── helpers
 │   │   │   └── variables.pug
@@ -201,7 +206,6 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   │   └── icons
 │   │       ├── dotted-shape.svg
 │   │       ├── favicon.png
-│   │       ├── icon-avatar.png
 │   │       ├── icon-profile.jpg
 │   │       ├── rounded-shape.svg
 │   │       └── shadow.svg
@@ -211,27 +215,14 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   │   │   ├── bootstrap.bundle.min.js
 │   │   │   ├── bootstrap.bundle.min.js.map
 │   │   │   ├── cropper.min.js
+│   │   │   ├── glide.min.js
 │   │   │   ├── html5shiv.min.js
 │   │   │   └── respond.min.js
 │   │   └── scripts.js
 │   └── music
-├── temp
-│   ├── old
-│   │   └── pages
-│   │       ├── 404.html
-│   │       ├── about.html
-│   │       ├── contact.html
-│   │       ├── index.html
-│   │       ├── login.html
-│   │       ├── post_details.html
-│   │       ├── posts.html
-│   │       ├── profile.html
-│   │       ├── register.html
-│   │       ├── trends.html
-│   │       └── update_profile.html
-│   ├── todo.md
-│   └── tree.txt
-└── __test__
+├── sw.js
+└── temp
+    └── tree.txt
 ```
 
 What follows is a general overview of each major part and how to use them.
@@ -243,7 +234,7 @@ initial CSS to help get you started from a solid foundation. [About the CSS](css
 
 ### doc
 
-This directory contains all the HTML5 Boilerplate documentation. You can use it
+This directory contains all the GuttenBerry documentation. You can use it
 as the location and basis for your own project's documentation.
 
 ### js
@@ -268,8 +259,7 @@ A helpful custom 404 to get you started.
 
 This file contains all settings regarding custom tiles for IE11 and Edge.
 
-For more info on this topic, please refer to [Microsoft's
-Docs](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85)).
+For more info on this topic, please refer to [Microsoft's Docs](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85)).
 
 ### .editorconfig
 

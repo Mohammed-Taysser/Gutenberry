@@ -1,4 +1,4 @@
-extends ../layouts/layout
+extends ../layouts/_layout
 
 block current_page 
   - var current_page = 'home'
@@ -7,21 +7,19 @@ block title
   title GuttenBerry | Home
 
 block style 
-  //- link(rel="stylesheet", href="../css/home.min.css")
 
-block javascript 
-  //- script(src="../javascript/build/glide.min.js") 
+block scripts 
 
 block content 
   
-  include ../components/header
+  include ../layouts/_header
 
   section.latest-news.main-background-color.py-5
     .container
       h2.mb-4.special-header.h1 Latest news
       .row.justify-content-center.align-items-center.align-items-stretch
         
-        include ../components/latest_news
+        include ../components/_latest_news
 
       .text-center.my-5
         a.h5.view-more-btn(href='articles.html') View all articles
@@ -45,7 +43,7 @@ block content
       h2.mb-4.special-header.h1 Recent trends
       .row.justify-content-center.align-items-center
         
-        include ../components/trend_news
+        include ../components/_trend_news
 
       .text-center.my-5
         a.h5.view-more-btn(href='articles.html') View all trends

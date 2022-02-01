@@ -1,4 +1,4 @@
-extends ../layouts/layout
+extends ../layouts/_layout
 
 block title 
   title GuttenBerry | About Us
@@ -7,15 +7,17 @@ block current_page
   - var current_page = 'about-us'
 
 block style 
+  link(rel="stylesheet", href="../css/libs/glide.min.css")
 
-block javascript 
+block scripts 
+  script(src='../javascript/libs/glide.min.js')
 
 block content 
 
   section.py-5
     .container
-      h1.h2.my-5.display-4.text-center about us
-      .row.justify-content-center.align-items-center 
+      h1.h2.my-5.special-header.text-center about us
+      .row.justify-content-center.align-items-center.my-5 
         .col-md-7.my-3 
           div 
             p I'am mohamed taysser, Frontend web developer. Well-versed in great number of languages and tools including HTML5, CSS3, JavaScript, Python, SQL and More. Very good background in web layout and principles. Interesting on writting secure and clean code. Seek to learn more and more about today technology.
@@ -26,3 +28,9 @@ block content
         .col-md-5.my-3 
           .img-container 
             img(src="../images/background/bg-about-us.webp", alt="about-us" class='img-fluid')
+      
+      section.our-team.my-5.py-5
+        h2.my-5.special-header.text-center our amazing team
+        .slider-container
+        
+          include ../components/_our_team

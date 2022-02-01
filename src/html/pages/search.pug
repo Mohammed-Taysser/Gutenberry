@@ -1,4 +1,4 @@
-extends ../layouts/layout
+extends ../layouts/_layout
 
 block title 
   title GuttenBerry | Search for 'title'
@@ -8,7 +8,8 @@ block current_page
 
 block style 
 
-block javascript 
+block scripts
+
 
 block content 
 
@@ -16,19 +17,13 @@ block content
     .container
       //- h2.mb-4.text-muted.special-header.h1 Latest posts
       form(action="", method="get" class='mb-4') 
-        input(class="form-control" type="search" value='' placeholder="What are you looking for?" aria-label="search" name='query' list="search-history" id="")
-        datalist#search-history
-          option(value='GuttenBerry')
-          option(value='blog')
-          option(value='apple')
-          option(value='history')
-          option(value='best')
-
+        input(class="form-control" type="search" value='' placeholder="What are you looking for ?" aria-label="search" name='query' id="js-search-page" dir="ltr" spellcheck=false autocomplete="off" maxlength="2048" tabindex="1")
+  
       .row.justify-content-center.align-items-center.align-items-stretch
         
-        include ../components/latest_news
+        include ../components/_latest_news
 
-        include ../components/latest_news
+        include ../components/_latest_news
 
       .mt-5(aria-label='Page navigation example')
         ul.pagination.justify-content-center.custom-pagination

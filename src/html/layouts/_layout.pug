@@ -1,4 +1,4 @@
-include ../helpers/variables
+include ../helpers/_variables
 
 block current_page 
   - var current_page = 'home'
@@ -16,8 +16,8 @@ html(lang="en")
             title layout
 
         // Meta Description
-        meta(name="description" content="multi page design as first project")
-        meta(name="author" content="Mohammed Taysser" href='../../humans.txt')
+        meta(name="description" content="How to Create A Perfect Blog With GuttenBerry")
+        meta(name="author" href='../../humans.txt')
         meta(name="keywords" content="HTML, CSS, JavaScript, bootstrap")
 
         link(rel="canonical", href="https://mohammed-taysser.github.io/Gutenberry/")
@@ -40,16 +40,16 @@ html(lang="en")
 
         // deal with search engin
         //- meta(name='robots' content='noindex,nofollow')
-        link(rel='manifest' href='../../manifest.json')
-        
+        link(rel='manifest' href='../../app.webmanifest' crossorigin="use-credentials")
+
         // Open Graph
-        meta(property='og:type' content='profile')
-        meta(property='og:title' content='Home')
-        meta(property='og:description' content='Description of the page less than 150 characters')
-        meta(property='og:url' content='')
-        meta(property='og:image' content='../images/background/bg-website_card.webp')
-        meta(property='profile:first_name' content='')
-        meta(property='profile:last_name' content='')
+        meta(property='og:type' content='website')
+        meta(property='og:title' content=current_page)
+        meta(property='og:description' content='How to Create A Perfect Blog With GuttenBerry')
+        meta(property='og:url' content='https://mohammed-taysser.github.io/Gutenberry/')
+        meta(property='og:image' content='../images/background/bg-website-card.webp')
+        //- meta(property='profile:first_name' content='')
+        //- meta(property='profile:last_name' content='')
 
 
         // twitter cards
@@ -58,7 +58,7 @@ html(lang="en")
         meta(name='twitter:site' content='@username')
 
         // username
-        meta(name='twitter:description' content='Description of the page less than 150 characters')
+        meta(name='twitter:description' content='How to Create A Perfect Blog With GuttenBerry')
         meta(name='twitter:image' content='../images/background/bg-website_card.jpg')
         // alt for image
         meta(name='twitter:image:alt' content='website_title')
@@ -78,17 +78,17 @@ html(lang="en")
         meta(name='twitter:app:id:iphone' content='')
                 
         // style sheet
-        //- link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
-        //- link(rel="stylesheet", href="../css/core.min.css")
+        link(rel="stylesheet", href="../css/libs/fontawesome.min.css")
+        link(rel="stylesheet", href="../css/core.min.css")
 
         //- defer-non-critical-css
-        link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
-        link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        //- link(rel="preload" href="../css/libs/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+        //- link(rel="preload" href="../css/core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
         
         block style
 
         // Standard favicon
-        // <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
+        // link(rel="icon" type="image/x-icon" href="https://example.com/favicon.ico")
         // Recommended favicon format
         link(rel='icon' type='image/png' href='../images/icons/favicon.png')
         // favicon
@@ -96,18 +96,29 @@ html(lang="en")
         link(rel='icon' type='image/png' sizes='32x32' href='../images/icons/favicon@3x.png')
         link(rel='icon' type='image/png' sizes='16x16' href='../images/icons/favicon@2x.png')
         link(rel='mask-icon' href='../images/icons/favicon.png' color='#9400ff')
-        meta(name='msapplication-TileColor' content='#603cba')
-        meta(name='theme-color' content='#ffffff')
+        meta(name='theme-color' content='#9400ff')
+        meta(name="theme-color" media="(prefers-color-scheme: light)" content="#9400ff")
+        meta(name="theme-color" media="(prefers-color-scheme: dark)" content="#9400ff")
+
+        //- IE Pinned Sites
+        //- Name the Pinned Site for Windows
+        meta(name="application-name" content="GuttenBerry")
+        //- Give your Pinned Site a tooltip
+        meta(name="msapplication-tooltip" content="How to Create A Perfect Blog With GuttenBerry.")
+        meta(name='msapplication-TileColor' content='#fff')
+        //- Recolor IE's controls manually for a Pinned Site
+        meta(name="msapplication-navbutton-color" content="#9400ff")
 
         noscript You need to enable JavaScript to run this app.
 
     body.load 
-        include ../components/loader
-        include ../components/navbar
+        include ../components/_loader
+        include ../layouts/_navbar
         block content 
-        include ../components/footer
+        include ../layouts/_footer
 
     script(src='../javascript/libs/bootstrap.bundle.min.js')
     script(src='../javascript/libs/cropper.min.js')
+    script(src='../javascript/libs/autoComplete.min.js')
+    block scripts
     script(src='../javascript/core.min.js')
-    block javascript

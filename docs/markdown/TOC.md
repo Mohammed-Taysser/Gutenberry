@@ -16,10 +16,9 @@
 
 ## Development
 
-* [Extending and customizing HTML5 Boilerplate](extend.md) — Going further with
-  the boilerplate.
+* [Extending and customizing GuttenBerry template](extend.md) — Going further with the boilerplate.
 
-## Related projects
+## More Related projects
 
 The [H5BP organization](https://github.com/h5bp) maintains several projects that
 complement HTML5 Boilerplate, projects that can help you improve different

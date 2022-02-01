@@ -41,10 +41,7 @@ For more details, please refer to the [EditorConfig project](https://editorconfi
 
 ## Server Configuration
 
-H5BP includes a [`.htaccess`](#htaccess) file for the [Apache HTTP server](https://httpd.apache.org/docs/). If you are not using Apache
-as your web server, then you are encouraged to download a
-[server configuration](https://github.com/h5bp/server-configs) that
-corresponds to your web server and environment.
+guttenberry includes a [`.htaccess`](#htaccess) file for the [Apache HTTP server](https://httpd.apache.org/docs/). If you are not using Apache as your web server, then you are encouraged to download a [server configuration](https://github.com/h5bp/server-configs) that corresponds to your web server and environment.
 
 A `.htaccess` (hypertext access) file is an [Apache HTTP server
 configuration file](https://github.com/h5bp/server-configs-apache).

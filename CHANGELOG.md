@@ -8,21 +8,15 @@
 - create page for update & create post
 - multi-language support
 - toggle dark & light theme
-- ensure that scss colors & gradient are stored in `scss/helpers/variables`
-- ensure that `keyframes` found only in `scss/helpers/keyframes`
-- use bootstrap from npm as separate scss files
 - perform more refactor in js code
 - more practices with PWA
 - work offline
 - change mobile menu close button
 - replace bootstrap.js with only css (see spectra framework)
 - replace font awesome with lighter icon library or use svg
-- replace site.webmanifest
 - reorganize docs content
-- back to normal like stylesheet
 - add github card
 - create website_card image
-- add 404 page to links
 
 ### search page
 
@@ -30,12 +24,26 @@
   - by date
   - by title
   - by author
-- empower search with auto complete
 
 ### post details page
 
 - for post owner add options like delete or update
 - for visitor add options like comment, like, save, share
+
+## 2.1.0 (Feb 1, 2022)
+
+- rename `webmanifest.json` to `app.webmanifest`
+- reorganize navbar pages
+- add 404 page to navbar links
+- start using glide slider
+- modify layout order & components
+- create our team in about us page as slider
+- use bootstrap from npm as separate scss files
+- minify image also
+- empower search page with auto complete
+- more refactor to autoComplete code
+- ensure that `keyframes` found only in `scss/helpers/keyframes`
+- ensure that scss colors & gradient are stored in `scss/helpers/variables`
 
 ## 2.0.0 (Jan 27, 2022)
 
@@ -61,3 +69,5 @@
 
 - create repo on github
 - Rewrite build script to make it more customizable and flexible.
+
+Thank You 🤍
