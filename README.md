@@ -70,6 +70,7 @@ Take a look at the [documentation table of contents](doc/TOC.md). This documenta
 - [`Bootstrap v5.1`][bootstrap-v5] customize & responsive mobile-first framework
 - [`ubuntu-font`][ubuntu-font]
 - [`cropper.js`][cropper]
+- [`autoComplete.js`][autoComplete]  simple, pure vanilla Javascript library
 
 <!-- - [`glide.js`][glide-js] Javascript Es6 Slider And Carouse -->
 <!-- - [`simple-bar`][simple-bar] replace the browser's default scrollbar -->
@@ -94,3 +95,4 @@ Take a look at the [documentation table of contents](doc/TOC.md). This documenta
 [simple-bar]: <https://github.com/Grsmto/simplebar>
 [howler]: <https://github.com/goldfire/howler.js>
 [cropper]: <https://github.com/fengyuanchen/cropperjs>
+[autoComplete]: <https://github.com/TarekRaafat/autoComplete.js>
