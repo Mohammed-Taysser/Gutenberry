@@ -1,4 +1,4 @@
-include ../helpers/variables
+include ../helpers/_variables
 
 block current_page 
   - var current_page = 'home'
@@ -112,10 +112,10 @@ html(lang="en")
         noscript You need to enable JavaScript to run this app.
 
     body.load 
-        include ../components/loader
-        include ../layouts/navbar
+        include ../components/_loader
+        include ../layouts/_navbar
         block content 
-        include ../layouts/footer
+        include ../layouts/_footer
 
     script(src='../javascript/libs/bootstrap.bundle.min.js')
     script(src='../javascript/libs/cropper.min.js')
